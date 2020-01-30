@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ready Arena</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Candal|Dosis|Open+Sans">
+        <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link rel="stylesheet" href="css/findTurnament.css" type="text/css" />
+        <link rel="stylesheet" href="css/normalize.css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.php"><img src="img/logo_ReadyArena.png" /></a>
+            <div>
+                <i class="fas fa-search"></i>
+                <form>
+                    <input type="text">
+                </form>
+            </div>
+            <div>
+                <a href="#">Login</a>
+                <a href="#">Sign up</a>
+                <!--<a href="#"><div id="profilIcone"></div></a>-->
+            </div>
+        </header>
+        <main>
+            <button id="arrowMenu">MENU</button>
+            <aside>
+                <nav class="hideAside">
+                    <ul>
+                        <li>My turnaments</li>
+                        <li>Ladder</li>
+                        <li>Friend list</li>
+                        <li>My team</li>
+                        <li>My Family</li>
+                        <li>Support</li>
+                    </ul>
+                </nav>
+            </aside>
+            <div id="templateDiv">
+                <?php include $template.'.phtml' ?>
+            </div>
+            <div id="DivExplain">
+                <div class="mainExplain">
+                    <img src="img/ladderExplain.jpg" alt="exemple de ladder"/>
+                    <div>
+                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
+                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
+                    </div>
+                </div>
+                <div class="mainExplain">
+                    <img src="img/ladderExplain.jpg" alt="exemple de ladder"/>
+                    <div>
+                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
+                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
