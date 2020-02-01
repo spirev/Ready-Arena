@@ -12,7 +12,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
   }
    
   /* Handle */
@@ -132,8 +132,8 @@ p {
 .showAside { /* class créée pour afficher le menu de navigation (aside) */
     position: fixed;
     color: white;
-    bottom: 25%;
-    left: -2%;
+    bottom: 24%;
+    left: -1%;
     transition: all 0.35s;
 }
 
@@ -148,7 +148,7 @@ aside nav ul { /* menu aside nav */
     background: linear-gradient(#0b1b38, #071620);
     border-right: 1px blue solid;
     border-radius: 30px;
-    margin-right: -83%;
+    margin-right: -30%;
     transition: all 0.2s;
 }
 
