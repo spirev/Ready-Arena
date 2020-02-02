@@ -14,7 +14,7 @@ $(function () {
 
     $('#arrowMenu').on('mouseover', function () {
         if ($('main aside nav').hasClass("showAside"))
-            $('#arrowMenu').html("<i class=\"fas fa-arrow-left\"></i>");
+            $('#arrowMenu').html("<i class=\"fas fa-arrow-left\" ></i>");
         else
             $('#arrowMenu').html("<i class=\"fas fa-arrow-right\"></i>");
 
