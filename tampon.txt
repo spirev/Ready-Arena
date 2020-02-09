@@ -1,3 +1,6 @@
 <p>Ready Arena comporte un systeme de classement 
 par points que les joueurs se voient attribués en 
 fonction de leurs classement dans les tournois auquels ils participent.</p>
+
+A la fin de chaque tournois chaque joueur se vois attribué un certain
+montant de point en fonction de sa position finale dans l'arbre de classement

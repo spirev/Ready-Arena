@@ -37,7 +37,7 @@ header {
 }
 
 header > a {/* le logo top left */
-    margin-left : 10px;
+    margin-left : 20px;
 }
 
 .fa-search {/* icone loupe a gauche du form */
@@ -188,7 +188,9 @@ aside nav ul li:hover {
 }
 
 .mainExplain p{
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 175%;
+    text-align: center;
     width: 85%;
 }
 
@@ -218,7 +220,7 @@ aside nav ul li:hover {
 
 #indexPhtml { /* tout index.phtml */
     background : linear-gradient(#12122d, #0b2638);
-    padding: 5% 0% 5%;
+    padding: 7% 0% 5%;
     margin-bottom: 15%;
     border-bottom: 2px solid rgb(0, 255, 255);
 }
