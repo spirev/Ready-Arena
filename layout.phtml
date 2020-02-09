@@ -40,25 +40,10 @@
                 </nav>
             </aside>
             <div id="templateDiv">
-                <?php include $template.'.phtml' ?>
+                <?php include $template_nav.'.phtml' ?>
             </div>
             <div id="DivExplain">
-                <div class="mainExplain">
-                    <img src="img/ladderExplain.jpg" alt="exemple de ladder"/>
-                    <div>
-                        <p>Ready Arena comporte un systeme interne de classement 
-                        des joueurs, des équipes et des familles. A la fin de chaque tournois chaque joueur se vois attribué un certain
-                        montant de point en fonction de sa position finale dans l'arbre de classement, qui vient s'ajouter a son total de point.</p>
-                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
-                    </div>
-                </div>
-                <div class="mainExplain">
-                    <img src="img/ladderExplain.jpg" alt="exemple de ladder"/>
-                    <div>
-                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
-                        <p>Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! Ladder explained ! </p>
-                    </div>
-                </div>
+                <?php include 'explain/'.$template_explain.'.phtml' ?>
             </div>
         </main>
         <footer>
