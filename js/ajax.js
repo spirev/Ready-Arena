@@ -1,4 +1,4 @@
 function setContent (content)
 {
-    $('templateDiv').html(content);
+    $('indexPhtml').html(content);
 }
