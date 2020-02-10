@@ -292,6 +292,7 @@ aside nav ul li:hover {
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 1px 1px 25px #000dff;
+    border : 1px solid blue;
     transition: all 0.2s;
 }
 
