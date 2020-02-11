@@ -33,16 +33,16 @@ $(function () {
         //homePage.fadeOut();
         switch (quickBut) {
             case 'creat':
-                $.get('creatTurnament.phtml', setContent);
+                $.get('creatTournament.phtml', setContent);
                 break;
             case 'find':
-                $.get('findTurnament.phtml', setContent);
+                $.get('findTournament.phtml', setContent);
                 break;
             case 'team':
-                $.get('team.phtml', setContent);
+                $.get('findTeam.phtml', setContent);
                 break;
             case 'family':
-                $get('family.phtml', setContent);
+                $get('findFamily.phtml', setContent);
                 break;
         }
     })
