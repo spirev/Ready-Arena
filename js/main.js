@@ -1,7 +1,7 @@
 const $asideMenu = $('aside nav');
 
 $(function () {
-
+    
     // listen to the click of menu/arrow to hide & show aside menu*/
     $('#arrowMenu').on('click', function () {
         $asideMenu.toggleClass("showAside");
@@ -25,24 +25,27 @@ $(function () {
     })
 
     //écoute des bouton creat/find/team/family de la page home du navigateur
-    $('#indexPDiv button').on('click', function () {
-
+    $('#homeNav button').on('click', function () {
         let quickBut = this.value;
         //let homePage = $('#indexPhtml');
-
+        
         //homePage.fadeOut();
         switch (quickBut) {
             case 'creat':
-                $.get('creatTournament.phtml', setContent);
+                $.get('views/ajaxHTML/nav/creatTournamentView/creatTournament.phtml', setNav),
+                $.get('views/ajaxHTML/explain/create_explain.phtml', setExplain);
                 break;
             case 'find':
-                $.get('findTournament.phtml', setContent);
+                $.get('views/ajaxHTML/nav/findTournamentView/findTournament.phtml', setNav),
+                $.get('views/ajaxHTML/explain/find_explain.phtml', setExplain);
                 break;
             case 'team':
-                $.get('findTeam.phtml', setContent);
+                $.get('views/ajaxHTML/nav/findTeamView/findTeam.phtml', setNav),
+                $.get('views/ajaxHTML/explain/team_explain.phtml', setExplain);
                 break;
             case 'family':
-                $get('findFamily.phtml', setContent);
+                $get('views/ajaxHTML/nav/findFamilyView/findFamily.phtml', setNav),
+                $.get('views/ajaxHTML/explain/family_explain.phtml', setExplain);
                 break;
         }
     })

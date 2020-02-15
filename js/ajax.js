@@ -1,4 +1,9 @@
-function setContent (content)
+function setNav (content)
 {
-    $('indexPhtml').html(content);
+    $('#homeNav').html(content);
+}
+
+function setExplain (content)
+{
+    $('#homeExplain').html(content);
 }

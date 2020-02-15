@@ -109,7 +109,7 @@ p {
     font-family: "Open Sans";
     font-size: 1rem;
     color: white;
-    box-shadow: 1px 1px 25px #000dff;
+    border : 1px solid rgb(0, 255, 255);
     outline: none;
     transition: all 0.2s;
 }
@@ -170,43 +170,6 @@ aside nav ul li:hover {
     cursor: pointer;
 }
 
-#DivExplain { /* div regroupant les deux .mainExplain*/
-    background : linear-gradient(#0b2638, #12122d);
-    border-top: 2px solid rgb(0, 255, 255);
-}
-
-.mainExplain {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 7% 5% 7%;
-}
-
-.mainExplain img {
-    margin-right: 5%;
-}
-
-.mainExplain p{
-    font-size: 1.2rem;
-    line-height: 175%;
-    text-align: center;
-    width: 85%;
-}
-
-.mainEplain div {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-}
-
-/*footer div div {  / *mon mail + mon discord* /
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-bottom: 5px;
-}*/
 
 .fa-discord, .fa-envelope {
     font-size : 30px;
@@ -214,38 +177,68 @@ aside nav ul li:hover {
     padding-right: 10px;
 }
                 /*____________________________________________________
-                ///////////////   START index.phtml  /////////////////
-                  home de la nav ajax --> creat /find / team /family  
-                ____________________________________________________*/
-
-#indexPhtml { /* tout index.phtml */
-    background : linear-gradient(#12122d, #0b2638);
-    padding: 7% 0% 5%;
-    margin-bottom: 15%;
+                ///////////////   START home.phtml  /////////////////
+                  homePhtml --> all home content (nav + explain)
+                  homeNav   --> ajax nav only (creat / find)
+                  explain   --> explain part at the bottom of page  
+                  ____________________________________________________*/
+                  
+#homePhtml { /* all content in home page (nav + explain) */
     border-bottom: 2px solid rgb(0, 255, 255);
 }
 
-#indexPDiv{ /* la nav ajax de index.phtml */
+#homePhtml p { /* all <p> in the ajax nav */
+    font-family: "Candal";
+    color : white;
+    font-size: 1rem;
+    padding: 2% 0% 2%;
+    width: 75%;
+}
+
+#homePhtml p:hover {
+    cursor : default;
+}
+
+#homeNav{ /* ajax nav only (creat / find) */
+    background : linear-gradient(#12122d, #0a1c31);
     width : 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: inherit;
     text-align: center;
+    padding-top: 10%;
+    border-bottom: 2px solid rgb(0, 255, 255);
 }
-#indexPhtml p { /* tout les <p> dans la nav ajax */
-    font-family: "Candal";
-    color : white;
-    font-size: 1rem;
-    padding: 2% 0% 2%;
-    width: 65%;
-}
-
-#indexPhtml p:hover {
-    cursor : default;
+    
+#homeExplain { /* div regroupant les deux .mainExplain*/
+    background : linear-gradient(#0b2038, #0a1c31);
+    border-top: 2px solid rgb(0, 255, 255);
+    margin-top: 17%;
 }
 
-#indexPDiv div { /* les div prisent deux par deux */
+.homeExplainDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 7% 1% 7% 8%;
+}
+
+.homeExplainDiv p{
+    font-size: 1.2rem;
+    line-height: 175%;
+    text-align: center;
+    width: 85%;
+}
+
+.homeExplainDiv div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#homeNav div { /* binomial functionalities in nav ajax ((creat + find) && (team + family)*/
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -253,7 +246,7 @@ aside nav ul li:hover {
     margin-bottom: 4%;
 }
 
-#indexPDiv div div { /* toute les div */
+#homeNav div div { /* all functionalities in nav ajax (creat + find + team + family) */
     display : flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -267,14 +260,14 @@ aside nav ul li:hover {
     transition: all 0.3s;
 }
 
-#indexPDiv div div:hover { /* hover n'importe quelle div (4) */
+#homeNav div div:hover { /* hover big square functionalities */
     border-left: 1px #00ffff solid;
     border-right: 1px #00ffff solid;
     box-shadow: 1px 1px 100px #1c2066;
     background-color: #141438;
 }
 
-#indexPhtml .fa-hammer, .fa-eye, .fa-users, .fa-home{ /* mega icone */ 
+#homePhtml .fa-hammer, .fa-eye, .fa-users, .fa-home{ /* big icone */ 
     width : 180px;
     height : 145px;
     font-size : 7rem;
@@ -282,7 +275,7 @@ aside nav ul li:hover {
     margin-bottom: -40px;
 }
 
-#indexPDiv button{ /* creat / find / team / family buttons*/
+#homeNav button{ /* creat / find / team / family   buttons*/
     border : 0px;
     width: 175px;
     height: 65px;
@@ -296,7 +289,7 @@ aside nav ul li:hover {
     transition: all 0.2s;
 }
 
-#indexPDiv button:hover { /* creat / find / team / family buttons hover*/
+#homeNav button:hover { /* creat / find / team / family buttons hover*/
     background-color: rgb(0, 230, 230);
     box-shadow: 1px 1px 25px #0059ff;
     color: black;
@@ -304,11 +297,11 @@ aside nav ul li:hover {
     cursor: pointer;
 }
 
-            /*______________________________________________
-            //////////START creatTurnament.phtml////////////
-            ________________________________________________*/
+/*______________________________________________
+//////////START creatTurnament.phtml////////////
+________________________________________________*/
 #creatTurnamentPhtml {
-    background : linear-gradient(#12122d, #0b2638);
+    background : linear-gradient(#0b2038, #0a1c31);
     padding: 5% 0% 5%;
     margin-bottom: 15%;
 }
