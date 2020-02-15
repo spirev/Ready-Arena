@@ -191,7 +191,7 @@ aside nav ul li:hover {
     font-family: "Candal";
     color : white;
     font-size: 1rem;
-    padding: 2% 0% 2%;
+    padding: 2% 8% 2%;
     width: 75%;
 }
 
@@ -211,32 +211,6 @@ aside nav ul li:hover {
     border-bottom: 2px solid rgb(0, 255, 255);
 }
     
-#homeExplain { /* div regroupant les deux .mainExplain*/
-    background : linear-gradient(#0b2038, #0a1c31);
-    border-top: 2px solid rgb(0, 255, 255);
-    margin-top: 17%;
-}
-
-.homeExplainDiv {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 7% 1% 7% 8%;
-}
-
-.homeExplainDiv p{
-    font-size: 1.2rem;
-    line-height: 175%;
-    text-align: center;
-    width: 85%;
-}
-
-.homeExplainDiv div {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-}
 
 #homeNav div { /* binomial functionalities in nav ajax ((creat + find) && (team + family)*/
     display: flex;
@@ -267,7 +241,7 @@ aside nav ul li:hover {
     background-color: #141438;
 }
 
-#homePhtml .fa-hammer, .fa-eye, .fa-users, .fa-home{ /* big icone */ 
+.fa-hammer, .fa-eye, .fa-users, .fa-home{ /* big icone */ 
     width : 180px;
     height : 145px;
     font-size : 7rem;
@@ -297,8 +271,63 @@ aside nav ul li:hover {
     cursor: pointer;
 }
 
+#homeExplain { /* home_explain.phtml */
+    background : linear-gradient(#0b2038, #0a1c31);
+    border-top: 2px solid rgb(0, 255, 255);
+    margin-top: 17%;
+}
+
+#homeExplain article {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 2%; 
+}
+
+#homeExplain article i {
+    font-size: 3.5rem;
+    padding-bottom: 2%;
+    width: auto;
+    height: auto;
+}
+
+#homeExplain div {
+    padding : 7% 5% 5% 14%;
+}
+
 /*______________________________________________
-//////////START creatTurnament.phtml////////////
+            START ladder.phtml
+________________________________________________*/
+
+#ladderExplain { /* div regroupant les deux .mainExplain*/
+    background : linear-gradient(#0b2038, #0a1c31);
+    border-top: 2px solid rgb(0, 255, 255);
+    margin-top: 17%;
+}
+
+.ladderExplainDiv {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 7% 1% 7% 8%;
+}
+
+.ladderExplainDiv p{
+    font-size: 1.2rem;
+    line-height: 175%;
+    text-align: center;
+    width: 85%;
+}
+
+.ladderExplainDiv div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+/*______________________________________________
+            START creatTurnament.phtml
 ________________________________________________*/
 #creatTurnamentPhtml {
     background : linear-gradient(#0b2038, #0a1c31);
