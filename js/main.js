@@ -24,7 +24,7 @@ $(function () {
         $('#arrowMenu').html("MENU");
     })
 
-    //écoute des bouton creat/find/team/family de la page home du navigateur
+    //listen buttons creat/find/team/family from homeNav
     $('#homeNav button').on('click', function () {
         let quickBut = this.value;
         //let homePage = $('#indexPhtml');
@@ -32,20 +32,16 @@ $(function () {
         //homePage.fadeOut();
         switch (quickBut) {
             case 'creat':
-                $.get('views/ajaxHTML/nav/creatTournamentView/creatTournament.phtml', setNav),
-                $.get('views/ajaxHTML/explain/create_explain.phtml', setExplain);
+                translate_home_content("createTournament");
                 break;
             case 'find':
-                $.get('views/ajaxHTML/nav/findTournamentView/findTournament.phtml', setNav),
-                $.get('views/ajaxHTML/explain/find_explain.phtml', setExplain);
+                translate_home_content("findTournament");
                 break;
             case 'team':
-                $.get('views/ajaxHTML/nav/findTeamView/findTeam.phtml', setNav),
-                $.get('views/ajaxHTML/explain/team_explain.phtml', setExplain);
+                translate_home_content("findFamily");
                 break;
             case 'family':
-                $get('views/ajaxHTML/nav/findFamilyView/findFamily.phtml', setNav),
-                $.get('views/ajaxHTML/explain/family_explain.phtml', setExplain);
+                translate_home_content("findTeam");
                 break;
         }
     })

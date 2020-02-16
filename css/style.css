@@ -12,7 +12,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
   }
    
   /* Handle */
@@ -178,15 +178,12 @@ aside nav ul li:hover {
 }
                 /*____________________________________________________
                 ///////////////   START home.phtml  /////////////////
-                  homePhtml --> all home content (nav + explain)
-                  homeNav   --> ajax nav only (creat / find)
-                  explain   --> explain part at the bottom of page  
+                  homePhtml     --> all home content (nav + explain)
+                  homeNav       --> ajax nav only (creat / find)
+                  explain       --> explain part at the bottom of page
+                  transitioning --> class for css translation between homeNav  
                   ____________________________________________________*/
                   
-#homePhtml { /* all content in home page (nav + explain) */
-    border-bottom: 2px solid rgb(0, 255, 255);
-}
-
 #homePhtml p { /* all <p> in the ajax nav */
     font-family: "Candal";
     color : white;
@@ -201,14 +198,15 @@ aside nav ul li:hover {
 
 #homeNav{ /* ajax nav only (creat / find) */
     background : linear-gradient(#12122d, #0a1c31);
-    width : 100%;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: inherit;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 8%;
     border-bottom: 2px solid rgb(0, 255, 255);
+    height: 882px;
 }
     
 
@@ -293,6 +291,15 @@ aside nav ul li:hover {
 
 #homeExplain div {
     padding : 7% 5% 5% 14%;
+}
+
+#createExplain  {
+    padding-top: 0px;
+}
+
+.transitioningOut { /* for content that is translating */
+    transition-duration: 0.55s;
+    transform: translate(-790px);
 }
 
 /*______________________________________________
