@@ -13,18 +13,16 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
-  }
-   
+}   
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgb(0, 255, 255); 
     border-radius: 10px;
-  }
-  
+}  
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #00ccff; 
-  }
+}
 
 header {
     display: flex;
@@ -166,7 +164,9 @@ aside nav ul li:hover {
     box-shadow: 3px 3px 25px #1b23c0;/*#000dff*/
     padding-left: 20px;
     border-radius: 15px;
-    border-left : 5px solid rgb(0, 26, 255);
+    /*border-left : 5px solid rgb(0, 26, 255);*/
+    border-left: 1px solid rgb(0, 255, 255);
+    border-right: 1px solid rgb(0, 255, 255);
     cursor: pointer;
 }
 
@@ -183,18 +183,6 @@ aside nav ul li:hover {
                   explain       --> explain part at the bottom of page
                   transitioning --> class for css translation between homeNav  
                   ____________________________________________________*/
-                  
-#homePhtml p { /* all <p> in the ajax nav */
-    font-family: "Candal";
-    color : white;
-    font-size: 1rem;
-    padding: 2% 8% 2%;
-    width: 75%;
-}
-
-#homePhtml p:hover {
-    cursor : default;
-}
 
 #homeNav{ /* ajax nav only (creat / find) */
     background : linear-gradient(#12122d, #0a1c31);
@@ -204,11 +192,22 @@ aside nav ul li:hover {
     justify-content: space-evenly;
     align-items: inherit;
     text-align: center;
-    padding-top: 8%;
+    padding-top: 5%;
     border-bottom: 2px solid rgb(0, 255, 255);
     height: 882px;
 }
     
+#homeNav p { /* all texte in nav*/
+    font-family: "Candal";
+    color : white;
+    font-size: 1rem;
+    padding: 2% 8% 2%;
+    width: 75%;
+}
+
+#homeNav p:hover { /* hover all texte in nav */
+    cursor : default;
+}
 
 #homeNav div { /* binomial functionalities in nav ajax ((creat + find) && (team + family)*/
     display: flex;
@@ -218,7 +217,7 @@ aside nav ul li:hover {
     margin-bottom: 4%;
 }
 
-#homeNav div div { /* all functionalities in nav ajax (creat + find + team + family) */
+#homeNav div article { /* all functionalities in nav ajax (creat + find + team + family) */
     display : flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -232,7 +231,7 @@ aside nav ul li:hover {
     transition: all 0.3s;
 }
 
-#homeNav div div:hover { /* hover big square functionalities */
+#homeNav div article:hover { /* hover big square functionalities */
     border-left: 1px #00ffff solid;
     border-right: 1px #00ffff solid;
     box-shadow: 1px 1px 100px #1c2066;
@@ -275,6 +274,18 @@ aside nav ul li:hover {
     margin-top: 17%;
 }
 
+#homeExplain p {
+    font-family: "Candal";
+    color : white;
+    font-size: 1rem;
+    padding: 2% 8% 2%;
+    width: 75%;
+}
+
+#homeExplain p:hover {
+    cursor : default;
+}
+
 #homeExplain article {
     display: flex;
     flex-flow: row nowrap;
@@ -293,13 +304,46 @@ aside nav ul li:hover {
     padding : 7% 5% 5% 14%;
 }
 
-#createExplain  {
-    padding-top: 0px;
-}
 
 .transitioningOut { /* for content that is translating */
     transition-duration: 0.55s;
-    transform: translate(-790px);
+    transform: translate(-1600px);
+}
+
+/*______________________________________________
+            START allGames.phtml
+________________________________________________*/
+#allGamesPhtml {
+    background-color: #0A1C31;
+    display: flex !important;
+    flex-flow: column wrap !important;
+    padding-top: 0 !important;
+}
+
+#allGamesPhtml div {
+    width: 65%;
+    height: 600px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#allGamesPhtml div div {
+    width: 700px;
+    height: 130px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#allGamesPhtml .gameIcone {
+    background-color: white !important;
+    width: 15%;
+    height: 74%;
+    border: 2px solid red;
 }
 
 /*______________________________________________
@@ -336,8 +380,12 @@ ________________________________________________*/
 /*______________________________________________
             START creatTurnament.phtml
 ________________________________________________*/
-#creatTurnamentPhtml {
-    background : linear-gradient(#0b2038, #0a1c31);
+#createTournamentPhtml {
+    /*background : linear-gradient(#0b2038, #0a1c31);*/
     padding: 5% 0% 5%;
     margin-bottom: 15%;
+}
+
+#createExplain  {
+    padding-top: 0px;
 }

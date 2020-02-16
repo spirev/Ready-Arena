@@ -7,3 +7,8 @@ function setExplain (content)
 {
     $('#homeExplain').html(content);
 }
+
+function loadHome (homepath)
+{
+    $('#homeNav').html(homepath);
+}
