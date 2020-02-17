@@ -178,26 +178,32 @@ aside nav ul li:hover {
 }
                 /*____________________________________________________
                 ///////////////   START home.phtml  /////////////////
-                  homePhtml     --> all home content (nav + explain)
-                  homeNav       --> ajax nav only (creat / find)
-                  explain       --> explain part at the bottom of page
-                  transitioning --> class for css translation between homeNav  
+                  homeNav        --> ajax nav for all pages
+                  homeContentNav --> ajax nav only (creat / find / team / family)
+                  explain        --> explain part at the bottom of page
+                  transitioning  --> class for css translation between homeNav  
                   ____________________________________________________*/
 
-#homeNav{ /* ajax nav only (creat / find) */
-    background : linear-gradient(#12122d, #0a1c31);
+#homeNav {
+    background : linear-gradient(#12122d, #0B1A30);
     width: 100%;
+    height: 1020px;
+    border-bottom: 2px solid rgb(0, 255, 255);
+
+}
+
+#homeContentNav{ /* ajax nav only (creat / find) */
+    background : linear-gradient(#12122d, #0B1A30);
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: inherit;
     text-align: center;
-    padding-top: 5%;
-    border-bottom: 2px solid rgb(0, 255, 255);
-    height: 882px;
 }
     
-#homeNav p { /* all texte in nav*/
+#homeContentNav p { /* all texte in nav*/
     font-family: "Candal";
     color : white;
     font-size: 1rem;
@@ -205,19 +211,18 @@ aside nav ul li:hover {
     width: 75%;
 }
 
-#homeNav p:hover { /* hover all texte in nav */
+#homeContentNav p:hover { /* hover all texte in nav */
     cursor : default;
 }
 
-#homeNav div { /* binomial functionalities in nav ajax ((creat + find) && (team + family)*/
+#homeContentNav div { /* binomial functionalities in nav ajax ((creat + find) && (team + family)*/
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 4%;
 }
 
-#homeNav div article { /* all functionalities in nav ajax (creat + find + team + family) */
+#homeContentNav div article { /* all functionalities in nav ajax (creat + find + team + family) */
     display : flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -231,7 +236,7 @@ aside nav ul li:hover {
     transition: all 0.3s;
 }
 
-#homeNav div article:hover { /* hover big square functionalities */
+#homeContentNav div article:hover { /* hover big square functionalities */
     border-left: 1px #00ffff solid;
     border-right: 1px #00ffff solid;
     box-shadow: 1px 1px 100px #1c2066;
@@ -246,7 +251,7 @@ aside nav ul li:hover {
     margin-bottom: -40px;
 }
 
-#homeNav button{ /* creat / find / team / family   buttons*/
+#homeContentNav button{ /* creat / find / team / family   buttons*/
     border : 0px;
     width: 175px;
     height: 65px;
@@ -260,7 +265,7 @@ aside nav ul li:hover {
     transition: all 0.2s;
 }
 
-#homeNav button:hover { /* creat / find / team / family buttons hover*/
+#homeContentNav button:hover { /* creat / find / team / family buttons hover*/
     background-color: rgb(0, 230, 230);
     box-shadow: 1px 1px 25px #0059ff;
     color: black;
@@ -269,7 +274,7 @@ aside nav ul li:hover {
 }
 
 #homeExplain { /* home_explain.phtml */
-    background : linear-gradient(#0b2038, #0a1c31);
+    background : linear-gradient(#0B1A30, #0a1c31);
     border-top: 2px solid rgb(0, 255, 255);
     margin-top: 17%;
 }
@@ -306,22 +311,37 @@ aside nav ul li:hover {
 
 
 .transitioningOut { /* for content that is translating */
-    transition-duration: 0.55s;
-    transform: translate(-1600px);
+    transition-duration: 1s;
+    transform: translate(-820px);
 }
+
+/*______________________________________________
+            START homeContent.phtml
+            ( if needed for a return to home page (ajaxed) after fiew interaction with nav)
+________________________________________________*/
+
 
 /*______________________________________________
             START allGames.phtml
 ________________________________________________*/
 #allGamesPhtml {
-    background-color: #0A1C31;
+    background : linear-gradient(#12122d, #0a1c31);
     display: flex !important;
     flex-flow: column wrap !important;
     padding-top: 0 !important;
+    height: 100%;
+    text-align: center;
+}
+
+#allGamesPhtml p{
+    font-family: "Candal";
+    color : white;
+    font-size: 1rem;
+    padding: 6% 0% 3% 0%;
 }
 
 #allGamesPhtml div {
-    width: 65%;
+    width: 100%;
     height: 600px;
     display: flex;
     flex-flow: column wrap;
@@ -340,10 +360,40 @@ ________________________________________________*/
 }
 
 #allGamesPhtml .gameIcone {
-    background-color: white !important;
+    background-color: black !important;
     width: 15%;
     height: 74%;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 255, 255);
+}
+
+#allGamesPhtml .gameIcone:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+/*______________________________________________
+            START findFamily.phtml
+________________________________________________*/
+
+#familyPhtml p {
+    font-family: "Candal";
+    color : white;
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+/*______________________________________________
+            START creatTurnament.phtml
+________________________________________________*/
+#createTournamentPhtml {
+    /*background : linear-gradient(#0b2038, #0a1c31);*/
+    padding: 5% 0% 5%;
+    margin-bottom: 15%;
+}
+
+#createExplain  {
+    padding-top: 0px;
 }
 
 /*______________________________________________
@@ -375,17 +425,4 @@ ________________________________________________*/
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-}
-
-/*______________________________________________
-            START creatTurnament.phtml
-________________________________________________*/
-#createTournamentPhtml {
-    /*background : linear-gradient(#0b2038, #0a1c31);*/
-    padding: 5% 0% 5%;
-    margin-bottom: 15%;
-}
-
-#createExplain  {
-    padding-top: 0px;
 }

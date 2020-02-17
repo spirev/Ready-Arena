@@ -1,7 +1,6 @@
 const $asideMenu = $('aside nav');
 
 $(function () {
-    translate_home_content("homeContent");
     // listen to the click of menu/arrow to hide & show aside menu*/
     $('#arrowMenu').on('click', function () {
         $asideMenu.toggleClass("showAside");
@@ -25,30 +24,13 @@ $(function () {
     })
 
     //listen buttons creat/find/team/family from homeNav
-    $('#homeNav button').on('click', function () {
-        console.log('1');
+    $('.homeContentDiv article button').on('click', function(){
         let quickBut = this.value;
-        //let homePage = $('#indexPhtml');
         if (quickBut == 'create' || quickBut == 'find' || quickBut == 'team') {
             translate_home_content('allGames');
         }
         else {
             translate_home_content('findFamily');
         }
-
-        /*switch (quickBut) {
-            case 'creat':
-                translate_home_content("createTournament");
-                break;
-            case 'find':
-                translate_home_content("findTournament");
-                break;
-            case 'team':
-                translate_home_content("findFamily");
-                break;
-            case 'family':
-                translate_home_content("findTeam");
-                break;
-        } TO DELETE / HERE IN CASE OF BAD MOVE */
     })
-})
+})  
