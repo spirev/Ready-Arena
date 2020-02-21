@@ -46,7 +46,7 @@ header > a {/* le logo top left */
 
 header input { /* le formulaire du header*/
     background-color: black;
-    color: white;
+    color: rgb(0, 255, 255);
     width: 330px;
     height: 37px;
     border: 1px solid rgb(0, 255, 255);
@@ -93,6 +93,7 @@ p {
     color: white;
     font-family: "Open Sans";
 }
+
 
 #arrowMenu { /* le bouton menu */
     position: fixed;
@@ -176,7 +177,20 @@ aside nav ul li:hover {
     color : rgb(0, 255, 255);
     padding-right: 10px;
 }
-                /*____________________________________________________
+
+.fa-question-circle {
+    font-size: 2rem;
+    color: orangered;
+    transition: all 0.2s;
+}
+
+.fa-arrow-alt-circle-up {
+    font-size: 2rem;
+    color: orangered;
+    transition: all 0.2s;
+}
+
+/*____________________________________________________
                 ///////////////   START home.phtml  /////////////////
                   homeNav        --> ajax nav for all pages
                   homeContentNav --> ajax nav only (creat / find / team / family)
@@ -192,6 +206,7 @@ aside nav ul li:hover {
 
 }
 
+
 #homeContentNav{ /* ajax nav only (creat / find) */
     background : linear-gradient(#12122d, #0B1A30);
     width: 100%;
@@ -202,7 +217,7 @@ aside nav ul li:hover {
     align-items: inherit;
     text-align: center;
 }
-    
+
 #homeContentNav p { /* all texte in nav*/
     font-family: "Candal";
     color : white;
@@ -221,6 +236,7 @@ aside nav ul li:hover {
     justify-content: space-evenly;
     align-items: center;
 }
+
 
 #homeContentNav div article { /* all functionalities in nav ajax (creat + find + team + family) */
     display : flex;
@@ -251,7 +267,8 @@ aside nav ul li:hover {
     margin-bottom: -40px;
 }
 
-#homeContentNav button{ /* creat / find / team / family   buttons*/
+
+#homeContentNav button:not(#helpBut){ /* creat / find / team / family   buttons*/
     border : 0px;
     width: 175px;
     height: 65px;
@@ -265,12 +282,28 @@ aside nav ul li:hover {
     transition: all 0.2s;
 }
 
-#homeContentNav button:hover { /* creat / find / team / family buttons hover*/
+#homeContentNav button:hover:not(#helpBut) { /* creat / find / team / family buttons hover*/
     background-color: rgb(0, 230, 230);
     box-shadow: 1px 1px 25px #0059ff;
     color: black;
     width : 210px;
     cursor: pointer;
+}
+
+#homeContentNav #helpBut { /* the help button wich on click permit to scroll to the bottom */
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    width: 34px;
+    padding: 0;
+    outline: none;
+}
+
+#homeContentNav #helpBut:hover {
+    cursor: pointer;
+}
+
+#homeContentNav #helpBut:hover :first-child {
+    color: yellow;
 }
 
 #homeExplain { /* home_explain.phtml */
@@ -306,13 +339,40 @@ aside nav ul li:hover {
 }
 
 #homeExplain div {
-    padding : 7% 5% 5% 14%;
+    padding : 7% 5% 3% 14%;
 }
 
+#upButDiv {
+    padding: 0 !important;
+    padding-bottom: 2% !important;
+    text-align: center;
+}
 
-.transitioningOut { /* for content that is translating */
+#homeExplain #upBut { /* the up button wich on click permit to scroll to the bottom */
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    width: 34px;
+    padding: 0;
+    outline: none;
+    padding: 0;
+}
+
+#homeExplain #upBut:hover {
+    cursor: pointer;
+}
+
+#homeExplain #upBut:hover :first-child {
+    color: yellow;
+}
+
+.transitioningOut { /* for content that is translating to the left (disappear) */
     transition-duration: 1s;
     transform: translate(-820px);
+}
+
+.transitioningIn { /* for content that is scaling up (called content)*/
+    transition-duration: 1s;
+    transform: translate(820px);
 }
 
 /*______________________________________________
@@ -336,7 +396,7 @@ ________________________________________________*/
 #allGamesPhtml p{
     font-family: "Candal";
     color : white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 6% 0% 3% 0%;
 }
 
@@ -364,10 +424,13 @@ ________________________________________________*/
     width: 15%;
     height: 74%;
     border: 2px solid rgb(0, 255, 255);
+    transition: all 0.25s;
 }
 
 #allGamesPhtml .gameIcone:hover {
-    border: 1px solid red;
+    border: 2px solid red;
+    width: 17%;
+    height: 82%;
     cursor: pointer;
 }
 

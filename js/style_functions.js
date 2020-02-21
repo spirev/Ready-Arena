@@ -1,7 +1,7 @@
 var timer;
-
-function translate_home_content(path) {
-    $('#homeNav div').addClass("transitioningOut");
+/*  allow homeNav to get new content wich replace previous content
+    (default : homeContent.phmtl ----> allGames.phtml or family.phtml ) */
+function SetAjaxContent(path) {
     timer = setInterval(function () {
         if (path == 'homeContent') {
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
@@ -16,4 +16,13 @@ function translate_home_content(path) {
         }
         clearInterval(timer);
     }, 1000);
+
+    /*if (path == 'homeContent') {
+        console.log('nada');
+    }
+    else if (path == 'allGames') {
+        $('#allGamePhtml').addClass(".transitioningIn");
+    }
+    else {
+    }*/
 }
