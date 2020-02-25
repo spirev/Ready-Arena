@@ -8,6 +8,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: 100%;/*1632px 1224px*/
+    overflow-x: hidden;
 }
 
 /* width */
@@ -110,6 +111,7 @@ p {
     color: white;
     border : 1px solid rgb(0, 255, 255);
     outline: none;
+    z-index: 1;
     transition: all 0.2s;
 }
 
@@ -117,6 +119,7 @@ p {
     background-color: #00ffff;
     box-shadow: 1px 1px 35px #0059ff;/*#000dff*/
     color: black;
+    cursor: pointer;
     outline: none;
 }
 
@@ -134,6 +137,7 @@ p {
     bottom: 24%;
     left: -1%;
     transition: all 0.35s;
+    z-index: 1;
 }
 
 aside nav ul { /* menu aside nav */
@@ -178,11 +182,6 @@ aside nav ul li:hover {
     padding-right: 10px;
 }
 
-.fa-question-circle {
-    font-size: 2rem;
-    color: orangered;
-    transition: all 0.2s;
-}
 
 .fa-arrow-alt-circle-up {
     font-size: 2rem;
@@ -191,23 +190,23 @@ aside nav ul li:hover {
 }
 
 /*____________________________________________________
-                ///////////////   START home.phtml  /////////////////
-                  homeNav        --> ajax nav for all pages
-                  homeContentNav --> ajax nav only (creat / find / team / family)
-                  explain        --> explain part at the bottom of page
-                  transitioning  --> class for css translation between homeNav  
-                  ____________________________________________________*/
+///////////////   START home.phtml  /////////////////
+homeNav        --> ajax nav for all pages
+homeContentNav --> ajax nav only (creat / find / team / family)
+explain        --> explain part at the bottom of page
+transitioning  --> class for css translation between homeNav  
+____________________________________________________*/
 
 #homeNav {
     background : linear-gradient(#12122d, #0B1A30);
     width: 100%;
     height: 1020px;
     border-bottom: 2px solid rgb(0, 255, 255);
-
+    
 }
 
 
-#homeContentNav{ /* ajax nav only (creat / find) */
+#homeContentNav{ /* ajax navigator (first half of the page) */
     background : linear-gradient(#12122d, #0B1A30);
     width: 100%;
     height: 100%;
@@ -298,6 +297,12 @@ aside nav ul li:hover {
     outline: none;
 }
 
+.fa-question-circle {
+    font-size: 1.7rem;
+    color: orangered;
+    transition: all 0.2s;
+}
+
 #homeContentNav #helpBut:hover {
     cursor: pointer;
 }
@@ -365,14 +370,14 @@ aside nav ul li:hover {
     color: yellow;
 }
 
-.transitioningOut { /* for content that is translating to the left (disappear) */
+.transitioningIn { /* translating from Right to Middle (load content) */
     transition-duration: 1s;
-    transform: translate(-820px);
+    transform: translate(690px);
 }
 
-.transitioningIn { /* for content that is scaling up (called content)*/
+.transitioningOut { /* translating from Middle to the Left (hide content) */
     transition-duration: 1s;
-    transform: translate(820px);
+    transform: translate(-820px);
 }
 
 /*______________________________________________
@@ -385,9 +390,9 @@ ________________________________________________*/
             START allGames.phtml
 ________________________________________________*/
 #allGamesPhtml {
-    background : linear-gradient(#12122d, #0a1c31);
+    background : linear-gradient(#12122d, #0B1A30);
     display: flex !important;
-    flex-flow: column wrap !important;
+    flex-flow: column nowrap !important;
     padding-top: 0 !important;
     height: 100%;
     text-align: center;
@@ -397,10 +402,29 @@ ________________________________________________*/
     font-family: "Candal";
     color : white;
     font-size: 1.5rem;
-    padding: 6% 0% 3% 0%;
 }
 
-#allGamesPhtml div {
+#allGamesPhtml .fa-arrow-alt-circle-left {
+    font-size: 2rem;
+    color: orangered;
+    transition: all 0.2s;
+}
+
+#allGamesPhtml .fa-arrow-alt-circle-left:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+#allGamesPhtml #top {
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5% 18%;
+}
+
+#allGamesPhtml #bottom {
     width: 100%;
     height: 600px;
     display: flex;
@@ -424,6 +448,7 @@ ________________________________________________*/
     width: 15%;
     height: 74%;
     border: 2px solid rgb(0, 255, 255);
+    border-radius: 20px;
     transition: all 0.25s;
 }
 
