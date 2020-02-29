@@ -8,3 +8,14 @@ montant de point en fonction de sa position finale dans l'arbre de classement
 <div id="DivExplain">
                 <?php include 'explain/'.$template_explain.'.phtml' ?>
             </div>
+
+
+POUR allGamesPhtml -->
+
+<?php foreach ($games as $game) : ?>
+    <div class="gameIcone"></div>                
+<?php endforeach; ?>
+
+POUR ajax.js -->
+
+<script type="text/javascript" src="js/style_functions.js"></script>
