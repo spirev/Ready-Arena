@@ -1,6 +1,6 @@
 
-// Allow an easier navigation with layer level indication & precise name of page
-// these values will be call with the buttons listener to know witch content need to be push
+// Allow an easier navigation in home navigation (ajaxed content), with layer level indication & precise name of page
+// these values will be called by buttons listener to know witch content need to be push
 
 class Navigation {
 

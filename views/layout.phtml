@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <a href="index.php"><img src="/finalProject/img/logo_ReadyArena.png" /></a>
+            <a href="/finalProject/index.php"><img src="/finalProject/img/logo_ReadyArena.png" /></a>
             <div>
                 <i class="fas fa-search"></i>
                 <form>
@@ -18,8 +18,8 @@
                 </form>
             </div>
             <div>
-                <a href="#">Login</a>
-                <a href="#">Sign up</a>
+                <a href="#" id="login">Login</a>
+                <a href="#" id="signUp">Sign up</a>
                 <!--<a href="#"><div id="profilIcone"></div></a>-->
             </div>
         </header>
@@ -28,18 +28,30 @@
             <aside>
                 <nav class="hideAside">
                     <ul>
-                        <a href="#"><li>My tournaments</li></a>
-                        <a href="#"><li>My team</li></a>
-                        <a href="#"><li>My Family</li></a>
-                        <a href="#"><li>Friend list</li></a>
-                        <a href="#"><li>Ladder</li></a>
+                        <?php if($_GET['path'] !== 'MyTounaments') : ?>
+                        <a href="controllers/MyTournamentsController/MyTournamentsController.php"><li>My tournaments</li></a>
+                        <?php endif; ?>
+                        <?php if($_GET['path'] !== 'MyTeams') : ?>
+                        <a href="controller/MyTeamsController/MyTeamsController.php"><li>My teams</li></a>
+                        <?php endif; ?>
+                        <?php if($_GET['path'] !== 'MyFamily') : ?>
+                        <a href="controllers/MyFamilyController/MyFamilyController.php"><li>My Family</li></a>
+                        <?php endif; ?>
+                        <?php if($_GET['path'] !== 'FriendList') : ?>
+                        <a href="controllers/FriendListController/FriendListController.php"><li>Friend list</li></a>
+                        <?php endif; ?>
+                        <?php if($_GET['path'] !== 'Ladder') : ?>
+                        <a href="contorllers/LadderController/LadderController.php"><li>Ladder</li></a>
+                        <?php endif; ?>
+                        <?php if($_GET['path'] !== 'support') : ?>
                         <a href="controllers/SupportController/SupportController.php?path=support"><li>Support</li></a>
+                        <?php endif; ?>
                     </ul>
                 </nav>
             </aside>
             <?php include $dataview; ?>
         </main>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="/finalProject/js/main.js"></script>
+        <script type="text/javascript" src="/finalProject/js/ajax.js"></script>
     </body>
 </html>

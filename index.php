@@ -6,13 +6,16 @@ define('ROOT_PATH', __DIR__);
 require_once 'library/bdd.class.php';
 //require_once 'program/mainController.php';
 include 'models/GamesModel.class.php';
+include 'controllers/HomeController.php';
 //$data = new MainController;
 //$dataview = $data->chargement();
-
-/*if (isset($_GET['path'])) {
-    $dataview = $data->chargement($_GET['path']);
-}*/
-$dataview = ROOT_PATH.'/views/HomeView/HomeView.phtml';
+$_GET['path'] = 'home';
+if (isset($_GET['path'])) {
+    $dataview = ROOT_PATH.'/views/HomeView/HomeView.phtml';
+}
+else {
+    $dataview = ROOT_PATH.'/views/HomeView/HomeView.phtml';
+}
 
 include 'views/layout.phtml';
 

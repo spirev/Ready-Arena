@@ -5,13 +5,10 @@
     </div>
     <div id="bottom">
         <div>
-            <?php foreach ($allGames as $game) : ?>
-                <button class="gameIcone" style="background-image: url('img/games_icone/<?= $game['icone'] ?>')"></button>
+            <?php foreach($allGames as $game): ?>
+                <p>HEEEEEY</p>
             <?php endforeach; ?>
-            
-            <?php
-                var_dump($game[0]['icone']);
-            ?>
+            <?php echo $allGames ?>
         </div>
     </div>
 </div>

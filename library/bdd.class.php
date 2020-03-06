@@ -20,9 +20,11 @@ class Database{
     }
 
     public function getAll(string $sql) {
-        $query = $this->pdo->prepare($sql);
+        /*$query = $this->pdo->prepare($sql);
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll(PDO::FETCH_ASSOC);*/
+        $query = $this->pdo->query($sql);
+        return $query->fetchAll();
     }
 }
 /*try{
