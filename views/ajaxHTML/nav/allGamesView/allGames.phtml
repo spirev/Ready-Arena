@@ -6,9 +6,12 @@
     <div id="bottom">
         <div>
             <?php foreach ($allGames as $game) : ?>
-                <p>YO</p>
-                <div class="gameIcone" style="background-image: url('img/games_icone/<?= $game['icone'] ?>')"><?= $game['name'] ?></div>
+                <button class="gameIcone" style="background-image: url('img/games_icone/<?= $game['icone'] ?>')"></button>
             <?php endforeach; ?>
+            
+            <?php
+                var_dump($game[0]['icone']);
+            ?>
         </div>
     </div>
 </div>

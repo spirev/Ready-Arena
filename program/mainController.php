@@ -1,6 +1,6 @@
 <?php
 
-    class Controller
+    class MainController
     {
         
         private $controllerPath;
@@ -18,5 +18,4 @@
             }
         }
     }
-
 ?>

@@ -159,13 +159,14 @@ aside nav ul:hover {
     border-right: 1px rgb(0, 255, 255) solid;
 }
 
-aside nav ul li { /* liste des liens dans la aside nav */
+aside nav ul a li { /* liste des liens dans la aside nav */
     font-size: 1rem;
     padding: 18px;
     transition : all 0.33s;
+    color: white;
 }
 
-aside nav ul li:hover {
+aside nav ul a li:hover {
     box-shadow: 3px 3px 25px #1b23c0;/*#000dff*/
     padding-left: 20px;
     border-radius: 15px;
@@ -380,6 +381,8 @@ ____________________________________________________*/
     transform: translate(-820px);
 }
 
+/* next code concern phtml files included with ajax */
+
 /*______________________________________________
             START homeContent.phtml
             ( if needed for a return to home page (ajaxed) after fiew interaction with nav)
@@ -446,18 +449,19 @@ ________________________________________________*/
 #allGamesPhtml .gameIcone {
     width: 15%;
     height: 74%;
-    border: 2px solid rgb(0, 255, 255);
+    border: 2px solid black;
     border-radius: 20px;
     margin: 30px;
     transition: all 0.25s;
-    color: white;
+    color: black;
     font-size: 2rem;
-    background-image: url('');
+    background-size: cover;
 }
 
 #allGamesPhtml .gameIcone:hover {
-    border: 2px solid rgb(250, 0, 200);
+    border: 2px solid rgb(0, 255, 255);
     cursor: pointer;
+    color: red;
 }
 
 /*______________________________________________
@@ -514,4 +518,18 @@ ________________________________________________*/
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+}
+
+/*_______________________
+        THIS PART HAVE TO GO TO AN OTHER CSS FILE
+________________________*/
+
+#supportPhtml {
+    background : linear-gradient(#0b2038, #0a1c31);
+    color: red;
+}
+
+#supportPhtml p {
+    color: red;
+    margin: 0;
 }

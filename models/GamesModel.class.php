@@ -1,5 +1,4 @@
 <?php
-    /*include 'library/bdd.class.php';*/
     class GamesModel {
         private $db;
 
@@ -9,8 +8,7 @@
         }
 
         public function findAll() {
-            $sql = "SELECT * FROM games";
-            return $this->db->getAll($sql);
+            return $this->db->getAll("SELECT * FROM games");
         }
     }
 ?>
