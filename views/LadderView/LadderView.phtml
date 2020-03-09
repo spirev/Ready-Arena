@@ -1,0 +1,25 @@
+<div id="ladderPhtml">
+    <div>
+        <p>Sort by :</p>
+        <button value='name'>Name</button>
+        <button value='rank'>Rank</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>ladder points</th>
+                <th>rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($users as $user): ?>
+                <tr>
+                    <td><?= $user['name'] ?></td>
+                    <td><?= $user['ladder_point'] ?></td>
+                    <td>#???</td>
+                </tr>    
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

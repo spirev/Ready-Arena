@@ -1,0 +1,65 @@
+#ladderPhtml {
+    background : linear-gradient(#12122d, #0B1A30);
+    min-height: 950px;
+    text-align: center;
+    padding-top: 7%;
+}
+
+#ladderPhtml p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+#ladderPhtml button {
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 1px 1px 25px #000dff;
+    border : 1px solid blue;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+#ladderPhtml button:hover {
+    background-color: rgb(0, 230, 230);
+    box-shadow: 1px 1px 25px #0059ff;
+    color: black;
+    width : 100px;
+    outline: none;
+    cursor: pointer;
+}
+
+#ladderPhtml div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    margin: 0% 25% 5%;
+}
+
+#ladderPhtml table {
+    color: white;
+    margin: auto;
+}
+
+#ladderPhtml table tr:nth-child(even) {
+    background : linear-gradient(#1b1b4d, #0B1A30);
+    color: white;
+}
+
+#ladderPhtml table thead tr th {
+    font-size: 2rem;
+    border-bottom: 1px solid rgb(0, 255, 255);
+}
+
+#ladderPhtml table tbody tr td {
+    font-size: 1.4rem;
+    padding: 10px 100px;
+}
+
+/*#ladderPhtml table td {
+    border: 1px solid red;
+}*/

@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Candal|Dosis|Open+Sans">
         <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/finalProject/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="/finalProject/css/<?= $_GET['path'] ?>.css" type="text/css" />
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
         <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
     </head>
@@ -28,23 +29,45 @@
             <aside>
                 <nav class="hideAside">
                     <ul>
-                        <?php if($_GET['path'] !== 'MyTounaments') : ?>
-                        <a href="controllers/MyTournamentsController/MyTournamentsController.php"><li>My tournaments</li></a>
+                        <?php if($_GET['path'] !== 'home'): ?>
+                            <?php if($_GET['path'] !== 'MyTounaments'): ?>
+                            <a href="MyTournamentsController.php"><li>My tournaments</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'MyTeams'): ?>
+                            <a href="MyTeamsController.php"><li>My teams</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'MyFamily'): ?>
+                            <a href="MyFamilyController.php"><li>My Family</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'FriendList'): ?>
+                            <a href="FriendListController.php"><li>Friend list</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'Ladder'): ?>
+                            <a href="LadderController.php?path=Ladder"><li>Ladder</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'support'): ?>
+                            <a href="SupportController.php?path=support"><li>Support</li></a>
+                            <?php endif; ?>
                         <?php endif; ?>
-                        <?php if($_GET['path'] !== 'MyTeams') : ?>
-                        <a href="controller/MyTeamsController/MyTeamsController.php"><li>My teams</li></a>
-                        <?php endif; ?>
-                        <?php if($_GET['path'] !== 'MyFamily') : ?>
-                        <a href="controllers/MyFamilyController/MyFamilyController.php"><li>My Family</li></a>
-                        <?php endif; ?>
-                        <?php if($_GET['path'] !== 'FriendList') : ?>
-                        <a href="controllers/FriendListController/FriendListController.php"><li>Friend list</li></a>
-                        <?php endif; ?>
-                        <?php if($_GET['path'] !== 'Ladder') : ?>
-                        <a href="contorllers/LadderController/LadderController.php"><li>Ladder</li></a>
-                        <?php endif; ?>
-                        <?php if($_GET['path'] !== 'support') : ?>
-                        <a href="controllers/SupportController/SupportController.php?path=support"><li>Support</li></a>
+                        <?php if($_GET['path'] == 'home'): ?>
+                            <?php if($_GET['path'] !== 'MyTournaments'): ?>
+                            <a href="controllers/MyTournamentsController.php"><li>My tournaments</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'MyTeams'): ?>
+                            <a href="controllers/MyTeamsController.php"><li>My teams</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'MyFamily'): ?>
+                            <a href="controllers/MyFamilyController.php"><li>My Family</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'FriendList'): ?>
+                            <a href="controllers/FriendListController.php"><li>Friend list</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'Ladder'): ?>
+                            <a href="controllers/LadderController.php?path=Ladder"><li>Ladder</li></a>
+                            <?php endif; ?>
+                            <?php if($_GET['path'] !== 'support'): ?>
+                            <a href="controllers/SupportController.php?path=support"><li>Support</li></a>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </ul>
                 </nav>
