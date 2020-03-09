@@ -19,3 +19,8 @@ POUR allGamesPhtml -->
 POUR ajax.js -->
 
 <script type="text/javascript" src="js/style_functions.js"></script>
+
+
+SQL SQL SQL
+
+ ORDER BY ladder_point DESC
