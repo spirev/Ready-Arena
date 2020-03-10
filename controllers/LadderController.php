@@ -10,4 +10,4 @@
         $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
         include ROOT_PATH.'/../views/layout.phtml';
     }
-?>
+ 

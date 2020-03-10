@@ -11,7 +11,7 @@
             return $this->db->getAll("SELECT * FROM users ORDER BY ladder_point DESC");
         }
 
-        public function findAll () {
+        public function findAll() {
             return $this->db->getAll("SELECT * FROM users");
         }
     }

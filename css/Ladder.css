@@ -13,6 +13,7 @@
 #ladderPhtml button {
     width: 100px;
     height: 40px;
+    font-weight: bolder;
     color: white;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 1px 1px 25px #000dff;
