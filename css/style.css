@@ -273,7 +273,7 @@ ____________________________________________________*/
 
 
 #homeContentNav button:not(#helpBut){ /* creat / find / team / family   buttons*/
-    border : 0px;
+    border: 0px;
     width: 175px;
     height: 65px;
     border-radius: 50px;
@@ -282,7 +282,7 @@ ____________________________________________________*/
     outline: none;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 1px 1px 25px #000dff;
-    border : 1px solid blue;
+    border: 1px solid blue;
     transition: all 0.2s;
 }
 
