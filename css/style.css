@@ -25,7 +25,7 @@ body {
     background: #00ccff; 
 }
 
-header {
+header { /* top page bar (logo(index.php) / search bar / login signup */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -35,17 +35,17 @@ header {
     background-color: #12122d;
 }
 
-header > a {/* le logo top left */
+header > a {/* logo top left */
     margin-left : 20px;
 }
 
-.fa-search {/* icone loupe a gauche du form */
+.fa-search {/* magniffying glasse icone to the left of form */
     color : rgb(0, 255, 255);
     font-size: 1.4rem;
     margin-right: 10px;
 }
 
-header input { /* le formulaire du header*/
+header input { /* search bar */
     background-color: black;
     color: rgb(0, 255, 255);
     width: 330px;
@@ -57,14 +57,14 @@ header input { /* le formulaire du header*/
     outline: none;
 }
 
-header div {
+header div { /* flex parent */
     display : flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
 
-header div a { /* login & sign up buttons*/
+header div a:not(#iconeProfil) { /* login & sign up buttons*/
     margin-right: 30px;
     padding: 10px 24px;
     text-decoration: none;
@@ -76,19 +76,28 @@ header div a { /* login & sign up buttons*/
     transition: all 0.15s;
 }
 
-header div a:hover {
+header div a:hover:not(#iconeProfil) {
     background: linear-gradient(#272158, #00aeff);
     border-bottom : 3px solid rgb(0, 255, 255);
 }
 
-/*#profilIcone {
+#profilIcone {
     height: 45px;
     width: 45px;
     border-radius: 50%;
     background-image: url('../img/default_user.jpg');
     background-size : cover;
-    /*background-image: url('img/default_user.jpg');
-}*/
+    transition: all 0.12s;
+}
+
+#profilIcone:hover {
+    box-shadow: 0px 0px 20px #00e1ff;;
+}
+
+#divIconeProfil {
+    margin-right: 3%;
+    margin-left: 8%
+}
 
 p {
     color: white;
@@ -266,7 +275,7 @@ ____________________________________________________*/
 .fa-hammer, .fa-eye, .fa-users, .fa-home{ /* big icone */ 
     width : 180px;
     height : 145px;
-    font-size : 7rem;
+    font-size : 6.5rem;
     color : #00b7ff;
     margin-bottom: -40px;
 }
@@ -286,7 +295,7 @@ ____________________________________________________*/
     transition: all 0.2s;
 }
 
-#homeContentNav button:hover:not(#helpBut) { /* creat / find / team / family buttons hover*/
+#homeContentNav button:hover:not(#helpBut):not(#famBut) { /* creat / find / team / family buttons hover*/
     background-color: rgb(0, 230, 230);
     box-shadow: 1px 1px 25px #0059ff;
     color: black;
@@ -454,18 +463,23 @@ ________________________________________________*/
     width: 15%;
     height: 74%;
     border: 2px solid black;
-    border-radius: 20px;
+    border-radius: 30px;
     margin: 30px;
     transition: all 0.25s;
     color: black;
     font-size: 2rem;
     background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    outline: none;
 }
 
 #allGamesPhtml .gameIcone:hover {
     border: 2px solid rgb(0, 255, 255);
     cursor: pointer;
-    color: red;
+    box-shadow: 0px 0px 30px black;
+    border-radius: 20px;
 }
 
 /*______________________________________________
@@ -523,7 +537,3 @@ ________________________________________________*/
     flex-flow: column wrap;
     align-items: center;
 }
-
-/*_______________________
-        THIS PART HAVE TO GO TO AN OTHER CSS FILE
-________________________*/

@@ -4,9 +4,11 @@
 
 class Navigation {
 
-    constructor(stage = 1, name = 'home'){
+    constructor(stage = 1, name = 'home', game = 'none'){
         this.stage = stage;
         this.name = name;
+        this.game = game;
+
     }
 }
 
@@ -17,16 +19,25 @@ lilProg = new Navigation();
     // only findFamily doesn't need to select a specifiic game for further activities (else)
     $('body').on('click', '.homeContentDiv article button', function(){
         let quickBut = this.value;
-        if (quickBut == 'create' || quickBut == 'find' || quickBut == 'team') {
-            $('#homeNav div').addClass('transitioningOut');
-            SetAjaxContent('allGames');
-            $('#allGamesPhtml').addClass('transitioningOut');
+        switch (quickBut){
+            case 'create':
+                $('#homeNav div').addClass('transitioningOut');
+                SetAjaxContent('allGames');
+                break;
+            case 'find':
+                $('#homeNav div').addClass('transitioningOut');
+                SetAjaxContent('allGames');
+                break;
+            case 'team':
+                $('#homeNav div').addClass('transitioningOut');
+                SetAjaxContent('allGames');
+                break;
+            case 'family':
+                /*$('#homeNav div').addClass('transitioningOut');
+                SetAjaxContent('findFamily');*/
+                break
         }
-        else {
-            $('#homeNav div').addClass('transitioningOut');
-            SetAjaxContent('findFamily');
-            $('#familyPhtml').addClass('transitioningIn');
-        }
+
         //increment stage value to memorise current layer in the home nav
         lilProg.stage++;
         //taking the layer name for stage 3
@@ -49,5 +60,22 @@ lilProg = new Navigation();
         $('#homeNav div').addClass('transitioningIn'); // WORKING HERE /!\ transitioning animation has to work !!
     })
 
+    //listen to all the games button to transfer its game name to lilprog.game
+    //then set new ajax content according to lilprog.name
     $('body').on('click', "#allGamesPhtml .gameIcone", function() {
+        lilProg.game = this.value;
+        switch(lilProg.name){
+            case 'create':
+                SetAjaxContent('create')
+                break;
+            case 'find':
+                SetAjaxContent('find')
+                break;
+            case 'team':
+                SetAjaxContent('team')
+                break;
+            case 'family':
+                SetAjaxContent('family')
+                break;
+        }
     })

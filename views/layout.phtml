@@ -18,11 +18,15 @@
                     <input type="text">
                 </form>
             </div>
-            <div>
-                <a href="/finalProject/controllers/LoginController.php?path=Login" id="login">Login</a>
-                <a href="/finalProject/controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
-                <!--<a href="#"><div id="profilIcone"></div></a>-->
-            </div>
+                <?php if($disable == true): ?>
+                <div>
+                    <a href="/finalProject/controllers/LoginController.php?path=Login" id="login">Login</a>
+                    <a href="/finalProject/controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
+                </div>
+                <?php endif; ?>
+                <?php if($disable == false): ?>
+                <div id='divIconeProfil'><a href="#" id="iconeProfil"><div id="profilIcone"></div></a></div>
+                <?php endif; ?>
         </header>
         <main>
             <button id="arrowMenu">MENU</button>

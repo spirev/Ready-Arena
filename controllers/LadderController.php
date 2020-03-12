@@ -2,6 +2,7 @@
     define('ROOT_PATH', __DIR__);
     include ROOT_PATH.'/../library/bdd.class.php';
     include ROOT_PATH.'/../models/UsersModel.class.php';
+    include '../controllers/LayoutController.php';
 
     $userModel = new UsersModel();
     $users = $userModel->findAllByPoints();

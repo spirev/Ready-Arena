@@ -24,3 +24,11 @@ POUR ajax.js -->
 SQL SQL SQL
 
  ORDER BY ladder_point DESC
+
+POUR LAYOUT / A METRE DANS TOUT LES CONTORLLERS QUI ONT UNE VIEW
+CONTENANT LE LAYOUT (top page (logo / form / login signup profiImg))
+
+include 'controllers/LayoutController.php';
+
+    /*session_start();
+    $_SESSION['connected'] = "";*/
