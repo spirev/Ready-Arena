@@ -35,11 +35,11 @@ header { /* top page bar (logo(index.php) / search bar / login signup */
     background-color: #12122d;
 }
 
-header > a {/* logo top left */
+header > a { /* logo top left */
     margin-left : 20px;
 }
 
-.fa-search {/* magniffying glasse icone to the left of form */
+.fa-search { /* magniffying glasse icone to the left of form */
     color : rgb(0, 255, 255);
     font-size: 1.4rem;
     margin-right: 10px;
@@ -76,25 +76,25 @@ header div a:not(#iconeProfil) { /* login & sign up buttons*/
     transition: all 0.15s;
 }
 
-header div a:hover:not(#iconeProfil) {
+header div a:hover:not(#iconeProfil) { /* login & sign up buttons */
     background: linear-gradient(#272158, #00aeff);
     border-bottom : 3px solid rgb(0, 255, 255);
 }
 
-#profilIcone {
+#profilIcone { /* profil icone (if isset($_SESSION)) */
     height: 45px;
     width: 45px;
     border-radius: 50%;
     background-image: url('../img/default_user.jpg');
     background-size : cover;
-    transition: all 0.12s;
+    transition: all 0.2s;
 }
 
-#profilIcone:hover {
-    box-shadow: 0px 0px 20px #00e1ff;;
+#profilIcone:hover { /* profil icone hover */
+    box-shadow: 0px 0px 13px #00e1ff;
 }
 
-#divIconeProfil {
+#divIconeProfil { /* parent container of profil icone */
     margin-right: 3%;
     margin-left: 8%
 }

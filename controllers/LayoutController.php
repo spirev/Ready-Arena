@@ -1,12 +1,12 @@
 <?php
 
-    session_start();
-    $_SESSION['connected'] = "";
+    /*session_start();
+    $_SESSION['connected'] = "";*/
     if (!isset($_SESSION['connected'])) {
-        $disable = true;
+        $connect = true;
     }
     else {
-        $disable = false;
+        $connect = false;
     }
 
 ?>

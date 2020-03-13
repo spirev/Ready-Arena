@@ -66,15 +66,19 @@ lilProg = new Navigation();
         lilProg.game = this.value;
         switch(lilProg.name){
             case 'create':
+                $('#homeNav div').addClass('transitioningOut');
                 SetAjaxContent('create')
                 break;
             case 'find':
+                $('#homeNav div').addClass('transitioningOut');
                 SetAjaxContent('find')
                 break;
             case 'team':
+                $('#homeNav div').addClass('transitioningOut');
                 SetAjaxContent('team')
                 break;
             case 'family':
+                $('#homeNav div').addClass('transitioningOut');
                 SetAjaxContent('family')
                 break;
         }

@@ -10,6 +10,8 @@ function setExplain(content)
     $('#homeExplain').html(content);
 }
 
+
+/* I've abandoned the idea to set dynamique php variable into ajax content ( 2 weeks lost ) */
 /*function setAllGames(content)
 {
     $('#homeNav').html(content);
@@ -39,9 +41,16 @@ function SetAjaxContent(path) {
         else if (path == 'allGames') {
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
         }
-        else if (path == 'create' || path == 'find' || path == 'team' || path == 'family') {
+        else if (path == 'team' || path == 'family') {
             console.log('CFTF');
-            $.get('view/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
+            $.get('views/ajaxHTML/nav/find'+ path + 'View/find'+ path + '.phtml', setNav);
+        }
+        else if (path == 'create') {
+            $.get('views/ajaxHTML/nav/'+ path+ 'TournamentView/'+ path+ 'Tournament.phtml', setNav);
+        }
+        else if (path == 'find') {
+            $.get('views/ajaxHTML/nav/findTournamentView/findTournament.phtml', setNav);
+
         }
         else {
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
