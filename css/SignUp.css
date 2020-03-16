@@ -2,7 +2,7 @@
     background : linear-gradient(#12122d, #0B1A30);
     min-height: 820px;
     text-align: center;
-    padding-top: 11%;
+    padding-top: 7%;
 }
 
 #signupPhtml p {
@@ -12,11 +12,15 @@
     font-weight: bolder;
 }
 
-#signupPhtml div {
+#signupPhtml div form {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 4%;
+}
+
+#signupPhtml form ul {
+    padding: 0;
 }
 
 #signupPhtml input {
@@ -26,9 +30,15 @@
     height: 37px;
     border: 1px solid rgb(0, 255, 255);
     border-radius: 11px;
+    margin-bottom: 4%;
     padding-left: 15px;
     outline: none;
 }
+
+#signupPhtml input[type="text"] {
+    font-size: 1.4rem;
+}
+
 
 #signupPhtml input::placeholder {
     color: rgb(0, 255, 255);
@@ -47,7 +57,6 @@
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 1px 1px 25px #000dff;
     border: 1px solid blue;
-    margin-top: 2%;
     transition: all 0.2s;
 }
 

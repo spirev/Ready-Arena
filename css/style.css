@@ -99,6 +99,10 @@ header div a:hover:not(#iconeProfil) { /* login & sign up buttons */
     margin-left: 8%;
 }
 
+#disconnect {
+    margin: 0% 0% 0% 26%;
+}
+
 p {
     color: white;
     font-family: "Open Sans";
@@ -303,6 +307,10 @@ ____________________________________________________*/
     cursor: pointer;
 }
 
+#homeContentNav #famBut:hover {
+    background-color: rgb(87, 87, 87);
+}
+
 #homeContentNav #helpBut { /* the help button wich on click permit to scroll to the bottom */
     border: 0;
     background-color: rgba(0, 0, 0, 0);
@@ -400,7 +408,7 @@ ____________________________________________________*/
             START homeContent.phtml
             ( if needed for a return to home page (ajaxed) after fiew interaction with nav)
 ________________________________________________*/
-
+/* doesn't seems useful after all... T_T */
 
 /*______________________________________________
             START allGames.phtml
@@ -498,9 +506,16 @@ ________________________________________________*/
             START creatTurnament.phtml
 ________________________________________________*/
 #createTournamentPhtml {
-    /*background : linear-gradient(#0b2038, #0a1c31);*/
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     padding: 5% 0% 5%;
     margin-bottom: 15%;
+}
+
+#createTournamentPhtml label {
+    color: red;
 }
 
 #createExplain  {
@@ -520,8 +535,9 @@ ________________________________________________*/
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 800px;
+    margin: auto;
 }
 
 #functionTeamPhtml a button {

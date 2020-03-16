@@ -75,7 +75,7 @@ lilProg = new Navigation();
                 break;
             case 'team':
                 $('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('team')
+                SetAjaxContent('Team')
                 break;
             case 'family':
                 $('#homeNav div').addClass('transitioningOut');

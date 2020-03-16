@@ -10,23 +10,6 @@ function setExplain(content)
     $('#homeExplain').html(content);
 }
 
-
-/* I've abandoned the idea to set dynamique php variable into ajax content ( 2 weeks lost ) */
-/*function setAllGames(content)
-{
-    $('#homeNav').html(content);
-    var myJSON = $.getJSON('JSON/allgames.php');
-    console.log(myJSON);
-}*/
-
-/*function setJsonContent(list) {
-    list.map(oneGame => {
-        $('#container').append(
-            `<p>${oneGame.name}</p>`
-        ).appendTo($ul)
-        })
-}*/
-
 /*  allow homeNav to get new content wich replace previous content
 (default : homeContent.phmtl ----> allGames.phtml or family.phtml ----> create/find/team/family  stage 3 ) */
 var timer;
@@ -41,8 +24,8 @@ function SetAjaxContent(path) {
         else if (path == 'allGames') {
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
         }
-        else if (path == 'team' || path == 'family') {
-            console.log('CFTF');
+        else if (path == 'Team' || path == 'family') {
+            console.log('CFTF'+ path);
             $.get('views/ajaxHTML/nav/find'+ path + 'View/find'+ path + '.phtml', setNav);
         }
         else if (path == 'create') {

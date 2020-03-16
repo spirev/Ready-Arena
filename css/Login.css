@@ -2,7 +2,7 @@
     background : linear-gradient(#12122d, #0B1A30);
     min-height: 820px;
     text-align: center;
-    padding-top: 12%;
+    padding-top: 8%;
 }
 
 #loginPhtml p {
@@ -12,9 +12,10 @@
     font-weight: bolder;
 }
 
-#loginPhtml div {
+#loginPhtml form {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
     margin-bottom: 5%;
 }
@@ -26,8 +27,13 @@
     height: 37px;
     border: 1px solid rgb(0, 255, 255);
     border-radius: 11px;
+    margin: 2%;
     padding-left: 15px;
     outline: none;
+}
+
+#loginPhtml input[type="text"] {
+    font-size: 1.4rem;
 }
 
 #loginPhtml input::placeholder {
