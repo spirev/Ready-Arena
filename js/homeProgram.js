@@ -71,7 +71,7 @@ lilProg = new Navigation();
                 break;
             case 'find':
                 $('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('find')
+                window.location.replace("controllers/findTournament.php?path=findTournament");
                 break;
             case 'team':
                 $('#homeNav div').addClass('transitioningOut');

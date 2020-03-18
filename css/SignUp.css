@@ -30,13 +30,13 @@
     height: 37px;
     border: 1px solid rgb(0, 255, 255);
     border-radius: 11px;
-    margin-bottom: 4%;
+    margin-bottom: 6%;
     padding-left: 15px;
     outline: none;
 }
 
 #signupPhtml input[type="text"] {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 
