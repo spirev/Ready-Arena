@@ -1,3 +1,7 @@
 <div id="findTournamentPhtml">
-    <p>findTounamentsPhtml have been suscessfuly ajaxed !</p>
+    <?php foreach($tournaments as $tournament): ?>
+        <div class="resumeTournament">
+            <div><?= $tournament['name']?></div>
+        </div>
+    <?php endforeach; ?>
 </div>

@@ -8,7 +8,6 @@ class Navigation {
         this.stage = stage;
         this.name = name;
         this.game = game;
-
     }
 }
 
@@ -71,7 +70,8 @@ lilProg = new Navigation();
                 break;
             case 'find':
                 $('#homeNav div').addClass('transitioningOut');
-                window.location.replace("controllers/findTournament.php?path=findTournament");
+                window.location.replace(`controllers/findTournament.php?path=findTournament&game=${lilProg.game}`);
+                //parseGameForTourn(lilProg.game);
                 break;
             case 'team':
                 $('#homeNav div').addClass('transitioningOut');
