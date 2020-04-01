@@ -12,8 +12,12 @@
             return $this->db->getAll("SELECT * FROM tournaments");
         }
 
-        public function findByName($game) {
+        public function findByGame($game) {
             return $this->db->getAll("SELECT * FROM tournaments WHERE game = '$game'");
+        }
+
+        public function findById($id) {
+            return $this->db->getAll("SELECT * FROM tournaments WHERE id = '$id'");
         }
     }
 ?>

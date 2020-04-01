@@ -312,7 +312,7 @@ ____________________________________________________*/
     box-shadow: none;
 }
 
-#homeContentNav #helpBut { /* the help button wich on click permit to scroll to the bottom */
+#homeContentNav #helpBut { /* help button wich on click permit to scroll to the bottom */
     border: 0;
     background-color: rgba(0, 0, 0, 0);
     width: 34px;
@@ -515,6 +515,18 @@ ________________________________________________*/
     padding-top: 10%;
 }
 
+#createTournamentPhtml .fa-arrow-alt-circle-left {
+    font-size: 2rem;
+    color: orangered;
+    margin-right: 50%;
+    transition: all 0.2s;
+}
+
+#createTournamentPhtml .fa-arrow-alt-circle-left:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
 #createTournamentPhtml ul {
     display: flex;
     flex-flow: row nowrap;
@@ -528,7 +540,7 @@ ________________________________________________*/
 }
 
 #createTournamentPhtml ul li{
-    margin: 10% 6%;
+    margin: 10% 3%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -593,15 +605,27 @@ ________________________________________________*/
     cursor: pointer;
 }
 
+#createTournamentPhtml #helpBut { /* the help button wich on click permit to scroll to the bottom */
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    width: 34px;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    margin-top: 4%;
+}
+
 #createExplain  {
     padding-top: 0px;
 }
+
 
 /*______________________________________________
             START functionsTeam.phtml
 ________________________________________________*/
 #functionTeamPhtml {
     display: flex;
+    flex-flow: column nowrap;
     align-items: center;
 }
 
@@ -635,6 +659,22 @@ ________________________________________________*/
     color: black;
     width : 250px;
     outline: none;
+    cursor: pointer;
+}
+
+#functionTeamPhtml .fa-arrow-alt-circle-left {
+    font-size: 2rem;
+    color: orangered;
+    transition: all 0.2s;
+    float: left;
+    position: relative;
+    top: 150px;
+    margin-right: 40%;
+    margin-bottom: -4%;
+}
+
+#functionTeamPhtml .fa-arrow-alt-circle-left:hover {
+    color: yellow;
     cursor: pointer;
 }
 

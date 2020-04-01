@@ -25,11 +25,11 @@ function SetAjaxContent(path) {
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
         }
         else if (path == 'Team' || path == 'family') {
-            console.log('CFTF'+ path);
             $.get('views/ajaxHTML/nav/find'+ path + 'View/find'+ path + '.phtml', setNav);
         }
         else if (path == 'create') {
             $.get('views/ajaxHTML/nav/'+ path+ 'TournamentView/'+ path+ 'Tournament.phtml', setNav);
+            $.get('views/ajaxHTML/explain/createTournamentExplain.phtml', setExplain);
         }
         else if (path == 'find') {
             $.get('views/ajaxHTML/nav/findTournamentView/findTournament.phtml', setNav);

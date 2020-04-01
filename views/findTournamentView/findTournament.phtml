@@ -1,7 +1,5 @@
 <div id="findTournamentPhtml">
     <?php foreach($tournaments as $tournament): ?>
-        <div class="resumeTournament">
-            <div><?= $tournament['name']?></div>
-        </div>
+        <a href="oneTournament.php?path=oneTournament&id=<?= $tournament['id'] ?>" class="resumeTournament"><?= $tournament['name'] ?></br></br><?= $tournament['timer'] ?></a>
     <?php endforeach; ?>
 </div>

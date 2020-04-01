@@ -5,11 +5,10 @@
     include '../controllers/LayoutController.php';
 
     $tournamentsModel = new TournamentsModel();
-    $tournaments = $tournamentsModel->findByName($_GET['game']);
+    $tournaments = $tournamentsModel->findByGame($_GET['game']);
 
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path'].".phtml";
-        /*$dataview = ROOT_PATH."/../views/findTournamentView/findTournament.phtml";*/
         include ROOT_PATH.'/../views/layout.phtml';
     }
 

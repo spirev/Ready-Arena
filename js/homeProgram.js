@@ -53,10 +53,15 @@ lilProg = new Navigation();
     
     //listen to "return arrow" button for going back in home navigator (orange left arrow)
     $('body').on('click', "#returnArrow", function() {
-        // decrement stage ofc...
+        if(lilProg.stage == "3") {
+            SetAjaxContent('allGames');
+            $('#homeNav div').addClass('transitioningIn'); // WORKING HERE /!\ transitioning animation has to work !!
+        }
+        else {
+            SetAjaxContent('homeContent');          // WORKING HERE /!\ need function evaluating lilprog values to return to the right ajax page (and not necesserly home) !!
+            $('#homeNav div').addClass('transitioningIn'); // WORKING HERE /!\ transitioning animation has to work !!
+        }
         lilProg.stage--;
-        SetAjaxContent('homeContent');          // WORKING HERE /!\ need function evaluating lilprog values to return to the right ajax page (and not necesserly home) !!
-        $('#homeNav div').addClass('transitioningIn'); // WORKING HERE /!\ transitioning animation has to work !!
     })
 
     //listen to all the games button to transfer its game name to lilprog.game
@@ -71,7 +76,6 @@ lilProg = new Navigation();
             case 'find':
                 $('#homeNav div').addClass('transitioningOut');
                 window.location.replace(`controllers/findTournament.php?path=findTournament&game=${lilProg.game}`);
-                //parseGameForTourn(lilProg.game);
                 break;
             case 'team':
                 $('#homeNav div').addClass('transitioningOut');
@@ -82,4 +86,5 @@ lilProg = new Navigation();
                 SetAjaxContent('family')
                 break;
         }
+        lilProg.stage++;
     })

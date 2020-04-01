@@ -1,0 +1,22 @@
+<div id="oneTournamentPhtml">
+    <h1><?= $tournament[0]['name'] ?></h1>
+    <div id="info">
+        <h2>Average skill : <?= $tournament[0]['averageSkill'] ?></h2>
+        <h2><?= $tournament[0]['timer'] ?></h2>
+        <div>
+            </div>
+        </div>
+        <div id="mainContent">
+            <canvas></canvas>
+            <div>
+                <button value="apply">APPLY</button>
+                <h2>Participants</h2>
+                <ul>
+                    <?php foreach($players as $player): ?>
+                        <li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,5 +14,9 @@
         public function findAll() {
             return $this->db->getAll("SELECT * FROM users");
         }
+
+        public function findById($id) {
+            return $this->db->getAll("SELECT * FROM users WHERE id = '$id'");
+        }
     }
 ?>
