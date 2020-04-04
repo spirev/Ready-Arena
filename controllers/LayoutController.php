@@ -3,10 +3,10 @@
     /*session_start();
     $_SESSION['connected'] = "";*/
     if (!isset($_SESSION['connected'])) {
-        $connect = true;
+        $connect = false;
     }
     else {
-        $connect = false;
+        $connect = true;
     }
 
 ?>

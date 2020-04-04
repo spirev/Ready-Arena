@@ -1,8 +1,5 @@
 <?php
 
-include 'controllers/LayoutController.php';
-
-    $allGameModel = new GamesModel();
-    $allGames = $allGameModel->findAll();
+    include 'controllers/LayoutController.php';
 
 ?>

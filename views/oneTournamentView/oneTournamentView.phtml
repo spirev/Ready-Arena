@@ -10,7 +10,7 @@
             <canvas></canvas>
             <div>
                 <button value="apply">APPLY</button>
-                <h2>Participants</h2>
+                <h2><span>Participants</span><?= count($players)." / ".$tournament[0]['nbr_participants'] ?></h2>
                 <ul>
                     <?php foreach($players as $player): ?>
                         <li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li>

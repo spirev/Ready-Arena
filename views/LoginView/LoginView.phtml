@@ -1,7 +1,12 @@
 <div id='loginPhtml'>
-    <form>
-        <input type="text" placeholder="email">
-        <input type="text" placeholder="password">
+    <?php if(isset($_GET['flashError'])): ?>
+        <p><span>INCORRECT INFORMATIONS<span></p>
+    <?php endif; ?>
+    <form method="post" action="./LoginController.php">
+        <input type="text" placeholder="email" name="Email">
+        <input type="text" placeholder="password" name="Password">
+        <div>
+            <button type="submit" name="Submit" value="confirm">CONFIRM</button>
+        </div>
     </form>
-    <button>CONFIRM</button>
 </div>

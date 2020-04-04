@@ -81,6 +81,11 @@
 #mainContent div h2 {
     font-size: 1.2rem;
     border-bottom: rgb(0, 255, 255);
+    width: 100%;
+}
+
+#mainContent div span {
+    margin: 10%;
 }
 
 #oneTournamentPhtml ul {

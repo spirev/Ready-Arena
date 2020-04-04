@@ -15,8 +15,21 @@
             return $this->db->getAll("SELECT * FROM users");
         }
 
-        public function findById($id) {
+        public function findById(int $id) {
             return $this->db->getAll("SELECT * FROM users WHERE id = '$id'");
+        }
+
+        public function loginVerify(string $email, string $password) {
+            $user = $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
+            if(!empty($user)) {
+                if(isset($user['password']) && $user['password'] == $password) {
+                    return $user;
+                }
+            }
+        }
+
+        public function findByEmail(string $email) {
+            return $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
         }
     }
 ?>

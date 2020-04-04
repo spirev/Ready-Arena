@@ -605,7 +605,7 @@ ________________________________________________*/
     cursor: pointer;
 }
 
-#createTournamentPhtml #helpBut { /* the help button wich on click permit to scroll to the bottom */
+#createTournamentPhtml #helpBut { /* the help button to scroll to the bottom */
     border: 0;
     background-color: rgba(0, 0, 0, 0);
     width: 34px;
@@ -613,6 +613,10 @@ ________________________________________________*/
     outline: none;
     box-shadow: none;
     margin-top: 4%;
+}
+
+#createTournamentPhtml #helpBut :first-child:hover {
+    color: yellow;
 }
 
 #createExplain  {
