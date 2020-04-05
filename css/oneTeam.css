@@ -1,0 +1,13 @@
+#oneTeamPhtml {
+    background : linear-gradient(#12122d, #0B1A30);
+    min-height: 950px;
+    text-align: center;
+    padding-top: 6%;
+}
+
+#oneTeamPhtml h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'Open Sans';
+    margin-bottom: 4%;
+}

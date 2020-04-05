@@ -26,8 +26,8 @@
                 <?php endif; ?>
                 <?php if($connect == true): ?>
                 <div id='divIconeProfil'>
-                    <a href="#" id="iconeProfil"><div id="profilIcone"></div></a>
-                    <a href="" id="disconnect">Disconnect</a>
+                    <a href="oneProfilController.php?user=<?=$_SESSION['name']?>" id="iconeProfil"><div id="profilIcone"></div></a>
+                    <a href="/?loged=F" id="disconnect">Disconnect</a>
                 </div>
                 <?php endif; ?>
         </header>

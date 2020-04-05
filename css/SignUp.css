@@ -39,6 +39,9 @@
     font-size: 1.3rem;
 }
 
+#signupPhtml input[type="text"]::selection {
+    color: rgb(0, 140, 255);
+}
 
 #signupPhtml input::placeholder {
     color: rgb(0, 255, 255);

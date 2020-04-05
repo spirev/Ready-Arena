@@ -1,3 +1,5 @@
 <div id="findATeam">
-    <p>THIS IS findATeam.phtml VIEW !</p>
+    <?php foreach($teams as $team): ?>
+        <a href="oneTeam.php?path=oneTeam&id=<?= $team['id'] ?>" class="resumeTournament"><?= $team['name'] ?></a>
+    <?php endforeach; ?>
 </div>
