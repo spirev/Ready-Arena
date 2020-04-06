@@ -1,5 +1,5 @@
 <div id="findATeam">
     <?php foreach($teams as $team): ?>
-        <a href="oneTeam.php?path=oneTeam&id=<?= $team['id'] ?>" class="resumeTournament"><?= $team['name'] ?></a>
+        <a href="oneTeam.php?path=oneTeam&id=<?= $team['id'] ?>&game=<?= $_GET['game'] ?>" class="resumeTournament"><?= $team['name'] ?></a>
     <?php endforeach; ?>
 </div>

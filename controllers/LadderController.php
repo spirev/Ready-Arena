@@ -5,8 +5,11 @@
     include '../controllers/LayoutController.php';
 
     $userModel = new UsersModel();
-    $users = $userModel->findAllByPoints();
-    
+    if ($_GET['order'] == 'name')
+        $users = $userModel->findByName();
+    else {
+        $users = $userModel->findAllByPoints();
+    }
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
         include ROOT_PATH.'/../views/layout.phtml';

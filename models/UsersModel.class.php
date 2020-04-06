@@ -18,6 +18,14 @@
         public function findById(int $id) {
             return $this->db->getAll("SELECT * FROM users WHERE id = '$id'");
         }
+        
+        public function findByEmail(string $email) {
+            return $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
+        }
+
+        public function findByName() {
+            return $this->db->getAll("SELECT * FROM users ORDER BY 'name' DESC");
+        }
 
         public function loginVerify(string $email, string $password) {
             $user = $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
@@ -28,8 +36,5 @@
             }
         }
 
-        public function findByEmail(string $email) {
-            return $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
-        }
     }
 ?>

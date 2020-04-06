@@ -22,4 +22,13 @@ $(document).ready(function () {
     $('#arrowMenu').on('mouseleave', function () {
         $('#arrowMenu').html("MENU");
     })
+
+    $('body').on('click', '.ladderButt', function () {
+        if(this.value == 'name') {
+            window.location.replace(`LadderController.php?path=Ladder&order=name`);
+        }
+        else {
+            window.location.replace(`LadderController.php?path=Ladder&order=rank`);
+        }
+    })
 })

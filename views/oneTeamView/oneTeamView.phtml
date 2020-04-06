@@ -1,3 +1,20 @@
 <div id="oneTeamPhtml">
-    <h1><?= $team[0]['name'] ?></h1>
+    <div>
+        <h1><?= $team[0]['name'] ?></h1>
+        <img src='<?= '../' ?>img\games_icone\<?= $game[0]['icone'] ?>'/>
+    </div>
+    <div id="mainContent">
+        <div><p><?= $team[0]['comment'] ?></p></div>
+        <div>
+            <ul>
+                <button value="apply">APPLY</button>
+                <h2>Captain : <?= $team[0]['captain'] ?></h2>
+                <h2><span>Teammates</span></h2>
+                <ul>
+                    <?php foreach($players as $player): ?>
+                        <li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li>
+                    <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
 </div>

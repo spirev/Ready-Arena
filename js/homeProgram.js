@@ -90,16 +90,6 @@ lilProg = new Navigation();
         console.log(lilProg.game);
     })
 
-    /*$('body').on('click', '#functionTeamPhtml nav #createTeam', function(){
-        window.location.replace(`controllers/findATeam.php?path=createTeam&game=${lilProg.game}`);
-    })
-    $('body').on('click', '#functionTeamPhtml nav #findTeam', function(){
-        window.location.replace(`controllers/findATeam.php?path=findATeam&game=${lilProg.game}`);
-    })
-    $('body').on('click', '#functionTeamPhtml nav #findPlayer', function(){
-        window.location.replace(`controllers/findATeam.php?path=findPlayer&game=${lilProg.game}`);
-    })*/
-
     $('body').on('click', '#functionTeamPhtml nav button', function(){
         if (this.value == 'createTeam') {
             window.location.replace(`controllers/findATeam.php?path=createTeam&game=${lilProg.game}`);        }
@@ -109,5 +99,4 @@ lilProg = new Navigation();
         else {
             window.location.replace(`controllers/findATeam.php?path=findTeammates&game=${lilProg.game}`);
         }
-
     })

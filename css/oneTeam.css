@@ -5,9 +5,110 @@
     padding-top: 6%;
 }
 
+#oneTeamPhtml div:first-child {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
 #oneTeamPhtml h1 {
     color: white;
     font-size: 2.5rem;
     font-family: 'Open Sans';
     margin-bottom: 4%;
+    margin-left: 7%;
+    width: 70%;
+}
+
+#oneTeamPhtml h2 {
+    color: white;
+    text-align: left;
+    font-weight: bolder;
+}
+
+#oneTeamPhtml img {
+    max-width: 130px;
+    max-height: 110px;
+    width: 7%;
+    height: 10%;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#oneTeamPhtml p { /* comment team */
+    font-size: 1rem;
+}
+
+#mainContent {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+}
+
+#mainContent > div {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20%;
+    border: 1px solid rgb(0, 255, 255);
+    background-color: rgba(30, 30, 30, 0.5);
+}
+
+#mainContent > div:first-child {
+    margin-right: 50%;
+    margin-left: 8%;
+}
+
+#oneTeamPhtml button {
+    width: 30%;
+    height: 40px;
+    margin-left: 35%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 1px 1px 25px #000dff;
+    border : 1px solid blue;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.15s;
+}
+
+#oneTeamPhtml button:hover {
+    background-color: rgb(0, 230, 230);
+    box-shadow: 1px 1px 25px #0059ff;
+    color: rgb(10, 10, 10);
+    width : 33%;
+    cursor: pointer;
+}
+
+#mainContent div h2 {
+    font-size: 1.2rem;
+    border-bottom: rgb(0, 255, 255);
+    width: 100%;
+    margin-bottom: 15%;
+    margin-left: 25%;
+}
+
+#mainContent div span {
+    margin: 10%;
+}
+
+#oneTeamPhtml ul {
+    padding: 0;
+    text-align: start;
+    width: 90%;
+}
+
+#oneTeamPhtml li {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: rgb(0, 255, 255);
+    font-size: 1.5rem;
+    list-style: none;
 }

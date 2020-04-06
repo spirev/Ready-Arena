@@ -12,7 +12,7 @@
     $playerList = $tournament[0]['playerList'];
     $list = [];
     $players = [];
-    $i = 0;
+    $i = 0; /* REMOVE ? */
 
     if(!empty($playerList)) {
         $list = explode(' ', $playerList);
