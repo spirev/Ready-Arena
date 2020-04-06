@@ -24,7 +24,7 @@
         }
 
         public function findByName() {
-            return $this->db->getAll("SELECT * FROM users ORDER BY 'name' DESC");
+            return $this->db->getAll("SELECT * FROM users ORDER BY name ASC");
         }
 
         public function loginVerify(string $email, string $password) {
