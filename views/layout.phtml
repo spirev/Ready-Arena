@@ -50,7 +50,7 @@
                             <a href="FriendListController.php?path=FriendList"><li>Friend list</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'Ladder'): ?>
-                            <a href="LadderController.php?path=Ladder"><li>Ladder</li></a>
+                            <a href="LadderController.php?path=Ladder&order=rank"><li>Ladder</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'support'): ?>
                             <a href="SupportController.php?path=support"><li>Support</li></a>
@@ -70,7 +70,7 @@
                             <a href="controllers/FriendListController.php?path=FirendList"><li>Friend list</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'Ladder'): ?>
-                            <a href="controllers/LadderController.php?path=Ladder"><li>Ladder</li></a>
+                            <a href="controllers/LadderController.php?path=Ladder&order=rank"><li>Ladder</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'support'): ?>
                             <a href="controllers/SupportController.php?path=support"><li>Support</li></a>

@@ -1,3 +1,5 @@
 <div id="findTeammates">
-    <p>THIS IS findTeammates.phtml VIEW !</p>
+<?php foreach($playerTab as $player): ?>
+        <a href="onePlayer.php?path=onePlayer&id=<?= $player['id'] ?>" class="resumeTournament"><?= $player['name'] ?></br></br>#<?= $player['rank'] ?></a>
+    <?php endforeach; ?>
 </div>

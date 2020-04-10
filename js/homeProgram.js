@@ -97,6 +97,6 @@ lilProg = new Navigation();
             window.location.replace(`controllers/findATeam.php?path=findATeam&game=${lilProg.game}`);
         }
         else {
-            window.location.replace(`controllers/findATeam.php?path=findTeammates&game=${lilProg.game}`);
+            window.location.replace(`controllers/findTeammates.php?path=findTeammates&game=${lilProg.game}`);
         }
     })
