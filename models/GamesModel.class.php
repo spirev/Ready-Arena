@@ -14,5 +14,9 @@
         public function findByName($name) {
             return $this->db->getAll("SELECT * FROM games WHERE name = '$name'");
         }
+
+        public function findById($id) {
+            return $this->db->getAll("SELECT * FROM games WHERE id = '$id'");
+        }
     }
 ?>
