@@ -45,7 +45,7 @@ lilProg = new Navigation();
     
     //listen helpBut & upBut for sroll down & up on click
     $('body').on('click', '#helpBut', function() {
-        $('html, body').animate({scrollTop: 1500}, 'slow');
+        $('html, body').animate({scrollTop: 2000}, 'slow');
     })
     $('body').on('click', '#upBut', function() {
         $('html, body').animate({scrollTop: 0}, 'slow');

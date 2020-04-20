@@ -3,20 +3,53 @@
     <div id="info">
         <h2>Average skill : <?= $tournament[0]['averageSkill'] ?></h2>
         <h2><?= $tournament[0]['timer'] ?></h2>
-        <div>
-            </div>
-        </div>
-        <div id="mainContent">
-            <canvas></canvas>
-            <div>
-                <button value="apply">APPLY</button>
-                <h2><span>Participants</span><?= count($players)." / ".$tournament[0]['nbr_participants'] ?></h2>
+    </div>
+    <div id="mainContent">
+        <article id="bracket">
+            <ul>
+            <?php foreach($players as $player): ?>
+                <a href="onePlayer.php?path=onePlayer&id=<?= $player[0]['id'] ?>"><li><?= $player[0]['name'] ?></li></a>
+            <?php endforeach; ?>
+            <?php for($i = 0;$i < $diffMaxPlayers;$i++): ?>
+                <a href="#"><li style="color: red">EMPTY</li></a>
+            <?php endfor; ?>
+            </ul>
+            <?php for($i = 1;$i < $nbrRounds + 1;$i++): ?>
                 <ul>
-                    <?php foreach($players as $player): ?>
-                        <li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li>
-                    <?php endforeach; ?>
+                    <?php if($i > 1): ?>
+                        <?php for($y = 0;$y < $maxPlayers / ($i * $i);$y++): ?>
+                            <?php if(!empty($playerRoundList[$i - 1][$y])): ?>
+                                <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
+                            <?php endif; ?>
+                            <?php if(!isset($playerRoundList[$i - 1][$y]) || empty($playerRoundList[$i - 1][$y])): ?>
+                                <a href="#"><li style="color: grey">NOT YET</li></a>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                    <?php if($i == 1): ?>
+                        <?php for($y = 0;$y < $maxPlayers / 2;$y++): ?>
+                            <?php if(!empty($playerRoundList[$i - 1][$y])): ?>
+                                <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
+                            <?php endif; ?>
+                            <?php if(!isset($playerRoundList[$i - 1][$y]) || empty($playerRoundList[$i - 1][$y])): ?>
+                                <a href="#"><li style="color: grey">NOT YET</li></a>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                    ?>
                 </ul>
-            </div>
-        </div>
+            <?php endfor; ?>
+        </article>
+        <article>
+            <?php if(count($players) < $tournament[0]['nbr_participants']) : ?>
+                <button value="apply">APPLY</button>
+            <?php endif; ?>
+            <h2><span>Participants</span> <?= count($players)." / ".$tournament[0]['nbr_participants'] ?></h2>
+            <ul>
+                <?php foreach($players as $player): ?>
+                    <a href="onePlayer.php?path=onePlayer&id=<?= $player[0]['id'] ?>"><li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li></a>
+                <?php endforeach; ?>
+            </ul>
+        </article>
     </div>
 </div>

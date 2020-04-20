@@ -59,23 +59,54 @@
 #mainContent {
     display: flex;
     flex-flow: row nowrap;
-
+    padding-bottom: 5%;
 }
 
-#mainContent canvas {
-    width: 70%;
+#mainContent #bracket {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 73%;
     border: 1px solid rgb(0, 255, 255);
-    margin-right: 5%;
+    margin-right: 3%;
+    margin-left: 3%;
     background-color: rgba(30, 30, 30, 0.5);
 }
 
-#mainContent > div {
+#mainContent #bracket ul {
+    width: 15%;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    width: 20%;
+    margin-right: 2%;
+    margin-left: 4%;
+}
+
+#mainContent #bracket ul a {
+    color: white;
+    background-color: black;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-bottom: 1%;
     border: 1px solid rgb(0, 255, 255);
+}
+
+#mainContent #bracket ul a:nth-child(even) {
+    margin-top: 2%;
+}
+
+#mainContent #bracket ul a:nth-child(odd) {
+    margin-top: 25%;
+}
+
+#mainContent > article {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 19%;
+    border: 1px solid rgb(0, 255, 255);
+    background-color: rgba(30, 30, 30, 0.5);
 }
 
 #mainContent div h2 {
@@ -101,4 +132,40 @@
     color: rgb(0, 255, 255);
     font-size: 1.5rem;
     list-style: none;
+}
+
+#oneTournamentPhtml ul a li:hover {
+    color: white;
+}
+
+#oneTournamentPhtml #bracket ul a li{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.2rem;
+    list-style: none;
+    transition: all 0.2s;
+}
+
+#oneTournamentPhtml #bracket ul li:hover {
+    color: white;
+    box-shadow: 10px 0px 1px rgb(0, 255, 255);
+    cursor: pointer;
+}
+
+#oneTournamentPhtml ul a {
+    text-decoration: none; 
+}
+
+.round32 {
+    width: 12%;
+}
+
+.round16 {
+    width: 18%;
+}
+
+.round8 {
+    width: 29%;
 }

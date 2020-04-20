@@ -6,14 +6,13 @@
     <div id="mainContent">
         <div><p><?= $team[0]['comment'] ?></p></div>
         <div>
+            <button value="apply">APPLY</button>
+            <div><h2>Captain : <?= $team[0]['captain'] ?></h2></div>
+            <div><<h2>Teammates</span></h2></div>
             <ul>
-                <button value="apply">APPLY</button>
-                <h2>Captain : <?= $team[0]['captain'] ?></h2>
-                <h2><span>Teammates</span></h2>
-                <ul>
-                    <?php foreach($players as $player): ?>
-                        <li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li>
-                    <?php endforeach; ?>
+                <?php foreach($players as $player): ?>
+                    <a href="onePlayer.php?path=onePlayer&id=<?= $player[0]['id'] ?>"><li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li></a>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>

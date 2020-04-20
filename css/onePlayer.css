@@ -1,7 +1,7 @@
 #onePlayerPhtml {
     background : linear-gradient(#12122d, #0B1A30);
     min-height: 950px;
-    padding-top: 6%;
+    padding-top: 5%;
     text-align: center;
     display: flex;
     flex-flow: column nowrap;
@@ -72,7 +72,7 @@
     box-shadow: 1px 1px 25px #000dff;
     border-radius: 10px;
     margin: 8% 5% 8%;
-    padding: 4%;
+    padding: 2%;
     font-size: 1.2rem;
     transition: all 0.2s;
 }
@@ -85,6 +85,30 @@
 
 #onePlayerPhtml #teams {
     width: 28%;
+}
+
+#onePlayerPhtml button {
+    width: 30%;
+    height: 40px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 1px 1px 25px #000dff;
+    border : 1px solid blue;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.15s;
+}
+
+#onePlayerPhtml button:hover {
+    background-color: rgb(0, 230, 230);
+    box-shadow: 1px 1px 25px #0059ff;
+    color: rgb(10, 10, 10);
+    width : 33%;
+    cursor: pointer;
 }
 
 #onePlayerPhtml .team {

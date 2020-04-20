@@ -16,6 +16,7 @@
             <?php endforeach; ?>
         </div>
         <div id='teams'>
+            <button value="sendRequest">Send invitation</button>
             <h3><?= $user[0]['name'] ?>'s teams</h3>
             <?php foreach($teams as $team): ?>
                 <a href="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>"><div class='team'><?= $team[0]['name'] ?></br><?= $team[0]['game'] ?></div></a>

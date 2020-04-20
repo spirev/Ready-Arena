@@ -1,11 +1,12 @@
 <div id="createTournamentPhtml">
     <i id="returnArrow" class="far fa-arrow-alt-circle-left"></i>
-    <form method="post" action="">
+    <form method="POST" action="">
         <fieldset>
             <input type="text" placeholder="Tournament name">
         </fieldset>
-        <fieldset>
-            <input type="text" placeholder="date">
+        <fieldset id="date">
+            <label for="startDate">Launch date</label>
+            <input type="date" name="startDate" placeholder="day">
         </fieldset>
         <fieldset>
             <ul>
@@ -17,11 +18,29 @@
                     <label for="forSolo">for 1v1 (solo)</label>
                     <input type="radio" name="soloTeam" id="solo">
                 </li>
+            </ul>
         </fieldset>
+        <fieldset>
+            <h2>Max participants</h2>
+            <ul id="maxParticipants">
+                <li>
+                    <label for="32">32</label>
+                    <input type="radio" name="maxParticipants" id="large">
+                </li>
+                <li>
+                    <label for="16">16</label>
+                    <input type="radio" name="maxParticipants" id="medium">
+                </li>
+                <li>
+                    <label for="8">8</label>
+                    <input type="radio" name="maxParticipants" id="small">
+                </li>
+        </fieldset>
+        <fieldset>
             <li>
                 <input type="text" placeholder="average skill">
             </li>
-        </ul>
+        </fieldset>
         <button type="submit">CONFIRM</button>
     </form>
     <button id="helpBut"><i class="far fa-question-circle"></i></button>

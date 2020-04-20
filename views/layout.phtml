@@ -37,14 +37,8 @@
                 <nav class="hideAside">
                     <ul>
                         <?php if($_GET['path'] !== 'home'): ?>
-                            <?php if($_GET['path'] !== 'MyTounaments'): ?>
-                            <a href="MyTournamentsController.php?path=MyTOurnaments"><li>My tournaments</li></a>
-                            <?php endif; ?>
-                            <?php if($_GET['path'] !== 'MyTeams'): ?>
-                            <a href="MyTeamsController.php?path=MyTeams"><li>My teams</li></a>
-                            <?php endif; ?>
-                            <?php if($_GET['path'] !== 'MyFamily'): ?>
-                            <a href="MyFamilyController.php?path=MyFamily"><li>My Family</li></a>
+                            <?php if($_GET['path'] !== 'onePlayer'): ?>
+                            <a href="onePlayer.php?connected=T"><li>My profil</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'FriendList'): ?>
                             <a href="FriendListController.php?path=FriendList"><li>Friend list</li></a>
@@ -57,14 +51,8 @@
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if($_GET['path'] == 'home'): ?>
-                            <?php if($_GET['path'] !== 'MyTournaments'): ?>
-                            <a href="controllers/MyTournamentsController.php?path=MyTournaments"><li>My tournaments</li></a>
-                            <?php endif; ?>
-                            <?php if($_GET['path'] !== 'MyTeams'): ?>
-                            <a href="controllers/MyTeamsController.php?path=MyTeams"><li>My teams</li></a>
-                            <?php endif; ?>
-                            <?php if($_GET['path'] !== 'MyFamily'): ?>
-                            <a href="controllers/MyFamilyController.php?path=MyFamily"><li>My Family</li></a>
+                            <?php if($_GET['path'] !== 'onePlayer'): ?>
+                            <a href="onePlayer.php?connected=T"><li>My profil</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'FriendList'): ?>
                             <a href="controllers/FriendListController.php?path=FirendList"><li>Friend list</li></a>
