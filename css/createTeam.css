@@ -4,3 +4,75 @@
     text-align: center;
     padding-top: 7%;
 }
+
+#createTeam h2 {
+    color: rgb(0, 255, 255);
+}
+
+#createTeam form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#createTeam form fieldset {
+    border: 0;
+}
+
+#createTeam form input:not(.LFP) {
+    background-color: black;
+    color: rgb(0, 255, 255);
+    width: 330px;
+    height: 37px;
+    border: 1px solid rgb(0, 255, 255);
+    border-radius: 11px;
+    margin-bottom: 15%;
+    padding-left: 15px;
+    outline: none;
+}
+
+#createTeam form .LFP {
+    width: 25px;
+    height: 25px;
+}
+
+#createTeam input[type="text"] {
+    color: rgb(0, 255, 255);
+    font-size: 1.4rem;
+}
+
+#createTeam input::placeholder {
+    color: rgb(0, 255, 255);
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+#createTeam #comment {
+    width: 650px;
+    height: 70px;
+    margin-top: 15%;
+    font-size: 1rem;
+}
+
+#createTeam button {
+    border: 0px;
+    width: 175px;
+    height: 65px;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.3rem;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 1px 1px 25px #000dff;
+    border: 1px solid blue;
+    transition: all 0.2s;
+}
+
+#createTeam button:hover {
+    background-color: rgb(0, 230, 230);
+    box-shadow: 1px 1px 25px #0059ff;
+    color: black;
+    width : 210px;
+    cursor: pointer;
+}
