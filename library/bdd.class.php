@@ -26,6 +26,10 @@ class Database{
         $query = $this->pdo->query($sql);
         return $query->fetchAll();
     }
+
+    public function insert(string $sql) {
+        $query = $this->pdo->query($sql);
+    }
 }
 /*try{
     $user = 'root';

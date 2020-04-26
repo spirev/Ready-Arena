@@ -1,20 +1,21 @@
 <div id="createTeam">
-    <form action="" method="post">
+    <form action="addTeam.php?game=<?= $_GET['game'] ?>" method="post">
         <fieldset>
             <input type="text" placeholder="Team name" name="name">
         </fieldset>
         <fieldset>
-            <h2>Is your team looking for people ?</h2>
+            <h2>Would you like to put this team in "looking for player section" ?</h2>
             <div>
-                <label for="yes">Yes</label>
-                <input type="radio" name="LFP" value="yes" class="LFP">
-                <label for="no">No</label>
-                <input type="radio" name="LFP" value="no" class="LFP">
+                <label for="1">Yes</label>
+                <input type="radio" name="LFP" value="1" class="LFP">
+                <label for="0">No</label>
+                <input type="radio" name="LFP" value="0" class="LFP">
             </div>
         </fieldset>
         <fieldset>
             <input type="text" name="comment" placeholder="comment" id="comment">
         </fieldset>
+        <h3>( The user whom create the team automatically become its captain )</h3>
         <button type="submit">CONFIRM</button>
     </form>
 </div>

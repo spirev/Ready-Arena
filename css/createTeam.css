@@ -1,13 +1,20 @@
 #createTeam {
     background : linear-gradient(#12122d, #0B1A30);
-    min-height: 950px;
+    min-height: 820px;
     text-align: center;
-    padding-top: 7%;
+    padding-top: 9%;
 }
 
 #createTeam h2 {
     color: rgb(0, 255, 255);
     font-size: 1.2rem;
+}
+
+#createTeam h3 {
+    color: rgb(0, 255, 255);
+    font-size: 0.9rem;
+    margin-bottom: 3%;
+    font-weight: normal;
 }
 
 #createTeam form {
@@ -19,6 +26,12 @@
 
 #createTeam form fieldset {
     border: 0;
+}
+
+#createTeam form fieldset:nth-child(2) {
+    border: 1px solid rgb(0, 255, 255);
+    border-radius: 11px;
+    padding: 2%;
 }
 
 #createTeam form div {
@@ -69,6 +82,7 @@
     width: 650px;
     height: 50px;
     margin-top: 15%;
+    margin-bottom: 8%;
     font-size: 1rem;
 }
 

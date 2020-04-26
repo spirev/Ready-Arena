@@ -10,6 +10,7 @@ include 'controllers/HomeController.php';
 //$data = new MainController;
 //$dataview = $data->chargement();
 $_GET['path'] = 'home';
+
 if (isset($_GET['path'])) {
     $dataview = ROOT_PATH.'/views/HomeView/HomeView.phtml';
 }

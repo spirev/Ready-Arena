@@ -1,8 +1,8 @@
 <div id="createTournamentPhtml">
     <i id="returnArrow" class="far fa-arrow-alt-circle-left"></i>
-    <form method="POST" action="">
+    <form action="controllers/addTournament.php" methode="post">
         <fieldset>
-            <input type="text" placeholder="Tournament name">
+            <input type="text" placeholder="Tournament name" name="name">
         </fieldset>
         <fieldset id="date">
             <label for="startDate">Launch date</label>
@@ -12,11 +12,11 @@
             <ul>
                 <li>
                     <label for="forTeam">for teams</label>
-                    <input type="radio" name="soloTeam" id="asTeam">
+                    <input type="radio" name="soloTeam" id="asTeam" value="team">
                 </li>
                 <li>
                     <label for="forSolo">for 1v1 (solo)</label>
-                    <input type="radio" name="soloTeam" id="solo">
+                    <input type="radio" name="soloTeam" id="solo" value="solo">
                 </li>
             </ul>
         </fieldset>
@@ -25,21 +25,20 @@
             <ul id="maxParticipants">
                 <li>
                     <label for="32">32</label>
-                    <input type="radio" name="maxParticipants" id="large">
+                    <input type="radio" name="maxParticipants" id="large" value="32">
                 </li>
                 <li>
                     <label for="16">16</label>
-                    <input type="radio" name="maxParticipants" id="medium">
+                    <input type="radio" name="maxParticipants" id="medium" value="16">
                 </li>
                 <li>
                     <label for="8">8</label>
-                    <input type="radio" name="maxParticipants" id="small">
+                    <input type="radio" name="maxParticipants" id="small" value="8">
                 </li>
+            </ul>
         </fieldset>
         <fieldset>
-            <li>
-                <input type="text" placeholder="average skill">
-            </li>
+            <input type="text" placeholder="average skill" name="averageSkill">
         </fieldset>
         <button type="submit">CONFIRM</button>
     </form>

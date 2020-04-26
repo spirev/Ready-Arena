@@ -18,6 +18,11 @@
         public function findById($id) {
             return $this->db->getAll("SELECT *FROM teams WHERE id = '$id'");
         }
+
+        public function addTeam($name, $game, $captain, $LFP, $comment, $teammates) {
+            $this->db->insert("INSERT INTO teams (id, name, game, family, captain, look_for_player, comment, teammates)
+                                VALUES (NULL, '$name', '$game', NULL, '$captain', '$LFP', '$comment', '$teammates')");
+        }
     }
 
 ?>

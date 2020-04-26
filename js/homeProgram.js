@@ -10,7 +10,6 @@ class Navigation {
         this.game = game;
     }
 }
-
 // Generate a new Navigation object
 lilProg = new Navigation();
 
@@ -68,10 +67,11 @@ lilProg = new Navigation();
     //then set new ajax content according to lilprog.name
     $('body').on('click', "#allGamesPhtml .gameIcone", function() {
         lilProg.game = this.value;
+        document.cookie = `game=${lilProg.game}`;
         switch(lilProg.name){
             case 'create':
                 $('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('create')
+                SetAjaxContent('create');
                 break;
             case 'find':
                 $('#homeNav div').addClass('transitioningOut');
@@ -79,20 +79,20 @@ lilProg = new Navigation();
                 break;
             case 'team':
                 $('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('Team')
+                SetAjaxContent('Team');
                 break;
             case 'family':
                 $('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('family')
+                SetAjaxContent('family');
                 break;
         }
         lilProg.stage++;
-        console.log(lilProg.game);
     })
-
+    
     $('body').on('click', '#functionTeamPhtml nav button', function(){
         if (this.value == 'createTeam') {
-            window.location.replace(`controllers/findATeam.php?path=createTeam&game=${lilProg.game}`);        }
+            window.location.replace(`controllers/createTeam.php?path=createTeam&game=${lilProg.game}`);
+        }
         else if (this.value == 'findTeam') {
             window.location.replace(`controllers/findATeam.php?path=findATeam&game=${lilProg.game}`);
         }
@@ -100,3 +100,4 @@ lilProg = new Navigation();
             window.location.replace(`controllers/findTeammates.php?path=findTeammates&game=${lilProg.game}`);
         }
     })
+    
