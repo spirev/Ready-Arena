@@ -356,7 +356,6 @@ ____________________________________________________*/
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    margin-bottom: 2%; 
 }
 
 #homeExplain article i {
@@ -650,9 +649,25 @@ ________________________________________________*/
 }
 
 #createExplain  {
-    padding-top: 0px;
+    display: flex !important;
+    flex-flow: column wrap !important;
+    justify-content: center !important;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
+#createExplain p {
+    margin-left: 10%;
+}
+
+#createExplain p span {
+    font-size: 2rem;
+    margin-right: 3%;
+}
+
+#createExplain i {
+    font-size: 1.9rem !important;
+}
 
 /*______________________________________________
             START functionsTeam.phtml
