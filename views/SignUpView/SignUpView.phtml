@@ -1,19 +1,19 @@
 <div id='signupPhtml'>
-    <form>
+    <form action="addUser.php" method="post">
         <ul>
             <li>
-                <input type="text" placeholder="name">
+                <input type="text" placeholder="name" name="name">
             </li>
             <li>
-                <input type="text" placeholder="email">
+                <input type="text" placeholder="email" name="email">
             </li>
             <li>
-                <input type="text" placeholder="password">
+                <input type="text" placeholder="password" name="password">
             </li>
             <li>
-                <input type="text" placeholder="confirm password">
+                <input type="text" placeholder="confirm password" name="confirmPWD">
             </li>
         </ul>
-        <button>CONFIRM</button>
+        <button type="submit">CONFIRM</button>
     </form>
 </div>
