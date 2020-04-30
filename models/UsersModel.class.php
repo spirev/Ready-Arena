@@ -41,5 +41,13 @@
             VALUES (NULL, '$name', '$email', '$password', '$ladder_point', '$rank', '$look_for_team')");
         }
 
+        public function loginVerify(string $email, string $password) {
+            $user = $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
+            if(!empty($user)) {
+                if(isset($user['password']) && $user['password'] == $password) {
+                    return $user;
+                }
+            }
+        }
     }
 ?>
