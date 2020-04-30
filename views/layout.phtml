@@ -14,9 +14,16 @@
             <a href="/finalProject/index.php"><img src="/finalProject/img/logo_ReadyArena.png" /></a>
             <div>
                 <i class="fas fa-search"></i>
-                <form>
-                    <input type="text">
-                </form>
+                <?php if ($_GET['path'] == 'home'): ?>
+                    <form method="get" action="controllers/findPlayerBar.php">
+                        <input type="text" placeholder="( find a player )" name="findPlayer">
+                    </form>
+                <?php endif; ?>
+                <?php if ($_GET['path'] !== 'home'): ?>
+                    <form method="get" action="../controllers/findPlayerBar.php">
+                        <input type="text" placeholder="( find a player )" name="findPlayer">
+                    </form>
+                <?php endif; ?> 
             </div>
                 <?php if($connect == false): ?>
                 <div>
