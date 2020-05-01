@@ -25,16 +25,21 @@
                     </form>
                 <?php endif; ?> 
             </div>
-                <?php if($connect == false): ?>
+                <?php if(!isset($_SESSION['name'])): ?>
                 <div>
                     <a href="/finalProject/controllers/LoginController.php?path=Login" id="login">Login</a>
                     <a href="/finalProject/controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
                 </div>
                 <?php endif; ?>
-                <?php if($connect == true): ?>
+                <?php if(isset($_SESSION['name'])): ?>
                 <div id='divIconeProfil'>
                     <a href="oneProfilController.php?user=<?=$_SESSION['name']?>" id="iconeProfil"><div id="profilIcone"></div></a>
-                    <a href="/?loged=F" id="disconnect">Disconnect</a>
+                    <?php if ($_GET['path'] == 'home'): ?>
+                        <a href="controllers/LoginController.php?action=disconnect" id="disconnect">Disconnect</a>
+                    <?php endif; ?>
+                    <?php if ($_GET['path'] !== 'home'): ?>
+                        <a href="LoginController.php?action=disconnect" id="disconnect">Disconnect</a>
+                    <?php endif; ?>
                 </div>
                 <?php endif; ?>
         </header>

@@ -32,7 +32,7 @@ header { /* top page bar (logo(index.php) / search bar / login signup */
     align-items: center;
     padding: 15px 0px 15px;
     border-bottom: 1px solid rgb(0, 255, 255);
-    background-color: #12122d;
+    background-color: #0c0c1f;
 }
 
 header > a { /* logo top left */
@@ -222,7 +222,7 @@ transitioning  --> class for css translation between homeNav
 ____________________________________________________*/
 
 #homeNav {
-    background : linear-gradient(#12122d, #0B1A30);
+    background : linear-gradient(#0c0c1f, #0B1A30);
     width: 100%;
     height: 1300px;
     border-bottom: 2px solid rgb(0, 255, 255);
@@ -231,7 +231,7 @@ ____________________________________________________*/
 
 
 #homeContentNav{ /* ajax navigator (first half of the page) */
-    background : linear-gradient(#12122d, #0B1A30);
+    background : linear-gradient(#0c0c1f, #0B1A30);
     width: 100%;
     height: 100%;
     display: flex;
@@ -419,7 +419,7 @@ ________________________________________________*/
             START allGames.phtml
 ________________________________________________*/
 #allGamesPhtml {
-    background : linear-gradient(#12122d, #0B1A30);
+    background : linear-gradient(#0c0c1f, #0B1A30);
     display: flex !important;
     flex-flow: column nowrap !important;
     padding-top: 0 !important;

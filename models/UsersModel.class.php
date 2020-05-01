@@ -44,7 +44,7 @@
         public function loginVerify(string $email, string $password) {
             $user = $this->db->getAll("SELECT * FROM users WHERE email = '$email'");
             if(!empty($user)) {
-                if(isset($user['password']) && $user['password'] == $password) {
+                if(password_verify($password, $user[0]['password'])) {
                     return $user;
                 }
             }
