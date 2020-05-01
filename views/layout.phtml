@@ -16,12 +16,12 @@
                 <i class="fas fa-search"></i>
                 <?php if ($_GET['path'] == 'home'): ?>
                     <form method="get" action="controllers/findPlayerBar.php">
-                        <input type="text" placeholder="( find a player )" name="findPlayer">
+                        <input type="text" placeholder="find a player" name="findPlayer">
                     </form>
                 <?php endif; ?>
                 <?php if ($_GET['path'] !== 'home'): ?>
                     <form method="get" action="../controllers/findPlayerBar.php">
-                        <input type="text" placeholder="( find a player )" name="findPlayer">
+                        <input type="text" placeholder="find a player" name="findPlayer">
                     </form>
                 <?php endif; ?> 
             </div>
@@ -33,11 +33,12 @@
                 <?php endif; ?>
                 <?php if(isset($_SESSION['name'])): ?>
                 <div id='divIconeProfil'>
-                    <a href="oneProfilController.php?user=<?=$_SESSION['name']?>" id="iconeProfil"><div id="profilIcone"></div></a>
                     <?php if ($_GET['path'] == 'home'): ?>
+                        <a href="controllers/onePlayer.php?path=onePlayer&id=<?=$_SESSION['id']?>" id="iconeProfil"><div id="profilIcone"></div></a>
                         <a href="controllers/LoginController.php?action=disconnect" id="disconnect">Disconnect</a>
                     <?php endif; ?>
                     <?php if ($_GET['path'] !== 'home'): ?>
+                        <a href="onePlayer.php?path=onePlayer&id=<?=$_SESSION['id']?>" id="iconeProfil"><div id="profilIcone"></div></a>
                         <a href="LoginController.php?action=disconnect" id="disconnect">Disconnect</a>
                     <?php endif; ?>
                 </div>
@@ -49,8 +50,8 @@
                 <nav class="hideAside">
                     <ul>
                         <?php if($_GET['path'] !== 'home'): ?>
-                            <?php if($_GET['path'] !== 'onePlayer'): ?>
-                            <a href="onePlayer.php?connected=T"><li>My profil</li></a>
+                            <?php if($_GET['path'] !== 'onePlayer' && isset($_SESSION['id'])): ?>
+                            <a href="onePlayer.php?path=onePlayer&id=<?= $_SESSION['id'] ?>"><li>My profil</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'FriendList'): ?>
                             <a href="FriendListController.php?path=FriendList"><li>Friend list</li></a>
@@ -63,8 +64,8 @@
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if($_GET['path'] == 'home'): ?>
-                            <?php if($_GET['path'] !== 'onePlayer'): ?>
-                            <a href="onePlayer.php?connected=T"><li>My profil</li></a>
+                            <?php if($_GET['path'] !== 'onePlayer' && isset($_SESSION['id'])): ?>
+                            <a href="controllers/onePlayer.php?path=onePlayer&id=<?= $_SESSION['id'] ?>"><li>My profil</li></a>
                             <?php endif; ?>
                             <?php if($_GET['path'] !== 'FriendList'): ?>
                             <a href="controllers/FriendListController.php?path=FirendList"><li>Friend list</li></a>
