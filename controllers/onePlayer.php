@@ -39,7 +39,7 @@
         $seekTournaments[$i] = $allTournaments[$i]['playerList'];
     }
     for ($i = 0;$i < count($seekTournaments);$i++) {
-        if (strpos(substr($seekTournaments[$i], 0, ($userIdLength + 1)), $_GET['id']." ") !== false) {
+        if (strpos(substr($seekTournaments[$i], 0, ($userIdLength)), $_GET['id']) !== false) {
             $tournaments[$i] = $TournamentsModel->findById($i + 1);
         }
         else if (strpos($seekTournaments[$i], " ".$_GET['id']." ") !== false) {
