@@ -45,7 +45,7 @@
         else if (strpos($seekTournaments[$i], " ".$_GET['id']." ") !== false) {
             $tournaments[$i] = $TournamentsModel->findById($i + 1);
         }
-        else if(strpos(substr($seekTournaments[$i], ($userIdLength * -1 - 1)), " ".$_GET['id']) !== false) {
+        else if(strpos(substr($seekTournaments[$i], ($userIdLength - 1)), " ".$_GET['id']) !== false) {
             $tournaments[$i] = $TournamentsModel->findById($i + 1);
         }
         else {
