@@ -8,23 +8,42 @@
         <link rel="stylesheet" href="/finalProject/css/<?= $_GET['path'] ?>.css" type="text/css" />
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
         <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.mjs"></script>
     </head>
     <body>
         <header>
             <a href="/finalProject/index.php"><img src="/finalProject/img/logo_ReadyArena.png" /></a>
-            <div>
-                <i class="fas fa-search"></i>
-                <?php if ($_GET['path'] == 'home'): ?>
-                    <form method="get" action="controllers/findPlayerBar.php">
-                        <input type="text" placeholder="find a player" name="findPlayer">
-                    </form>
-                <?php endif; ?>
-                <?php if ($_GET['path'] !== 'home'): ?>
-                    <form method="get" action="../controllers/findPlayerBar.php">
-                        <input type="text" placeholder="find a player" name="findPlayer">
-                    </form>
-                <?php endif; ?> 
-            </div>
+            <?php if (!isset($_SESSION['name'])): ?>
+                <div id="searchBar">
+                    <i class="fas fa-search"></i>
+                    <?php if ($_GET['path'] == 'home'): ?>
+                        <form method="get" action="controllers/findPlayerBar.php">
+                            <input type="text" placeholder="find a player" name="findPlayer">
+                        </form>
+                    <?php endif; ?>
+                    <?php if ($_GET['path'] !== 'home'): ?>
+                        <form method="get" action="../controllers/findPlayerBar.php">
+                            <input type="text" placeholder="find a player" name="findPlayer">
+                        </form>
+                    <?php endif; ?> 
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['name'])): ?>
+                <div id="searchBar" class="connectedSearchBar">
+                    <i class="fas fa-search"></i>
+                    <?php if ($_GET['path'] == 'home'): ?>
+                        <form method="get" action="controllers/findPlayerBar.php">
+                            <input type="text" placeholder="find a player" name="findPlayer">
+                        </form>
+                    <?php endif; ?>
+                    <?php if ($_GET['path'] !== 'home'): ?>
+                        <form method="get" action="../controllers/findPlayerBar.php">
+                            <input type="text" placeholder="find a player" name="findPlayer">
+                        </form>
+                    <?php endif; ?> 
+                </div>
+            <?php endif; ?>
                 <?php if(!isset($_SESSION['name'])): ?>
                 <div>
                     <a href="/finalProject/controllers/LoginController.php?path=Login" id="login">Login</a>
@@ -34,11 +53,11 @@
                 <?php if(isset($_SESSION['name'])): ?>
                 <div id='divIconeProfil'>
                     <?php if ($_GET['path'] == 'home'): ?>
-                        <a href="controllers/onePlayer.php?path=onePlayer&id=<?=$_SESSION['id']?>" id="iconeProfil"><div id="profilIcone"></div></a>
+                        <a href="controllers/onePlayer.php?path=onePlayer&id=<?=$_SESSION['id']?>" id="headerProfil"><h4><?= $_SESSION['name'] ?></h4></a>
                         <a href="controllers/LoginController.php?action=disconnect" id="disconnect">Disconnect</a>
                     <?php endif; ?>
                     <?php if ($_GET['path'] !== 'home'): ?>
-                        <a href="onePlayer.php?path=onePlayer&id=<?=$_SESSION['id']?>" id="iconeProfil"><div id="profilIcone"></div></a>
+                        <a href="onePlayer.php?path=onePlayer&id=<?=$_SESSION['id']?>" id="headerProfil"><h4><?= $_SESSION['name'] ?></h4></a>
                         <a href="LoginController.php?action=disconnect" id="disconnect">Disconnect</a>
                     <?php endif; ?>
                 </div>
@@ -82,6 +101,7 @@
             </aside>
             <?php include $dataview; ?>
         </main>
+        <div id='hidden'></div>
         <script type="text/javascript" src="/finalProject/js/main.js"></script>
         <script type="text/javascript" src="/finalProject/js/ajax.js"></script>
     </body>

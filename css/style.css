@@ -25,7 +25,7 @@ body {
     background: #00ccff; 
 }
 
-header { /* top page bar (logo(index.php) / search bar / login signup */
+header { /* top page bar */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -57,6 +57,10 @@ header input { /* search bar */
     outline: none;
 }
 
+.connectedSearchBar {
+    margin-left: 12%;
+}
+
 header input::placeholder {
     color: rgb(0, 255, 255);
     text-align: center;
@@ -70,7 +74,7 @@ header div { /* flex parent */
     align-items: center;
 }
 
-header div a:not(#iconeProfil) { /* login & sign up buttons*/
+header div a:not(#headerProfil) { /* login & sign up buttons*/
     margin-right: 30px;
     padding: 10px 24px;
     text-decoration: none;
@@ -82,26 +86,30 @@ header div a:not(#iconeProfil) { /* login & sign up buttons*/
     transition: all 0.15s;
 }
 
-header div a:hover:not(#iconeProfil) { /* login & sign up buttons */
+header div a:hover:not(#headerProfil) { /* login & sign up buttons */
     background: linear-gradient(#272158, #00aeff);
     border-bottom : 3px solid rgb(0, 255, 255);
 }
 
-#profilIcone { /* profil icone (if isset($_SESSION)) */
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    background-image: url('../img/default_user.jpg');
-    background-size : cover;
-    transition: all 0.2s;
+#headerProfil {
+    color: rgb(0, 255, 255);
+    text-decoration: none;
 }
 
-#profilIcone:hover { /* profil icone hover */
-    box-shadow: 0px 0px 13px #00e1ff;
+#headerProfil:hover { /* profil icone hover */
+    font-size: 2rem;
+}
+
+#headerProfil h4{ /* profil icone (if isset($_SESSION)) */
+    font-size: 1rem;
+}
+
+#headerProfil h4:hover {
+    color: white;
 }
 
 #divIconeProfil { /* parent container of profil icone */
-    margin-right: 3%;
+    margin-right: 4%;
     margin-left: 8%;
 }
 

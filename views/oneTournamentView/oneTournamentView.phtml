@@ -41,7 +41,7 @@
             <?php endfor; ?>
         </article>
         <article>
-            <?php if(count($players) < $tournament[0]['nbr_participants']) : ?>
+            <?php if(count($players) < $tournament[0]['nbr_participants'] && isset($_SESSION['name'])) : ?>
                 <button value="apply">APPLY</button>
             <?php endif; ?>
             <h2><span>Participants</span> <?= count($players)." / ".$tournament[0]['nbr_participants'] ?></h2>

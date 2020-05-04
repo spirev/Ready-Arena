@@ -23,6 +23,7 @@ $(document).ready(function () {
         $('#arrowMenu').html("MENU");
     })
 
+    //redirect to the right ladder page considering option chose (by name / rank)
     $('body').on('click', '.ladderButt', function () {
         if(this.value == 'name') {
             window.location.replace(`LadderController.php?path=Ladder&order=name`);
