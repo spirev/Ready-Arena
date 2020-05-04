@@ -65,6 +65,26 @@
         }
     }
 
+    //look for connected user on this tournament
+    if (isset($_SESSION['name'])) {
+        $currentUser = $usersModel->checkName($_SESSION['name']);
+        if (strpos(substr($tournament[0]['playerList'], 0, strlen($currentUser[0]['id'])), $currentUser[0]['id']) !== false) {
+            $alreadySub = 1;
+        }
+        else if (strpos($tournament[0]['playerList'], " ".$currentUser[0]['id']." ") !== false) {
+            $alreadySub = 1;
+        }
+        else {
+            $alreadySub = 0;
+        }
+        var_dump($currentUser[0]['name']);
+        var_dump($currentUser[0]['id']);
+        var_dump($tournament[0]['playerList']);
+        var_dump(strlen($currentUser[0]['id']));
+        var_dump(strpos($tournament[0]['playerList'], $currentUser[0]['id']));
+        var_dump($alreadySub);
+    }
+
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
         include ROOT_PATH.'/../views/layout.phtml';

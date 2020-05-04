@@ -5,6 +5,9 @@
 
     $usersModel = new UsersModel();
     $varTest;
+    $lastUser = $usersModel->maxId();
+    $lastId = intval($lastUser[0]['MAX(id)'], 10);
+    $lastId = $lastId + 1;
 
     // if one field is not fill redirect to signup page
     if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['confirmPWD'])) {
@@ -62,7 +65,7 @@
 
     //hashing password
     $hashedPWD = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $usersModel->addUser($_POST['name'], $_POST['email'], $hashedPWD, $varTest[0]['rank']);
+    $usersModel->addUser($lastId, $_POST['name'], $_POST['email'], $hashedPWD, $varTest[0]['rank']);
     header('Location: ../index.php?flash=signUp');
 
 ?>

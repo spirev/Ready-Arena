@@ -36,9 +36,13 @@
             return $this->db->getAll("SELECT * FROM users WHERE ladder_point = 0");
         }
 
-        public function addUser($name, $email, $password, $rank, $ladder_point = 0, $look_for_team = null) {
+        public function maxId() {
+            return $this->db->getAll("SELECT MAX(id) FROM users");
+        }
+
+        public function addUser($id, $name, $email, $password, $rank, $ladder_point = 0, $look_for_team = null) {
             $this->db->insert("INSERT INTO users (id, name, email, password, ladder_point, rank, look_for_team)
-            VALUES (NULL, '$name', '$email', '$password', '$ladder_point', '$rank', '$look_for_team')");
+            VALUES ($id, '$name', '$email', '$password', '$ladder_point', '$rank', '$look_for_team')");
         }
 
         public function loginVerify(string $email, string $password) {
