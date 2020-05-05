@@ -74,15 +74,12 @@
         else if (strpos($tournament[0]['playerList'], " ".$currentUser[0]['id']." ") !== false) {
             $alreadySub = 1;
         }
+        else if (strpos($tournament[0]['playerList'], " ".$currentUser[0]['id']) !== false) {
+            $alreadySub = 1;
+        }
         else {
             $alreadySub = 0;
         }
-        var_dump($currentUser[0]['name']);
-        var_dump($currentUser[0]['id']);
-        var_dump($tournament[0]['playerList']);
-        var_dump(strlen($currentUser[0]['id']));
-        var_dump(strpos($tournament[0]['playerList'], $currentUser[0]['id']));
-        var_dump($alreadySub);
     }
 
     if (isset($_GET['path'])) {
