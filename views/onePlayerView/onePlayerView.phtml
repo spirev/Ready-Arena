@@ -17,7 +17,9 @@
         </div>
         <div id='teams'>
             <?php if (isset($_SESSION['id']) && $_SESSION['id'] !== $_GET['id']): ?>
-            <button value="sendRequest">Send invitation</button>
+            <form action="inviteToTeam.php?path=inviteToTeam&id=<?= $_GET['id'] ?>" method="post">
+                <button>Send invitation</button>
+            </form>
             <?php endif; ?>
             <h3><?= $user[0]['name'] ?>'s teams</h3>
             <?php foreach($teams as $team): ?>

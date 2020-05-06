@@ -40,6 +40,10 @@
             return $this->db->getAll("SELECT MAX(id) FROM users");
         }
 
+        public function addTeamInvite($newTeamInvite, $id) {
+            $this->db->insert("UPDATE users SET team_invite = '$newTeamInvite' WHERE id = '$id'");
+        }
+
         public function addUser($id, $name, $email, $password, $rank, $ladder_point = 0, $look_for_team = null) {
             $this->db->insert("INSERT INTO users (id, name, email, password, ladder_point, rank, look_for_team)
             VALUES ($id, '$name', '$email', '$password', '$ladder_point', '$rank', '$look_for_team')");

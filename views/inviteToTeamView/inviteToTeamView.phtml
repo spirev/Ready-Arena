@@ -1,0 +1,8 @@
+<div id='inviteToTeam'>
+    <?php if (empty($teams)): ?>
+        <h1><?= $requestPlayer[0]['name'] ?> is already on waiting list for all your teams or is already in all of your teams</h1>
+    <?php endif; ?>
+    <?php foreach($teams as $team): ?>
+        <a href="checkInvitation.php?id=<?= $requestPlayer[0]['id'] ?>&team=<?= $team[0]['id'] ?>"><div><?= $team[0]['name'] ?></br><?= $team[0]['game'] ?></div></a>
+    <?php endforeach; ?>
+</div>
