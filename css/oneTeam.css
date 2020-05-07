@@ -44,6 +44,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
+    justify-content: space-between;
 }
 
 #mainContent > div {
@@ -57,12 +58,62 @@
 }
 
 #mainContent > div:first-child {
-    margin-right: 50%;
-    margin-left: 8%;
+    margin-left: 6%;
 }
 
-#oneTeamPhtml button {
-    width: 30%;
+#mainContent > div:nth-child(2) {
+    margin-right: 4%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainContent > div:nth-child(2) h2{
+    margin-left: 2%;
+}
+
+#mainContent > div:nth-child(3) {
+    margin-right: 2%;
+}
+
+.waitingPlayer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.waitingPlayer i {
+    font-size: 1.5rem;
+}
+
+.waitingPlayer a:nth-child(2) {
+    color: rgb(0, 255, 255);
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.waitingPlayer a:nth-child(3) {
+    color: rgb(0, 225, 255);
+}
+
+.waitingPlayer a:nth-child(2):hover {
+    color: rgb(0, 255, 0);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.waitingPlayer a:nth-child(3):hover {
+    color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+#oneTeamPhtml form {
+    width: 70%;
+}
+
+#oneTeamPhtml form button {
+    width: 50%;
     height: 40px;
     margin-top: 5%;
     margin-bottom: 12%;
@@ -77,11 +128,11 @@
     transition: all 0.15s;
 }
 
-#oneTeamPhtml button:hover {
+#oneTeamPhtml form button:hover {
     background-color: rgb(0, 230, 230);
     box-shadow: 1px 1px 25px #0059ff;
     color: rgb(10, 10, 10);
-    width : 33%;
+    width : 65%;
     cursor: pointer;
 }
 

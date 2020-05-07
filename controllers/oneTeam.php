@@ -8,17 +8,39 @@
     include '../controllers/LayoutController.php';
 
     $teamsModel = new TeamsModel();
-    $team = $teamsModel->findById($_GET['id']);
     $usersModel = new UsersModel();
+    $team = $teamsModel->findById($_GET['id']);
     $playerList = $team[0]['teammates'];
+    $waitingList = $team[0]['waiting_list'];
     $list = [];
     $players = [];
+    $waitingPlayers = [];
+    $alreadyIn = false;
+    $alreadyRegister = false;
 
     if(!empty($playerList)) {
         $list = explode(' ', $playerList);
     }
     for($i = 0; $i < count($list);$i++) {
         $players[$i] = $usersModel->findById(intval($list[$i], 10));
+        if (isset($_SESSION['name'])) {
+            if ($players[$i][0]['name'] == $_SESSION['name']) {
+                $alreadyIn = true;
+                $alreadyRegister = true;
+            }
+        }
+    }
+
+    if(!empty($waitingList)) {
+        $list = explode(' ', $waitingList);
+        for ($i = 0;$i < count($list);$i++) {
+            $waitingPlayers[$i] = $usersModel->findById(intval($list[$i], 10));
+            if (isset($_SESSION['name'])) {
+                if ($waitingPlayers[$i][0]['name'] == $_SESSION['name']) {
+                    $alreadyIn = true;
+                }
+            }
+        }
     }
 
     $gamesModel = new GamesModel();

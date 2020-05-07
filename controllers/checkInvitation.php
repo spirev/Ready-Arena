@@ -12,7 +12,7 @@
     else {
         $requestPlayerInviteBox .= " ".$_GET['team'];
     }
-    $userModel->addTeamInvite($requestPlayerInviteBox, $_GET['id']);
+    $userModel->updateTeamInvite($requestPlayerInviteBox, $_GET['id']);
     header('Location: ../index.php');
 
 ?>

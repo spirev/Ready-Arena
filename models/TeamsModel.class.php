@@ -27,6 +27,10 @@
         public function addTeammates($teamId, $newTeammates) {
             $this->db->insert("UPDATE teams SET teammates = '$newTeammates' WHERE id = '$teamId'");
         }
+
+        public function updateWaitingPlayer($teamId, $newWaitingList) {
+            $this->db->insert("UPDATE teams SET waiting_list = '$newWaitingList' WHERE id = '$teamId'");
+        }
     }
 
 ?>

@@ -4,9 +4,29 @@
         <img src='<?= '../' ?>img\games_icone\<?= $game[0]['icone'] ?>'/>
     </div>
     <div id="mainContent">
-        <div><p><?= $team[0]['comment'] ?></p></div>
         <div>
-            <button value="apply">APPLY</button>
+            <p><?= $team[0]['comment'] ?></p>
+        </div>
+        <div>
+            <h2>Users waiting for validation</h2>
+            <ul>
+                <?php foreach($waitingPlayers as $waitingPlayer): ?>
+                    <div class="waitingPlayer">
+                        <a href="onePlayer.php?path=onePlayer&id=<?= $waitingPlayer[0]['id'] ?>"><li><?= $waitingPlayer[0]['name'] ?></li></a>
+                        <?php if (isset($_SESSION['name']) && $alreadyRegister === true): ?>
+                            <a href="oneTeamWaitingList.php?user=<?= $waitingPlayer[0]['id'] ?>&team=<?= $team[0]['id'] ?>&choice=yes"><i class="far fa-check-circle"></i></a>
+                            <a href="oneTeamWaitingList.php?user=<?= $waitingPlayer[0]['id'] ?>&team=<?= $team[0]['id'] ?>&choice=no"><i class="far fa-times-circle"></i></a>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div>
+            <?php if ($alreadyIn !== true && isset($_SESSION['name'])): ?>
+                <form action="applyTeam.php?id=<?= $_GET['id'] ?>" method="post">
+                    <button value="apply">APPLY</button>
+                </form>
+            <?php endif; ?>
             <div><h2>Captain : <?= $team[0]['captain'] ?></h2></div>
             <div><<h2>Teammates</span></h2></div>
             <ul>
