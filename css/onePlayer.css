@@ -28,7 +28,7 @@
     font-size: 1rem;
 }
 
-#onePlayerPhtml > div {
+#onePlayerPhtml > div{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -36,13 +36,13 @@
     margin: 2%;
 }
 
-#onePlayerPhtml div > div {
+#onePlayerPhtml div > div:not(.inviteTeam){
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgb(0, 255, 255);
 }
 
 #onePlayerPhtml #seekTeam {
-    width: 16%;
+    width: 20%;
     color: white;
     display: flex;
     flex-flow: column wrap;
@@ -63,7 +63,7 @@
 
 
 #onePlayerPhtml #upTourn {
-    width: 50%;
+    width: 45%;
 }
 
 #onePlayerPhtml .UpTournament {
@@ -81,6 +81,7 @@
     background-color: rgb(0, 255, 255);
     color: black;
     font-weight: bolder;
+    box-shadow: 1px 1px 10px rgb(0, 255, 255);
 }
 
 #onePlayerPhtml #teams {
@@ -126,8 +127,44 @@
     background-color: rgb(0, 255, 255);
     color: black;
     font-weight: bolder;
+    box-shadow: 1px 1px 10px rgb(0, 255, 255);
 }
 
 #onePlayerPhtml a {
     text-decoration: none;
+}
+
+#onePlayerPhtml .inviteTeam {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#onePlayerPhtml .inviteTeam i {
+    font-size: 1.5rem;
+}
+
+#onePlayerPhtml .inviteTeam a:hover {
+    box-shadow: 1px 1px 10px rgb(0, 255, 255);
+}
+
+#onePlayerPhtml .inviteTeam a:nth-child(2) {
+    color: rgb(0, 255, 255);
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#onePlayerPhtml .inviteTeam a:nth-child(3) {
+    color: rgb(0, 225, 255);
+}
+
+#onePlayerPhtml .inviteTeam a:nth-child(2):hover {
+    color: rgb(0, 255, 0);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+#onePlayerPhtml .inviteTeam a:nth-child(3):hover {
+    color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }

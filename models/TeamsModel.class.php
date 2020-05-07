@@ -23,6 +23,10 @@
             $this->db->insert("INSERT INTO teams (id, name, game, family, captain, look_for_player, comment, teammates)
                                 VALUES (NULL, '$name', '$game', NULL, '$captain', '$LFP', '$comment', '$teammates')");
         }
+
+        public function addTeammates($teamId, $newTeammates) {
+            $this->db->insert("UPDATE teams SET teammates = '$newTeammates' WHERE id = '$teamId'");
+        }
     }
 
 ?>

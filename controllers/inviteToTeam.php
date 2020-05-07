@@ -27,9 +27,6 @@ for ($i = 0;$i < count($seekTeams);$i++) {
     }
     else if (strpos($seekTeams[$i], " ".$connectedUser[0]['id']) !== false && strpos($seekTeams[$i], " ".$requestPlayer[0]['id']) == false) {
         if (strpos($requestPlayer[0]['team_invite'], $allTeams[$i]['id']) === false){
-            var_dump($requestPlayer[0]['team_invite']);
-            var_dump($allTeams[$i]['id']);
-            var_dump(strpos($requestPlayer[0]['team_invite'], $allTeams[$i]['id']));
             $teams[$i] = $teamsModel->findById($i + 1);
         }
     }

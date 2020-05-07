@@ -73,6 +73,15 @@
             }
     }
 
+    //take all invitations from teams to display them below looking for a team section on the left page
+    if (!empty($user[0]['team_invite'])) {
+        $invitations = explode(' ', $user[0]['team_invite']);
+        $invite_list = [];
+        for($i = 0;$i < count($invitations);$i++) {
+            $invite_list[$i] = $TeamsModel->findById($invitations[$i]);
+        }
+    }
+
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
         include ROOT_PATH.'/../views/layout.phtml';

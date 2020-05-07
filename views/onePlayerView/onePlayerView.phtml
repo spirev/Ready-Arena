@@ -8,6 +8,20 @@
             <?php foreach($games as $game): ?>
                 <img src="../img/games_icone/<?= $game[0]['icone'] ?>" alt="<?= $game[0]['name'] ?> icone">
             <?php endforeach; ?>
+            <?php if (isset($_SESSION['name'])): ?>
+                <?php if ($_SESSION['name'] == $user[0]['name']): ?>
+                    <?php if (isset($invite_list)): ?>
+                        <h3>Teams invitations</h3>
+                        <?php for($i = 0;$i < count($invite_list);$i++): ?>
+                            <div class="inviteTeam">
+                                <a href="oneTeam.php?path=oneTeam&id=<?= $invite_list[$i][0]['id'] ?>&game=<?= $invite_list[$i][0]['game'] ?>" class="team"><?= $invite_list[$i][0]['name'] ?></a>
+                                <a href="onePlayerInvitations.php?user=<?= $user[0]['id'] ?>&team=<?= $invite_list[$i][0]['id'] ?>&choice=yes"><i class="far fa-check-circle"></i></a>
+                                <a href="onePlayerInvitations.php?user=<?= $user[0]['id'] ?>&team=<?= $invite_list[$i][0]['id'] ?>&choice=no"><i class="far fa-times-circle"></i></a>
+                            </div>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                <?php endif;?>
+            <?php endif; ?>
         </div>
         <div id='upTourn'>
             <h3>Upcoming Tournaments</h3>
