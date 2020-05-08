@@ -4,8 +4,13 @@
         <img src='<?= '../' ?>img\games_icone\<?= $game[0]['icone'] ?>'/>
     </div>
     <div id="mainContent">
-        <div>
+        <div id="commentDiv">
             <p><?= $team[0]['comment'] ?></p>
+            <?php if (isset($_SESSION['name']) && $_SESSION['name'] == $team[0]['captain']): ?>
+                    <form action="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>&reloadComment" method="post">
+                        <input type="text" name="reloadComment" placeholder="new comment">
+                    </form>
+            <?php endif; ?>
         </div>
         <div>
             <h2>Users waiting for validation</h2>
@@ -31,7 +36,16 @@
             <div><<h2>Teammates</span></h2></div>
             <ul>
                 <?php foreach($players as $player): ?>
+                    <?php if (isset($_SESSION['name']) && $_SESSION['name'] === $team[0]['captain']): ?>
+                        <div class="adminTeammatesDiv">
+                    <?php endif; ?>
                     <a href="onePlayer.php?path=onePlayer&id=<?= $player[0]['id'] ?>"><li><div>#<?= $player[0]['rank'] ?></div> <div><?= $player[0]['name'] ?></div></li></a>
+                    <?php if (isset($_SESSION['name']) && $_SESSION['name'] === $team[0]['captain']): ?>
+                        <a href="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>&user=<?= $player[0]['id'] ?>&deletePlayer"><i class="far fa-times-circle"></i></a>
+                    <?php endif; ?>
+                    <?php if (isset($_SESSION['name']) && $_SESSION['name'] === $team[0]['captain']): ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
         </div>

@@ -18,6 +18,29 @@
     $alreadyIn = false;
     $alreadyRegister = false;
 
+    if (isset($_GET['deletePlayer'])) {
+        $oldTeammates = explode(' ', $playerList);
+        for ($i = 0;$i < count($oldTeammates);$i++) {
+            if ($oldTeammates[$i] == $_GET['user']) {
+                $y = $oldTeammates[0];
+                $oldTeammates[0] = $oldTeammates[$i];
+                $oldTeammates[$i] = $y;
+            }
+        }
+        array_shift($oldTeammates);
+        $newList = implode(' ', $oldTeammates);
+        if ($newList[0] == ' ') {
+            $newList = substr($newList, 1, strlen($newList));
+        }
+        $teamsModel->addTeammates($team[0]['id'], $newList);
+        header('Location: oneTeam.php?path=oneTeam&id='.$team[0]['id'].'&game='.$team[0]['game']);
+    }
+
+    if (isset($_GET['reloadComment'])) {
+        $teamsModel->updateComment($team[0]['id'], $_POST['reloadComment']);
+        header('Location: oneTeam.php?path=oneTeam&id='.$team[0]['id'].'&game='.$team[0]['game']);
+    }
+
     if(!empty($playerList)) {
         $list = explode(' ', $playerList);
     }

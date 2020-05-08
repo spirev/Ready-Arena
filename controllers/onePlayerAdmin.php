@@ -5,11 +5,9 @@
     include ROOT_PATH.'/../models/TeamsModel.class.php';
     include ROOT_PATH.'/../models/GamesModel.class.php';
 
-    //take a string and delete 
+    //take a string and delete user or LFT in it
     function deleteDBvalue($oldStartlist, $choice) {
         $oldList = explode(' ', $oldStartlist);
-        var_dump($oldList);
-        var_dump($_GET['game']);
         for ($i = 0;$i < count($oldList);$i++) {
             if ((isset($_GET['team']) && $oldList[$i] == $_GET['user'] && $choice == 'team') || (isset($_GET['game']) && $oldList[$i] == $_GET['game'] && $choice == 'LFT')) {
                 $y = $oldList[0];
