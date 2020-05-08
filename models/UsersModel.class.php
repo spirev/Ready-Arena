@@ -40,6 +40,10 @@
             return $this->db->getAll("SELECT MAX(id) FROM users");
         }
 
+        public function updateLFT($userId, $newLFT) {
+            $this->db->insert("UPDATE users SET look_for_team = '$newLFT' WHERE id = '$userId'");
+        }
+
         public function updateTeamInvite($newTeamInvite, $id) {
             $this->db->insert("UPDATE users SET team_invite = '$newTeamInvite' WHERE id = '$id'");
         }

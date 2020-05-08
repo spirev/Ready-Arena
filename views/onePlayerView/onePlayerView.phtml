@@ -7,6 +7,9 @@
             <h3>Looking for a team on</h3>
             <?php foreach($games as $game): ?>
                 <img src="../img/games_icone/<?= $game[0]['icone'] ?>" alt="<?= $game[0]['name'] ?> icone">
+                <?php if (isset($_SESSION['id']) && $_SESSION['id'] === $_GET['id']): ?>
+                    <a href="onePlayerAdmin.php?user=<?= $_GET['id'] ?>&game=<?= $game[0]['id'] ?>&choice=LFT"><i class="far fa-times-circle"></i></a>
+                <?php endif; ?>
             <?php endforeach; ?>
             <?php if (isset($_SESSION['name'])): ?>
                 <?php if ($_SESSION['name'] == $user[0]['name']): ?>
@@ -31,13 +34,18 @@
         </div>
         <div id='teams'>
             <?php if (isset($_SESSION['id']) && $_SESSION['id'] !== $_GET['id']): ?>
-            <form action="inviteToTeam.php?path=inviteToTeam&id=<?= $_GET['id'] ?>" method="post">
-                <button>Send invitation</button>
-            </form>
+                <form action="inviteToTeam.php?path=inviteToTeam&id=<?= $_GET['id'] ?>" method="post">
+                    <button>Send invitation</button>
+                </form>
             <?php endif; ?>
             <h3><?= $user[0]['name'] ?>'s teams</h3>
             <?php foreach($teams as $team): ?>
-                <a href="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>"><div class='team'><?= $team[0]['name'] ?></br><?= $team[0]['game'] ?></div></a>
+                <div class="myTeam">
+                    <a href="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>"><div class='team'><?= $team[0]['name'] ?></br><?= $team[0]['game'] ?></div></a>
+                    <?php if (isset($_SESSION['id']) && $_SESSION['id'] === $_GET['id']): ?>
+                        <a href="onePlayerAdmin.php?user=<?= $_GET['id'] ?>&team=<?= $team[0]['id'] ?>&choice=team"><i class="far fa-times-circle"></i></a>
+                    <?php endif; ?>
+                </div>
             <?php endforeach; ?>
         </div>
     </div>
