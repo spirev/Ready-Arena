@@ -59,7 +59,7 @@
         $seekTeams[$i] = $allTeams[$i]['teammates'];
     }
     for ($i = 0;$i < count($seekTeams);$i++) {
-            if (strpos(substr($seekTeams[$i], 0, ($userIdLength + 1)), $_GET['id']." ") !== false) {
+            if (strpos(substr($seekTeams[$i], 0, ($userIdLength + 1)), $_GET['id']) !== false) {
                 $teams[$i] = $TeamsModel->findById($i + 1);
             }
             else if (strpos($seekTeams[$i], " ".$_GET['id']." ") !== false) {

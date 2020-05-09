@@ -1,0 +1,54 @@
+#functionTeamPhtml {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#functionTeamPhtml nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 800px;
+    margin: auto;
+}
+
+#functionTeamPhtml button {
+    width: 200px;
+    height: 80px;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 1px 1px 25px #000dff;
+    border : 1px solid blue;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+#functionTeamPhtml button:hover {
+    background-color: rgb(0, 230, 230);
+    box-shadow: 1px 1px 25px #0059ff;
+    color: black;
+    width : 250px;
+    outline: none;
+    cursor: pointer;
+}
+
+#functionTeamPhtml .fa-arrow-alt-circle-left {
+    font-size: 2rem;
+    color: orangered;
+    transition: all 0.2s;
+    float: left;
+    position: relative;
+    top: 150px;
+    margin-right: 40%;
+    margin-bottom: -4%;
+}
+
+#functionTeamPhtml .fa-arrow-alt-circle-left:hover {
+    color: yellow;
+    cursor: pointer;
+}
