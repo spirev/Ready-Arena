@@ -1,4 +1,16 @@
 const $asideMenu = $('aside nav');
+var state = 0;
+const sliders = [
+    {
+        src: '/finalProject/img/slider/scene1.jpeg',
+    },
+    {
+        src: '/finalProject/img/slider/fond3.jpg',
+    },
+    {
+        src: '/finalProject/img/slider/leagueOL.jpeg',
+    }
+]
 
 $(document).ready(function () {
 
@@ -32,4 +44,15 @@ $(document).ready(function () {
             window.location.replace(`LadderController.php?path=Ladder&order=rank`);
         }
     })
+
+    setInterval(function() {
+        if (state == sliders.length - 1) {
+            state = 0;
+        }
+        else {
+            state++;
+        }
+        $('body').css(`background-image`,`url('${sliders[state].src}')`);
+    }, 6000);
+
 })

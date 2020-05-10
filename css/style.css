@@ -3,11 +3,11 @@ body {
     font-size: 62.5%;
     background-color: #12122d;
     font-family: "Open Sans", Arial;
-    background-image: url('../img/slider/leagueOL.jpeg');
+    background-image: url('../img/slider/scene1.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 100%;/*1632px 1224px*/
+    background-size: 100%;
     overflow-x: hidden;
 }
 

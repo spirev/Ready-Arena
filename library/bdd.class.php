@@ -1,5 +1,4 @@
 <?php
-    /* try to connect to DB */
 
 class Database{
 
@@ -20,9 +19,6 @@ class Database{
     }
 
     public function getAll(string $sql) {
-        /*$query = $this->pdo->prepare($sql);
-        $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);*/
         $query = $this->pdo->query($sql);
         return $query->fetchAll();
     }
@@ -31,19 +27,5 @@ class Database{
         $query = $this->pdo->query($sql);
     }
 }
-/*try{
-    $user = 'root';
-    $password = '';
-    $dbname = 'readyarena';
-    $pdo = new PDO("mysql:host=localhost;dbname=$dbname;charset=utf8",
-        $user,
-        $password,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]
-    ); 
-}catch(PDOException $e){
-    echo "Hello , votre prof qui vous manque vous dit qu'il y a eu un sushi : ". $e->getMessage()."<br> Statut code : ".$e->getCode();
-}*/
+
 ?>
