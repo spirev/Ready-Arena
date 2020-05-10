@@ -3,7 +3,6 @@
     include ROOT_PATH.'/../library/bdd.class.php';
     include ROOT_PATH.'/../models/UsersModel.class.php';
 
-
     if(!empty($_POST['Email']) && !empty($_POST['Password'])) {
         $users = new UsersModel;
         $tryUser = $users->loginVerify($_POST['Email'], $_POST['Password']);

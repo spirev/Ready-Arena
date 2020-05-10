@@ -14,7 +14,7 @@ class Navigation {
 lilProg = new Navigation();
 
     //listen buttons creat/find/team/family from homeNav
-    // only findFamily doesn't need to select a specifiic game for further activities (else)
+    // only findFamily doesn't need to select a specific game for further activities (else)
     $('body').on('click', '.homeContentDiv article button', function(){
         let quickBut = this.value;
         switch (quickBut){

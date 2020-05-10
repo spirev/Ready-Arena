@@ -17,7 +17,6 @@ var timer;
 function SetAjaxContent(path) {
     timer = setInterval(function () {
         if (path == 'homeContent') {
-            console.log('homecontent');
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
             $.get('views/ajaxHTML/explain/'+ path + 'explain.phtml', setExplain);
         }

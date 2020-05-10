@@ -4,14 +4,23 @@
     include ROOT_PATH.'/../models/TeamsModel.class.php';
     include '../controllers/LayoutController.php';
     
+    //check if a user is connected before seting the team
+    if (!isset($_SESSION['name'])) {
+        header('Location: ../index.php?flash=notConnected');
+        exit;
+    }
+
     $teamModel = new TeamsModel();
-    
+    $lastTeam = $teamModel->maxID();
+    $lastId = intval($lastTeam[0]['MAX(id)'], 10);
+    $lastId = $lastId + 1;
+
     if (empty($_POST['LFP'])) {
         $_POST['LFP'] = 0;
     }
     
     if (!empty($_POST['name']) && !empty($_POST['comment'])) {
-        $teamModel->addTeam($_POST['name'], $_GET['game'], $_SESSION['name'], $_POST['LFP'], $_POST['comment'], $_SESSION['id']);
+        $teamModel->addTeam($lastId, $_POST['name'], $_GET['game'], $_SESSION['name'], $_POST['LFP'], $_POST['comment'], $_SESSION['id']);
         header('Location: /finalProject/index.php');
         exit;
     }
