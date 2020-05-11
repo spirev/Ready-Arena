@@ -55,4 +55,8 @@ $(document).ready(function () {
         $('body').css(`background-image`,`url('${sliders[state].src}')`);
     }, 6000);
 
+    $('#onePlayerPhtml #seekTeam i').on('click', function() {
+        $('#onePlayerPhtml #seekTeam section').toggleClass('hideAddLFT');
+        $('#onePlayerPhtml #seekTeam section').toggleClass('showAddLFT');
+    })
 })

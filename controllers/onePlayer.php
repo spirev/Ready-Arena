@@ -16,19 +16,21 @@
     $allTournaments = $TournamentsModel->findAll();
     $allTeams = $TeamsModel->findAll();
     $userIdLength = strlen($_GET['id']);
-
 // take "look_for_team" string in page user and explode it into an array for phmtl use
     $seekOnGame = $user[0]['look_for_team'];
     $list = [];
     $games = [];
     $i = 0; /* REMOVE ? */
 
+// make list of LFT games
     if(!empty($seekOnGame)) {
         $list = explode(' ', $seekOnGame);
     }
     for($i = 0; $i < count($list);$i++) {
         $games[$i] = $gameModel->findById(intval($list[$i], 10));
     }
+// make a list of unset LFT games for '#seekTeam section' selection
+$notLFTGames = $gameModel->findAll();
 
 // take playerList from all tournaments and look for page user for phtml use (not smart / inner join expected)
     $tournaments = [];

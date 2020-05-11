@@ -10,9 +10,9 @@
     $lastId = $lastId + 1;
 
     // if one field is not fill redirect to signup page
-    if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['confirmPWD'])) {
+    if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmPWD'])) {
         header('Location: SignUpController.php?path=SignUp&error=empty');
-        //exit;
+        exit;
     }
 
     // check if name field contain an unused name and has two character minimum

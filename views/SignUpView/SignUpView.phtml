@@ -1,4 +1,21 @@
 <div id='signupPhtml'>
+    <?php if (isset($_GET['error'])): ?>
+        <?php if ($_GET['error'] == 'empty'): ?>
+            <h1>EMPTY FIELD</h1>
+        <?php endif; ?>
+        <?php if ($_GET['error'] == 'name'): ?>
+            <h1>INCORRECT NAME FIELD</h1>
+        <?php endif; ?>
+        <?php if ($_GET['error'] == 'email'): ?>
+            <h1>INCORRECT EMAIL FIELD</h1>
+        <?php endif; ?>
+        <?php if ($_GET['error'] == 'PWD'): ?>
+            <h1>INCORRECT PASSWORD FIELD</h1>
+        <?php endif; ?>
+        <?php if ($_GET['error'] == 'confirmPWD'): ?>
+            <h1>INCORRECT CONFIRM PASSWORD FIELD</h1>
+        <?php endif; ?>
+    <?php endif; ?>
     <form action="addUser.php" method="post">
         <ul>
             <li>

@@ -37,7 +37,7 @@
         $userModel = new UsersModel();
         $connectedUser = $userModel->findById($_GET['user']);
         $playerLFT = $connectedUser[0]['look_for_team'];
-        $newPlayerLFT = deleteDBvalue($playerLFT, '');
+        $newPlayerLFT = deleteDBvalue($playerLFT, 'LFT');
         $userModel->updateLFT($_GET['user'], $newPlayerLFT, $_GET['choice']);
     }
     header('Location: onePlayer.php?path=onePlayer&id='.$_GET['user']);

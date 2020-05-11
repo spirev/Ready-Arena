@@ -5,6 +5,11 @@
     padding-top: 7%;
 }
 
+#signupPhtml h1 {
+    color: red;
+    font-size: 1rem;
+}
+
 #signupPhtml p {
     color: rgb(0, 255, 255);
     font-size: 2rem;

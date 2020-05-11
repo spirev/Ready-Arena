@@ -18,7 +18,7 @@
     else {
         $waitingList .= " ".$currentUser[0]['id'];
     }
-    $teamModel->addWaitingPlayer($currentTeam[0]['id'], $waitingList);
+    $teamModel->updateWaitingPlayer($currentTeam[0]['id'], $waitingList);
     header('Location: oneTeam.php?path=oneTeam&id='.$currentTeam[0]['id'].'&game='.$currentTeam[0]['game']);
 
 ?>
