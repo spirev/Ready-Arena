@@ -13,6 +13,6 @@
         $requestPlayerInviteBox .= " ".$_GET['team'];
     }
     $userModel->updateTeamInvite($requestPlayerInviteBox, $_GET['id']);
-    header('Location: ../index.php');
+    header('Location: ../index.php?flash=sendInvite');
 
 ?>

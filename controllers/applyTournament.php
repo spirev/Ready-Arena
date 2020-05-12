@@ -14,6 +14,6 @@
 
     $playerList .= " ".$currentUser[0]['id'];
     $tournamentModel->updatePlayerList($playerList, $_GET['id']);
-    header('Location: ../index.php');
+    header('Location: oneTournament.php?path=oneTournament&id='.$currentTournament[0]['id']."&flash=apply");
 
 ?>

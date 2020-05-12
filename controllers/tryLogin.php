@@ -10,7 +10,7 @@
             session_start();
             $_SESSION['name'] = $tryUser[0]['name'];
             $_SESSION['id'] = $tryUser[0]['id'];
-            header('Location: http://localhost/finalProject/controllers/onePlayer?path=onePlayer&id='.$tryUser[0]['id']);
+            header('Location: http://localhost/finalProject/controllers/onePlayer?path=onePlayer&id='.$tryUser[0]['id'].'&flash=login');
             exit;
         }
         else {

@@ -59,4 +59,8 @@ $(document).ready(function () {
         $('#onePlayerPhtml #seekTeam section').toggleClass('hideAddLFT');
         $('#onePlayerPhtml #seekTeam section').toggleClass('showAddLFT');
     })
+
+    $('#flash').on('click', function() {
+        $('#flash').css('display', 'none');
+    })
 })

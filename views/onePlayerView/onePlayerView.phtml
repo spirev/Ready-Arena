@@ -1,7 +1,9 @@
 <div id='onePlayerPhtml'>
+    <?php if (isset($_GET['flash']) && $_GET['flash'] == 'login'): ?>
+        <div id='flash'>You have been logged successfully !</div>
+    <?php endif; ?>
     <h1><?= $user[0]['name'] ?></h1>
     <h2>#<?= $user[0]['rank'] ?></h2>
-
     <div>
         <div id="seekTeam">
             <section class='hideAddLFT'>

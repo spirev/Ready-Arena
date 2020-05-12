@@ -1,4 +1,7 @@
 <div id="oneTournamentPhtml">
+    <?php if(isset($_GET['flash']) && $_GET['flash'] == 'apply'): ?>
+        <div id='flash'>You have been signed-up for this tournament !</div>
+    <?php endif; ?>
     <h1><?= $tournament[0]['name'] ?></h1>
     <div id="info">
         <h2>Average skill : <?= $tournament[0]['averageSkill'] ?></h2>

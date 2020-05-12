@@ -1,4 +1,16 @@
 <section id="homeNav">
+    <?php if(isset($_GET['flash']) && $_GET['flash'] == 'signUp'): ?>
+        <div id='flash'>Your account has been created successfully !</div>
+    <?php endif; ?>
+    <?php if(isset($_GET['flash']) && $_GET['flash'] == 'tournament'): ?>
+        <div id='flash'>Your tournament has been created successfully !</div>
+    <?php endif; ?>
+    <?php if(isset($_GET['flash']) && $_GET['flash'] == 'team'): ?>
+        <div id='flash'>Your team has been created successfully !</div>
+    <?php endif; ?>
+    <?php if(isset($_GET['flash']) && $_GET['flash'] == 'sendInvite'): ?>
+        <div id='flash'>Your invitation has been sent successfully !</div>
+    <?php endif; ?>
     <div id="homeContentNav">
         <div class="homeContentDiv">
             <article>

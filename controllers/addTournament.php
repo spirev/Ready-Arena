@@ -26,7 +26,7 @@
     if (!empty($_GET['name']) && !empty($_GET['startDate'])) {
         $tournamentModel->addTournament($lastId, $_GET['name'], $_COOKIE['game'], $_GET['maxParticipants'], $_GET['soloTeam'], $_GET['averageSkill'], $_GET['startDate'], $_SESSION['id']);
         setcookie('game', null, -1, '/'); // doesn't work...
-        header('Location: /finalProject/index.php');
+        header('Location: /finalProject/index.php?flash=tournament');
         exit;
     }
     else {

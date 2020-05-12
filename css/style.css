@@ -122,6 +122,21 @@ p {
     font-family: "Open Sans";
 }
 
+#flash {
+    width: 350px;
+    background-color: rgb(0, 255, 255);
+    color: black;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: 0 auto;
+    padding: 15px 10px 15px 10px;
+    text-align: center;
+    border-radius: 14px;
+}
+
+#flash:hover {
+    cursor: pointer;
+}
 
 #arrowMenu { /* le bouton menu */
     position: fixed;
