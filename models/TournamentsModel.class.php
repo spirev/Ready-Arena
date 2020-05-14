@@ -32,5 +32,9 @@
         public function updatePlayerList($newPlayerList, $id) {
             $this->db->insert("UPDATE tournaments SET playerList = '$newPlayerList' WHERE id = '$id'");
         }
+
+        public function updateRounds($tournamentId, $round, $newRoundList) {
+            $this->db->insert("UPDATE tournaments SET $round = '$newRoundList' WHERE id = '$tournamentId'");
+        }
     }
 ?>

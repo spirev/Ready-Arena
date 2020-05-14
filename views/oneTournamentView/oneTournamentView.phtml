@@ -1,20 +1,27 @@
 <div id="oneTournamentPhtml">
     <?php if(isset($_GET['flash']) && $_GET['flash'] == 'apply'): ?>
-        <div id='flash'>You have been signed-up for this tournament !</div>
+        <div id='flash'>You have been registered for this tournament !</div>
     <?php endif; ?>
     <h1><?= $tournament[0]['name'] ?></h1>
     <div id="info">
         <h2>Average skill : <?= $tournament[0]['averageSkill'] ?></h2>
-        <h2><?= $tournament[0]['timer'] ?></h2>
+        <h2><?= $newTimer ?></h2>
     </div>
     <div id="mainContent">
         <article id="bracket">
             <ul>
             <?php foreach($players as $player): ?>
-                <a href="onePlayer.php?path=onePlayer&id=<?= $player[0]['id'] ?>"><li><?= $player[0]['name'] ?></li></a>
+                <div>
+                    <a href="onePlayer.php?path=onePlayer&id=<?= $player[0]['id'] ?>"><li><?= $player[0]['name'] ?></li></a>
+                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $player[0]['name'] && !isset($lastRoundLoggedUser) && $isTournamentReady == true): ?>
+                        <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&win" class="winIcone"><i class="far fa-check-circle"></i></a>
+                    <?php endif; ?>
+                </div>
             <?php endforeach; ?>
             <?php for($i = 0;$i < $diffMaxPlayers;$i++): ?>
-                <a href="#"><li style="color: red">EMPTY</li></a>
+                <div>
+                    <a href="#"><li style="color: red">EMPTY</li></a>
+                </div>
             <?php endfor; ?>
             </ul>
             <?php for($i = 1;$i < $nbrRounds + 1;$i++): ?>
@@ -22,20 +29,34 @@
                     <?php if($i > 1): ?>
                         <?php for($y = 0;$y < $maxPlayers / ($i * $i);$y++): ?>
                             <?php if(!empty($playerRoundList[$i - 1][$y])): ?>
-                                <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
+                                <div>
+                                    <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
+                                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1): ?>
+                                        <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&win" class="winIcone"><i class="far fa-check-circle"></i></a>
+                                    <?php endif; ?>
+                                </div>
                             <?php endif; ?>
                             <?php if(!isset($playerRoundList[$i - 1][$y]) || empty($playerRoundList[$i - 1][$y])): ?>
-                                <a href="#"><li style="color: grey">NOT YET</li></a>
+                                <div>
+                                    <a href="#"><li style="color: grey">NOT YET</li></a>
+                                </div>
                             <?php endif; ?>
                         <?php endfor; ?>
                     <?php endif; ?>
                     <?php if($i == 1): ?>
                         <?php for($y = 0;$y < $maxPlayers / 2;$y++): ?>
                             <?php if(!empty($playerRoundList[$i - 1][$y])): ?>
-                                <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
-                            <?php endif; ?>
+                                <div>
+                                    <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
+                                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1): ?>
+                                        <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&win" class="winIcone"><i class="far fa-check-circle"></i></a>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
                             <?php if(!isset($playerRoundList[$i - 1][$y]) || empty($playerRoundList[$i - 1][$y])): ?>
-                                <a href="#"><li style="color: grey">NOT YET</li></a>
+                                <div>
+                                    <a href="#"><li style="color: grey">NOT YET</li></a>
+                                </div>
                             <?php endif; ?>
                         <?php endfor; ?>
                     <?php endif; ?>

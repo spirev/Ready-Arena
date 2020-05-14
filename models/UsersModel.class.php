@@ -36,6 +36,14 @@
             return $this->db->getAll("SELECT * FROM users WHERE ladder_point = 0");
         }
 
+        public function updateLadderPoints($userID, $ladderPointsWin) {
+            $this->db->insert("UPDATE users SET ladder_point = $ladderPointsWin WHERE id = $userID");
+        }
+
+        public function updateRank($userId, $newRank) {
+            $this->db->insert("UPDATE users SET rank = '$newRank' WHERE id = $userId");
+        }
+
         public function maxId() {
             return $this->db->getAll("SELECT MAX(id) FROM users");
         }
