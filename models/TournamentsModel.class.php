@@ -36,5 +36,9 @@
         public function updateRounds($tournamentId, $round, $newRoundList) {
             $this->db->insert("UPDATE tournaments SET $round = '$newRoundList' WHERE id = '$tournamentId'");
         }
+
+        public function TimerOff($tournamentId) {
+            $this->db->insert("UPDATE tournaments SET timer = '3000-01-01' WHERE id = $tournamentId");
+        }
     }
 ?>

@@ -31,7 +31,7 @@
                             <?php if(!empty($playerRoundList[$i - 1][$y])): ?>
                                 <div>
                                     <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
-                                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1): ?>
+                                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1 && $isTournamentReady == true): ?>
                                         <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&win" class="winIcone"><i class="far fa-check-circle"></i></a>
                                     <?php endif; ?>
                                 </div>
@@ -48,7 +48,7 @@
                             <?php if(!empty($playerRoundList[$i - 1][$y])): ?>
                                 <div>
                                     <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
-                                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1): ?>
+                                    <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1 && $isTournamentReady == true): ?>
                                         <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&win" class="winIcone"><i class="far fa-check-circle"></i></a>
                                     <?php endif; ?>
                                 </div>
