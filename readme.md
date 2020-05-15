@@ -9,5 +9,12 @@ l'éxistence d'un "faux" profil (falseUserRank0) est nécessaire au bon déroule
 
 Dans de nombreux cas ( liste des participants aux tournois, déroulement des rounds, liste des équipiers dans une équipe ... ) la non-utilisation de la notion d'"INNER JOIN" à été une erreur. Cependant il m'aurait été trop fastidieux de revenir sur mon modèle de développement après en avoir pris conscience.
 
+<<<<<<< HEAD
 profil test : - email : testUser01@test.test
               - mot de passe : testUSer01
+=======
+il est important de noter que pour effectuer les tests du déroulement d'un tournoi la date de ce dernier doit être calibrée sur une date anterieur à celle du jour de connexion.
+
+profil test : - email : MegaTornade@gmail.com
+              - mot de passe : popoMOMO99
+>>>>>>> 8e88889fd80ced7eb2702ab454db90e092cbf8e9
