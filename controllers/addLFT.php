@@ -12,7 +12,12 @@
         header('Location: onePlayer.php?path=onePlayer&id='.$_GET['user']);
     }
     else {
-        $newLFT = $LFTuser." ".$_GET['game'];
+        if($explodeLFTUser[0] == '') {
+            $newLFT = $LFTuser.$_GET['game'];
+        }
+        else {
+            $newLFT = $LFTuser." ".$_GET['game'];
+        }
         $userModel->updateLFT($user[0]['id'], $newLFT);
         header('Location: onePlayer.php?path=onePlayer&id='.$_GET['user']);
     }

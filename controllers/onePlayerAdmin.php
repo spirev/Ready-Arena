@@ -8,6 +8,7 @@
     //take a string and delete user or LFT in it
     function deleteDBvalue($oldStartlist, $choice) {
         $oldList = explode(' ', $oldStartlist);
+        var_dump($oldList);
         for ($i = 0;$i < count($oldList);$i++) {
             if ((isset($_GET['team']) && $oldList[$i] == $_GET['user'] && $choice == 'team') || (isset($_GET['game']) && $oldList[$i] == $_GET['game'] && $choice == 'LFT')) {
                 $y = $oldList[0];
@@ -20,7 +21,6 @@
         if ($newList[0] == ' ') {
             $newList = substr($newList, 1, strlen($newList));
         }
-        var_dump($newList);
         return $newList;
     }
 

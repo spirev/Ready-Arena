@@ -226,11 +226,9 @@
         //test if tournament is ready to be launch ( timer - actual date )
         if (intval(substr($tournament[0]['timer'], 0, 4), 10) - date("Y") <= 0 && intval(substr($tournament[0]['timer'], 5, 2), 10) - date("m") <= 0 && intval(substr($tournament[0]['timer'], 8, 2), 10) - date("d") <= 0) {
             $isTournamentReady = true;
-            var_dump('OK');
         }
         else {
             $isTournamentReady = false;
-            var_dump('NONONONON');
         }
         // if round2 (final) has been played then set timer to unreachable limit (year 3000)
         if (isset($_GET['timerOff'])) {
