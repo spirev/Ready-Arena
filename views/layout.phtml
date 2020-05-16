@@ -6,6 +6,7 @@
         <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/finalProject/css/style.css" type="text/css" />
         <link rel="stylesheet" href="/finalProject/css/<?= $_GET['path'] ?>.css" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
         <script src="https://kit.fontawesome.com/f6ab443034.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -45,7 +46,7 @@
                 </div>
             <?php endif; ?>
                 <?php if(!isset($_SESSION['name'])): ?>
-                <div>
+                <div id='connectDiv'>
                     <a href="/finalProject/controllers/LoginController.php?path=Login" id="login">Login</a>
                     <a href="/finalProject/controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
                 </div>

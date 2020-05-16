@@ -235,3 +235,77 @@ aside nav ul a li:hover {
     color: orangered;
     transition: all 0.2s;
 }
+
+@media screen and (max-width: 425px) {
+    header {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header img {
+        width: 366px;
+        height: 116px;
+    }
+
+    header a:not(#signUp):not(#login) {
+        width: 150px;
+        height: 60px;
+        font-size: 2rem;
+        margin: 0% 23% 5% 0%;
+    }
+
+    header #searchBar {
+        margin: 10% 5% 0% 0% !important;
+    }
+
+    header #searchBar i {
+        font-size: 1.9rem;
+    }
+
+    header input {
+        width: 500px;
+        height: 55px;
+        font-size: 1.7rem;
+    }
+    
+    header div {
+        margin: 10% 0% 10% 0%;
+    }
+    
+    header #connectDiv {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 55%;
+    }
+
+    header div a {
+        width: 150px;
+        height: 60px;
+        font-size: 2rem !important;
+        margin-right: 0px !important;
+        text-align: center;
+        padding-top: 5% !important;
+    }
+}
+
+@media screen and (min-width: 425px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 894px) {
+    header {
+        width: 895px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
