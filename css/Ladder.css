@@ -63,6 +63,18 @@
     padding: 10px 100px;
 }
 
+@media screen and (max-width: 768px) {
+    #ladderPhtml table tbody tr td {
+        padding: 20px 90px;
+    }
+
+    #ladderPhtml button {
+        width: 145px;
+        height: 58px;
+        font-size: 1.5rem;
+    }
+}
+
 /* fot mobile */
 @media screen and (max-width: 425px) {
     #ladderPhtml button {
@@ -81,18 +93,9 @@
     }
 
     #ladderPhtml table tbody tr td {
-        padding: 25px 82px;
-        font-size: 2rem;
+        padding: 25px 79px;
+        font-size: 2.17rem;
     }
-}
-/* for tablet */
-@media screen and (min-width: 425px){
-
-}
-
-/* for laptop < L */
-@media screen and (min-width: 768px){
-
 }
 
 /* special for my super bugy css */
@@ -101,10 +104,3 @@
         width: 895px;
     }
 }
-
-/* for laptop L */
-@media screen and (min-width: 1024px) {
-
-}
-
-/*1025  -->   768   --->   425*/

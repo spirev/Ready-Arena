@@ -76,7 +76,7 @@ header div { /* flex parent */
 
 header div a:not(#headerProfil) { /* login & sign up buttons*/
     margin-right: 30px;
-    padding: 10px 24px;
+    padding: 2% 7% 4% 6%;
     text-decoration: none;
     color: white;
     background: linear-gradient(#272158, #1b72c4);
@@ -135,6 +135,22 @@ p {
 }
 
 #flash:hover {
+    cursor: pointer;
+}
+
+#redFlash {
+    width: 350px;
+    background-color: rgb(255, 0, 0);
+    color: black;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: 0 auto;
+    padding: 15px 10px 15px 10px;
+    text-align: center;
+    border-radius: 14px;
+}
+
+#redFlash:hover {
     cursor: pointer;
 }
 
@@ -253,11 +269,11 @@ aside nav ul a li:hover {
         width: 150px;
         height: 60px;
         font-size: 2rem;
-        margin: 0% 23% 5% 0%;
+        margin: 0% 14% 5% 0%;
     }
 
     header #searchBar {
-        margin: 10% 5% 0% 0% !important;
+        margin: 10% 0% 0% 0% !important;
     }
 
     header #searchBar i {
@@ -290,11 +306,31 @@ aside nav ul a li:hover {
         text-align: center;
         padding-top: 5% !important;
     }
+
+    header #divIconeProfil {
+        width: 62%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: baseline;
+    }
+
+    header #divIconeProfil h4 {
+        font-size: 2.6rem;
+    }
 }
 
-@media screen and (min-width: 425px) {
-
+/*@media screen and (max-width: 425px) {
+    #supportPhtml p {
+        font-size: 1.8rem !important;
+        margin: 0%;
+    }
 }
+
+@media screen and (min-width: 580px) {
+    #supportPhtml p {
+        font-size: 2rem;
+    }
+}*/
 
 @media screen and (min-width: 768px) {
 
@@ -302,6 +338,9 @@ aside nav ul a li:hover {
 
 @media screen and (max-width: 894px) {
     header {
+        width: 895px;
+    }
+    main {
         width: 895px;
     }
 }

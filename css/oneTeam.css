@@ -10,6 +10,7 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4%;
 }
 
 #oneTeamPhtml h1 {
@@ -29,7 +30,7 @@
 
 #oneTeamPhtml img {
     max-width: 130px;
-    max-height: 110px;
+    max-height: 120px;
     width: 7%;
     height: 10%;
     border-radius: 20px;
@@ -81,11 +82,15 @@
 }
 
 #mainContent > div:nth-child(2) {
-    margin-right: 4%;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    margin-left: 6%;
+}
+
+#mainContent > div:nth-child(2) ul {
+    margin-right: 9%;
 }
 
 #mainContent > div:nth-child(2) h2{

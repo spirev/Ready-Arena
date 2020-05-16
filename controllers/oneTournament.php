@@ -110,7 +110,7 @@
                         updateNextRound($tournamentsModel, $tournament, 'round8', $currentUser);
                         break;
                     case 1:
-                        updateNextRound($tournamentsModel, $tournament, 'roun4', $currentUser);
+                        updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
                         break;
                     case 2:
                         updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);

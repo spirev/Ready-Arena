@@ -63,4 +63,7 @@ $(document).ready(function () {
     $('#flash').on('click', function() {
         $('#flash').css('display', 'none');
     })
+    $('#redFlash').on('click', function() {
+        $('#redFlash').css('display', 'none');
+    })
 })

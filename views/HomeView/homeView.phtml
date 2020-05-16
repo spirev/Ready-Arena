@@ -11,6 +11,12 @@
     <?php if(isset($_GET['flash']) && $_GET['flash'] == 'sendInvite'): ?>
         <div id='flash'>Your invitation has been sent successfully !</div>
     <?php endif; ?>
+    <?php if (isset($_GET['flash']) && $_GET['flash'] == 'notConnected'): ?>
+        <div id='redFlash'>You have to be connected to acces to this functionality</div>
+    <?php endif; ?>
+    <?php if (isset($_GET['flash']) && $_GET['flash'] == 'incorrectForm'): ?>
+        <div id='redFlash'>Incorrect informations in form</div>
+    <?php endif; ?>
     <div id="homeContentNav">
         <div class="homeContentDiv">
             <article>

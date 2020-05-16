@@ -13,7 +13,7 @@
             </section>
             <div id='lftTitle'>
                 <h3>Looking for a team on</h3>
-                <?php if ($_SESSION['name'] == $user[0]['name']): ?>
+                <?php if (isset($_SESSION['name']) && $_SESSION['name'] == $user[0]['name']): ?>
                     <i class="far fa-plus-square"></i>
                 <?php endif; ?>
             </div>
