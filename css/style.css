@@ -76,7 +76,8 @@ header div { /* flex parent */
 
 header div a:not(#headerProfil) { /* login & sign up buttons*/
     margin-right: 30px;
-    padding: 2% 7% 4% 6%;
+    padding: 10px 24px;
+    /*padding: 2% 7% 4% 6%;*/
     text-decoration: none;
     color: white;
     background: linear-gradient(#272158, #1b72c4);
@@ -269,11 +270,11 @@ aside nav ul a li:hover {
         width: 150px;
         height: 60px;
         font-size: 2rem;
-        margin: 0% 14% 5% 0%;
+        margin: 0% 22% 5% 0%;
     }
 
     header #searchBar {
-        margin: 10% 0% 0% 0% !important;
+        margin: 10% 3% 0% 0% !important;
     }
 
     header #searchBar i {
@@ -319,29 +320,21 @@ aside nav ul a li:hover {
     }
 }
 
-/*@media screen and (max-width: 425px) {
-    #supportPhtml p {
-        font-size: 1.8rem !important;
-        margin: 0%;
-    }
-}
-
-@media screen and (min-width: 580px) {
-    #supportPhtml p {
-        font-size: 2rem;
-    }
-}*/
-
 @media screen and (min-width: 768px) {
 
 }
 
-@media screen and (max-width: 894px) {
+@media screen and (max-width: 1112px) {
     header {
-        width: 895px;
+        width: 1112px;
     }
+
+    #divIconeProfil #headerProfil{
+        margin-right: -14%;
+    }
+
     main {
-        width: 895px;
+        width: 1112px;
     }
 }
 

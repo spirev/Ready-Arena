@@ -162,3 +162,97 @@
 #createExplain i {
     font-size: 1.9rem !important;
 }
+
+/* 550px beggin to feel too small (between tablet and mobile) */
+@media screen and (max-width: 550px) {
+    #homeNav {
+        height: 1700px !important;
+    }
+
+    #createTournamentPhtml {
+        padding-top: 10%;
+    }
+    
+    #createTournamentPhtml h2 {
+        font-size: 1.7rem;
+    }
+
+    #createTournamentPhtml #returnArrow {
+        margin-bottom: 5%;
+    }
+
+    #createTournamentPhtml #date label {
+        font-size: 1.7rem;
+    }
+
+    #createTournamentPhtml #date input {
+        font-size: 2rem;
+    }
+
+    #createTournamentPhtml label {
+        font-size: 1.6rem;
+    }
+
+    #createTournamentPhtml input:not(#solo):not(#asTeam):not(#large):not(#medium):not(#small) {
+        width: 500px;
+        height: 60px;
+    }
+
+    #createTournamentPhtml input:not(#solo):not(#asTeam):not(#large):not(#medium):not(#small)::placeholder {
+        font-size: 1.8rem;
+    }
+
+    #createTournamentPhtml fieldset[type='date'] input {
+        width: 450px;
+        height: 60px;
+    }
+
+    #createTournamentPtml .fa-question-circle {
+        display: none;
+    }
+
+    #createTournamentPhtml button {
+        width: 350px;
+        height: 80px;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #homeNav {
+        height: 2200px !important;
+    }
+    
+    #createTournamentPhtml .fa-arrow-alt-circle-left {
+        font-size: 3rem;
+    }
+    
+    #createTournamentPhtml input {
+        width: 70px;
+        height: 50px;
+    }
+
+    #createTournamentPhtml #asTeam, #createTournamentPhtml #solo {
+        width: 70px;
+        height: 50px;
+    }
+
+    #createTournamentPhtml input:not(#solo):not(#asTeam):not(#large):not(#medium):not(#small) {
+        width: 620px;
+        height: 80px;
+    }
+
+    #createTournamentPhtml input:not(#solo):not(#asTeam):not(#large):not(#medium):not(#small)::placeholder {
+        font-size: 3rem;
+    }
+
+    #createTournamentPhtml #date label {
+        font-size: 2.5rem;
+    }
+
+
+    #createTournamentPhtml label {
+        font-size: 3rem;
+    }
+
+}

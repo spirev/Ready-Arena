@@ -75,3 +75,66 @@
     width : 210px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1024px) {
+    #signupPhtml input {
+        margin-bottom: 8%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #signupPhtml {
+        height: 1600px;
+        padding-top: 15%;
+    }
+
+    #signupPhtml input {
+        width: 500px;
+        height: 50px;
+        margin-bottom: 10%;
+    }
+
+    #signupPhtml input::placeholder {
+        font-size: 1.8rem;
+    }
+
+    #signupPhtml button {
+        width: 240px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #signupPhtml {
+        height: 2000px;
+    }
+
+    #signupPhtml input {
+        width: 600px;
+        height: 90px;
+        margin-bottom: 10%;
+        font-size: 2rem;
+    }
+
+    #signupPhtml input::placeholder {
+        font-size: 2.4rem;
+    }
+
+    #signupPhtml button {
+        width: 290px;
+        height: 110px;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #signupPhtml input::placeholder {
+        font-size: 2.5rem;
+    }
+    
+    #signupPhtml button {
+        width: 320px;
+        height: 120px;
+    }
+}
+

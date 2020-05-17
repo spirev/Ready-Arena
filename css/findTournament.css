@@ -32,3 +32,36 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1112px) {
+    #findTournamentPhtml {
+        padding-bottom: 900px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #findTournamentPhtml a {
+        width: 26%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #findTournamentPhtml {
+        padding-top: 15%;
+    }
+
+    #findTournamentPhtml a {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #findTournamentPhtml {
+        padding-bottom: 1300px;
+    }
+    
+    #findTournamentPhtml a {
+        width: 45%;
+        font-size: 2rem;
+    }
+}

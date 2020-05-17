@@ -184,3 +184,61 @@
     transition-duration: 1s;
     transform: translate(-820px);
 }
+
+@media screen and (max-width: 1024px) {
+    #homeContentNav div article{
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #homeExplain p {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #homeNav {
+        height: 2200px;
+    }
+    
+    #homeContentNav {
+        padding-top: 10%;
+    }
+    
+    #homeContentNav div{
+        flex-flow: row wrap;
+    }
+    
+    #homeContentNav div article {
+        width: 65%;
+        margin-bottom: 5%;
+    }
+
+    #homeContentNav div article p {
+        font-size: 2rem;
+    }
+
+    #homeContentNav button:not(#helpBut) {
+        width: 290px;
+        height: 90px;
+        font-size: 2rem;
+    }
+
+    .fa-question-circle {
+        display: none;
+    }
+
+    #homeExplain {
+        height: 1400px;
+        margin-top: 80%;
+    }
+
+    #homeExplain div {
+        padding: 7% 5% 3% 6%;
+    }
+
+    #homeExplain p {
+        font-size: 1.8rem;
+    }
+}
