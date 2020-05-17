@@ -185,6 +185,12 @@
     transform: translate(-820px);
 }
 
+@media screen and (min-width: 1024px) {
+    body {
+        background-size: 120rem;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     #homeContentNav div article{
         width: 35%;
@@ -192,12 +198,21 @@
 }
 
 @media screen and (max-width: 768px) {
+    
+    body {
+        background-size: 140rem;
+    }
+
     #homeExplain p {
         font-size: 1.3rem;
     }
 }
 
 @media screen and (max-width: 425px) {
+    body {
+        background-size: 250rem;
+    }
+
     #homeNav {
         height: 2200px;
     }
@@ -230,7 +245,7 @@
     }
 
     #homeExplain {
-        height: 1400px;
+        height: 1700px;
         margin-top: 80%;
     }
 
@@ -240,5 +255,15 @@
 
     #homeExplain p {
         font-size: 1.8rem;
-    }
+        font-weight: lighter;
+        line-height: 4rem;
+   }
+
+   #homeExplain .fa-arrow-alt-circle-up {
+       font-size: 4rem;
+   }
+
+   #homeExplain #upBut {
+       padding-bottom: 1%   ;
+   }
 }

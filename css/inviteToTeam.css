@@ -2,7 +2,7 @@
     background : linear-gradient(#0c0c1f, #0B1A30);
     min-height: 950px;
     text-align: center;
-    padding-top: 7%;
+    padding-top: 15%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -20,7 +20,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    width: 18%;
+    width: 20%;
     height: 160px;
     margin: 1%;
     border: 1px solid rgb(0, 255, 255);
@@ -36,4 +36,47 @@
     box-shadow: 1px 1px 35px #003699;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+
+    #inviteToTeam a {
+        width: 20%;
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    #inviteToTeam a {
+        width: 25%;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #inviteToTeam a {
+        width: 25%;
+        font-size: 2.3rem;
+    }
+
+    body {
+        background-color: #0B1A30;
+        background-size: 0rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    #inviteToTeam a {
+        width: 34%;
+        height: 200px;
+        font-size: 3rem;
+    }
+
+    body {
+        background-color: #0B1A30;
+        background-size: 0rem;
+    }
 }

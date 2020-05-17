@@ -64,7 +64,7 @@
                 </ul>
             <?php endfor; ?>
         </article>
-        <article>
+        <article id='playerList'>
             <?php if(count($players) < $tournament[0]['nbr_participants'] && isset($_SESSION['name']) && $alreadySub !== 1) : ?>
                 <form action="applyTournament.php?id=<?= $_GET['id'] ?>" method="post">
                     <button type="submit">APPLY</button>

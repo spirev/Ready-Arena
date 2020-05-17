@@ -5,10 +5,7 @@ const sliders = [
         src: '/finalProject/img/slider/scene1.jpeg',
     },
     {
-        src: '/finalProject/img/slider/fond3.jpg',
-    },
-    {
-        src: '/finalProject/img/slider/leagueOL.jpeg',
+        src: '/finalProject/img/slider/fond5.jpg',
     }
 ]
 

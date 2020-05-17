@@ -161,6 +161,8 @@
     color: rgb(0, 255, 255);
     font-size: 1.5rem;
     list-style: none;
+    margin-left: -25%;
+    margin-right: -25%;
 }
 
 #oneTournamentPhtml ul a li:hover {
@@ -175,6 +177,8 @@
     font-size: 1.2rem;
     list-style: none;
     transition: all 0.2s;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #oneTournamentPhtml #bracket ul li:hover {
@@ -197,4 +201,30 @@
 
 .round8 {
     width: 29%;
+}
+
+@media screen and (max-width: 425px) {
+    #oneTournamentPhtml #mainContent {
+        flex-flow: column wrap;
+    }
+
+    #oneTournamentPhtml h1 {
+        font-size: 4rem;
+    }
+
+    #oneTournamentPhtml h2 {
+        font-size: 3rem;
+    }
+
+    #oneTournamentPhtml #mainContent > article {
+        width: 45%;
+    }
+
+    #oneTournamentPhtml #mainContent #bracket {
+        width: 100%;
+    }
+
+    #oneTournamentPhtml #mainContent #bracket ul a li {
+        font-size: 1.8rem;
+    }
 }
