@@ -253,6 +253,88 @@ aside nav ul a li:hover {
     transition: all 0.2s;
 }
 
+
+@media screen and (max-width: 1600px) {
+    #arrowMenu {
+        width: 8%;
+    }
+    
+    .showAside {
+        bottom: 29%
+    }
+}
+
+
+@media screen and (max-width: 1112px) {
+    header {
+        width: 1112px;
+    }
+    
+    #divIconeProfil #headerProfil{
+        margin-right: -14%;
+    }
+    
+    main {
+        width: 1112px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .showAside {
+        bottom: 35%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-flow: column wrap;
+    }
+    
+    header input {
+        width: 600px;
+        height: 65px;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8%;
+        margin-bottom: 8%;
+        margin-left: -10%;
+    }
+
+    header img {
+        width: 340px;
+        height: 105px;
+    }
+
+    header #headerProfil h4 {
+        font-size: 2rem;
+    }
+
+    header div a:not(#headerProfil) {
+        font-size: 2rem;
+    }
+
+    .fa-search {
+        font-size: 2rem;
+        margin-left: -12%;
+    }
+
+    #arrowMenu {
+        width: 10%;
+        height: 50px;
+        font-size: 1.5rem;
+        left: -17px;
+    }
+    
+    .showAside {
+        bottom: 43%;
+    }
+    
+    aside nav ul a li {
+        font-size: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 425px) {
     header {
         display: flex;
@@ -279,12 +361,14 @@ aside nav ul a li:hover {
 
     header #searchBar i {
         font-size: 2.9rem;
+        margin-left: 0;
     }
 
     header input {
         width: 850px;
         height: 100px;
         font-size: 2.5rem;
+        margin-left: 0;
     }
     
     header div {
@@ -322,33 +406,27 @@ aside nav ul a li:hover {
     header #disconnect {
         padding: 0% 22% 5% 0%;
     }
-}
 
-
-@media screen and (max-width: 1112px) {
-    header {
-        width: 1112px;
-    }
-    
-    #divIconeProfil #headerProfil{
-        margin-right: -14%;
-    }
-    
-    main {
-        width: 1112px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-
-}
-
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 425px) {
     header div a:not(#headerProfil) {
         padding: 0% 9%  4%  7%;
+    }
+
+    #arrowMenu {
+        width: 13%;
+        height: 70px;
+        font-size: 2.1rem;
+        left: -19px;
+    }
+
+    .showAside {
+        bottom: 48%;
+    }
+
+    aside nav ul {
+        height: 650px;
+    }
+
+    aside nav ul a li {
+        font-size: 2rem;
     }
 }

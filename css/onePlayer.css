@@ -246,7 +246,7 @@
     display: block;
     position: relative;
     width: 99.8%;
-    height: 3%;
+    height: 6%;
     background-color: black;
     border: 1px solid rgb(0, 225, 255);
 }
@@ -263,4 +263,155 @@
 #onePlayerPhtml #seekTeam section img:hover {
     border: 2px solid rgb(0, 225, 255);
     border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    #onePlayerPhtml #flash {
+        width: 450px;
+        font-size: 1.5rem;
+    }
+    
+    #onePlayerPhtml h1 {
+        font-size: 3.6rem;
+    }
+
+    #onePlayerPhtml h2 {
+        font-size: 3.2rem;
+    }
+
+    #onePlayerPhtml h3 {
+        font-size: 2rem;
+    }
+
+    #onePlayerPhtml #seekTeam h3 {
+        font-size: 2.2rem;
+    }
+
+    #onePlayerPhtml .fa-plus-square {
+        font-size: 2.5rem;
+    }
+
+    #onePlayerPhtml .LFTdiv i {
+        font-size: 2.5rem;
+    }
+
+    #onePlayerPhtml > div {
+        flex-flow: row wrap;
+    }
+
+    #onePlayerPhtml #seekTeam {
+        width: 48%;
+        margin: 0 auto;
+        flex-flow: column nowrap;
+    }
+
+    #onePlayerPhtml #seekTeam .showAddLFT {
+        height: 25%;
+    }
+    
+    #onePlayerPhtml #seekTeam section img {
+        width: 75px;
+        height: 75px;
+    }
+
+    #onePlayerPhtml #upTourn {
+        width: 60%;
+    }
+
+    #onePlayerPhtml .UpTournament {
+        margin: 8% 5% 8%;
+        font-size: 1.7rem;
+    }
+
+    #onePlayerPhtml #teams {
+        width: 39%;
+    }
+
+    #onePlayerPhtml #teams .team {
+        font-size: 1.6rem;
+    }
+
+    #onePlayerPhtml .team {
+        font-size: 1.8rem;
+    }
+
+    #onePlayerPhtml .myTeam a i {
+        font-size: 2.5rem;
+    }
+
+    #onePlayerPhtml .inviteTeam i {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #onePlayerPhtml h1 {
+        font-size: 5rem;
+    }
+    
+    #onePlayerPhtml h2 {
+        font-size: 4.2rem;
+    }
+
+    #onePlayerPhtml h3 {
+        font-size: 4rem;
+    }
+
+    #onePlayerPhtml #seekTeam .showAddLFT {
+        height: 30%;
+    }
+
+    #onePlayerPhtml #seekTeam section img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #onePlayerPhtml #seekTeam {
+        width: 80%;
+    }
+
+    #onePlayerPhtml #seekTeam h3 {
+        font-size: 3.8rem;
+    }
+
+    #onePlayerPhtml .fa-plus-square {
+        font-size: 3.5rem;
+    }
+
+    #onePlayerPhtml #seekTeam img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    #onePlayerPhtml .LFTdiv i {
+        font-size: 3.5rem;
+    }
+
+    #onePlayerPhtml .team {
+        font-size: 3.8rem;
+    }
+
+    #onePlayerPhtml .inviteTeam i {
+        font-size: 4.5rem;
+    }
+
+    #onePlayerPhtml #upTourn {
+        width: 100%;
+    }
+
+    #onePlayerPhtml .UpTournament {
+        font-size: 2.9rem;
+    }
+
+    #onePlayerPhtml #teams {
+        width: 100%;
+    }
+
+    #onePlayerPhtml #teams .team {
+        font-size: 3.6rem;
+    }
+
+    #onePlayerPhtml .myTeam a i {
+        font-size: 4.7rem;
+    }
 }
