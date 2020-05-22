@@ -12,7 +12,14 @@
     $currentTournament = $tournamentModel->findById($_GET['id']);
     $playerList = $currentTournament[0]['playerList'];
 
-    $playerList .= " ".$currentUser[0]['id'];
+    if (isset($_GET['format']) && $_GET['format'] == 'solo') {
+        $playerList .= " ".$currentUser[0]['id'];
+    }
+    else {
+        //if tournament format is team --> re-use of inviteToTeam.phtml
+        header('Location: inviteToTeam.php?path=inviteToteam&format=team&id='.$currentUser[0]['id']."&Tid=".$currentTournament[0]['id']);
+        exit;
+    }
     $tournamentModel->updatePlayerList($playerList, $_GET['id']);
     header('Location: oneTournament.php?path=oneTournament&id='.$currentTournament[0]['id']."&flash=apply");
 

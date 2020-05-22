@@ -9,6 +9,8 @@
 
     $teamsModel = new TeamsModel();
     $usersModel = new UsersModel();
+    $gamesModel = new GamesModel();
+    $game = $gamesModel->findByName($_GET['game']);
     $team = $teamsModel->findById($_GET['id']);
     $playerList = $team[0]['teammates'];
     $waitingList = $team[0]['waiting_list'];
@@ -65,10 +67,7 @@
             }
         }
     }
-
-    $gamesModel = new GamesModel();
-    $game = $gamesModel->findByName($_GET['game']);
-
+    
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
         include ROOT_PATH.'/../views/layout.phtml';

@@ -3,29 +3,53 @@
     include ROOT_PATH.'/../library/bdd.class.php';
     include ROOT_PATH.'/../models/TournamentsModel.class.php';
     include ROOT_PATH.'/../models/UsersModel.class.php';
+    include ROOT_PATH.'/../models/TeamsModel.class.php';
     include '../controllers/LayoutController.php';
 
     $tournamentsModel = new TournamentsModel();
     $usersModel = new UsersModel();
+    $teamModel = new TeamsModel();
     $tournament = $tournamentsModel->findById($_GET['id']);
 
     function updateNextRound($tournamentsModel, $tournament, $nextRound, $currentUser) {
         $newPlayerList = $tournament[0][$nextRound];
-        if (empty($tournament[0][$nextRound])) {
-            $newPlayerList .= $currentUser[0]['id'];
+        if (isset($_GET['format']) && $_GET['format'] == 'solo') {
+            if (empty($tournament[0][$nextRound])) {
+                $newPlayerList .= $currentUser[0]['id'];
+            }
+            else {
+                $newPlayerList .= " ".$currentUser[0]['id'];
+            }
         }
         else {
-            $newPlayerList .= " ".$currentUser[0]['id'];
+            if (empty($tournament[0][$nextRound])) {
+                $newPlayerList .= $currentUser;
+            }
+            else {
+                $newPlayerList .= " ".$currentUser;
+            }
         }
         $tournamentsModel->updateRounds($tournament[0]['id'], $nextRound, $newPlayerList);
     }
     
-    function addLadderPoint($playerList, $usersModel) {
+    function addLadderPoint($playerList, $usersModel, $teamModel) {
         for ($i = 0;$i < count($playerList);$i++) {
             for ($y = 0;$y < count($playerList[$i]);$y++) {
-                $tmpUser = $usersModel->findById($playerList[$i][$y]);
-                $newLadderPoints = intval($tmpUser[0]['ladder_point'], 10) + 1;
-                $usersModel->updateLadderPoints($playerList[$i][$y], $newLadderPoints);
+                if (isset($_GET['format']) && $_GET['format'] == 'solo') {
+                    $tmpUser = $usersModel->findById($playerList[$i][$y]);
+                    $newLadderPoints = intval($tmpUser[0]['ladder_point'], 10) + 1;
+                    $usersModel->updateLadderPoints($playerList[$i][$y], $newLadderPoints);
+                }
+                else {
+                    //each user from signIn teams get points for the number of rounds they played
+                    $tmpTeam = $teamModel->findByID($playerList[$i][$y]);
+                    $tmpTeamTeammates = explode(' ', $tmpTeam[0]['teammates']);
+                    for ($x = 0;$x < count($tmpTeamTeammates);$x++){
+                        $tmpUser = $usersModel->findById($tmpTeamTeammates[$x]);
+                        $newLadderPoints = intval($tmpUser[0]['ladder_point'], 10) + 1;
+                        $usersModel->updateLadderPoints($tmpUser[0]['id'], $newLadderPoints);
+                    }
+                }
             }
         }
     }
@@ -76,71 +100,147 @@
         }
         for ($i = 0;$i < count($playerList);$i++) {
             for ($y = 0;$y < count($playerList[$i]);$y++) {
-                if ($playerList[$i][$y] == $currentUser[0]['id']) {
-                    $lastRoundLoggedUser = $i;
+                if (!isset($_GET['format'])) {
+                    if ($playerList[$i][$y] == $currentUser[0]['id']) {
+                        $lastRoundLoggedUser = $i;
+                    }
+                }
+                else {
+                    if ($playerList[$i][$y] == $_GET['currentUserTeam']) {
+                        $lastRoundLoggedUser = $i;
+                    }
                 }
             }
         }
         switch ($maxPlayers) {
             case 32:
-                switch($lastRoundLoggedUser) {
-                    case 0:
-                        updateNextRound($tournamentsModel, $tournament, 'round16', $currentUser);
+                if (!isset($_GET['format'])) {
+                    switch($lastRoundLoggedUser) {
+                        case 0:
+                            updateNextRound($tournamentsModel, $tournament, 'round16', $currentUser);
+                            break;
+                        case 1:
+                            updateNextRound($tournamentsModel, $tournament, 'round8', $currentUser);
+                            break;
+                        case 2:
+                            updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
+                            break;
+                        case 3:
+                            updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);
                         break;
-                    case 1:
-                        updateNextRound($tournamentsModel, $tournament, 'round8', $currentUser);
-                        break;
-                    case 2:
-                        updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
-                        break;
-                    case 3:
-                        updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);
-                        break;
-                    case 4:
-                        addLadderPoint($playerList, $usersModel);
-                        rankCalcul($usersModel);
-                        header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&timerOff");
-                        exit;
-                        break;
+                        case 4:
+                            addLadderPoint($playerList, $usersModel, $teamModel);
+                            rankCalcul($usersModel);
+                            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&timerOff");
+                            exit;
+                            break;
+                    }
+                }
+                else {
+                    switch($lastRoundLoggedUser) {
+                        case 0:
+                            updateNextRound($tournamentsModel, $tournament, 'round16', $_GET['currentUserTeam']);
+                            break;
+                        case 1:
+                            updateNextRound($tournamentsModel, $tournament, 'round8', $_GET['currentUserTeam']);
+                            break;
+                        case 2:
+                            updateNextRound($tournamentsModel, $tournament, 'round4', $_GET['currentUserTeam']);
+                            break;
+                        case 3:
+                            updateNextRound($tournamentsModel, $tournament, 'round2', $_GET['currentUserTeam']);
+                            break;
+                        case 4:
+                            addLadderPoint($playerList, $usersModel, $teamModel);
+                            rankCalcul($usersModel);
+                            header('Location: oneTournament.php?path=oneTournament&format=team&id='.$tournament[0]['id']."&timerOff");
+                            exit;
+                            break;
+                    }
                 }
                 break;
             case 16:
-                switch ($lastRoundLoggedUser) {
-                    case 0:
-                        updateNextRound($tournamentsModel, $tournament, 'round8', $currentUser);
-                        break;
-                    case 1:
-                        updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
-                        break;
-                    case 2:
-                        updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);
-                        break;
-                    case 3:
-                        addLadderPoint($playerList, $usersModel);
-                        rankCalcul($usersModel);
-                        header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&timerOff");
-                        exit;
-                        break;
+                if (!isset($_GET['format'])) {                
+                    switch ($lastRoundLoggedUser) {
+                        case 0:
+                            updateNextRound($tournamentsModel, $tournament, 'round8', $currentUser);
+                            break;
+                        case 1:
+                            updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
+                            break;
+                        case 2:
+                            updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);
+                            break;
+                        case 3:
+                            addLadderPoint($playerList, $usersModel, $teamModel);
+                            rankCalcul($usersModel);
+                            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&timerOff");
+                            exit;
+                            break;
+                    }
+                    break;
+                }
+                else {
+                    switch ($lastRoundLoggedUser) {
+                        case 0:
+                            updateNextRound($tournamentsModel, $tournament, 'round8', $_GET['currentUserTeam']);
+                            break;
+                        case 1:
+                            updateNextRound($tournamentsModel, $tournament, 'round4', $_GET['currentUserTeam']);
+                            break;
+                        case 2:
+                            updateNextRound($tournamentsModel, $tournament, 'round2', $_GET['currentUserTeam']);
+                            break;
+                        case 3:
+                            addLadderPoint($playerList, $usersModel, $teamModel);
+                            rankCalcul($usersModel);
+                            header('Location: oneTournament.php?path=oneTournament&format=team&id='.$tournament[0]['id']."&timerOff");
+                            exit;
+                            break;
+                    }
                 }
                 break;
             case 8:
-                switch ($lastRoundLoggedUser) {
-                    case 0:
-                        updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
-                        break;
-                    case 1:
-                        updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);
-                        break;
-                    case 2:
-                        addLadderPoint($playerList, $usersModel);
-                        rankCalcul($usersModel);
-                        header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&timerOff");
-                        exit;
-                        break;
+                if (!isset($_GET['format'])) {                    
+                    switch ($lastRoundLoggedUser) {
+                        case 0:
+                            updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
+                            break;
+                        case 1:
+                            updateNextRound($tournamentsModel, $tournament, 'round2', $currentUser);
+                            break;
+                        case 2:
+                            addLadderPoint($playerList, $usersModel, $teamModel);
+                            rankCalcul($usersModel);
+                            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&timerOff");
+                            exit;
+                            break;
+                    }
+                }
+                else {
+                    switch ($lastRoundLoggedUser) {
+                        case 0:
+                            updateNextRound($tournamentsModel, $tournament, 'round4', $_GET['currentUserTeam']);
+                            break;
+                        case 1:
+                            updateNextRound($tournamentsModel, $tournament, 'round2', $_GET['currentUserTeam']);
+                            break;
+                        case 2:
+                            addLadderPoint($playerList, $usersModel, $teamModel);
+                            rankCalcul($usersModel);
+                            header('Location: oneTournament.php?path=oneTournament&format=team&id='.$tournament[0]['id']."&timerOff");
+                            exit;
+                            break;
+                    }
                 }
                 break;
         }
-        header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']);
+        if (!isset($_GET['format'])) {
+            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']);
+        }
+        else {
+            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&format=team");
+        }
         exit;
     }
     else {
@@ -153,9 +253,16 @@
         if(!empty($playerList)) {
             $list = explode(' ', $playerList);
         }
-    
-        for($i = 0; $i < count($list);$i++) {
-            $players[$i] = $usersModel->findById(intval($list[$i], 10));
+        
+        if (isset($_GET['format']) && $_GET['format'] == 'solo') {        
+            for($i = 0; $i < count($list);$i++) {
+                $players[$i] = $usersModel->findById(intval($list[$i], 10));
+            }
+        }
+        else{
+            for($i = 0; $i < count($list);$i++) {
+                $players[$i] = $teamModel->findById(intval($list[$i], 10));
+            }
         }
         // bracket part ( $nbrRounds count numbers of rounds left to final for html list minus 1 ( first round is set by nbr_participants ))
         $maxPlayers = intval($tournament[0]['nbr_participants'], 10);
@@ -213,11 +320,34 @@
         }
         for($i = 0;$i < count($playersRound);$i++) {
             for($y = 0;$y < count($playersRound[$i]);$y++) {
-                $playerRoundList[$i][$y] = $usersModel->findById(intval($playersRound[$i][$y], 10));
+                if (isset($_GET['format']) && $_GET['format'] == 'solo') {
+                    $playerRoundList[$i][$y] = $usersModel->findById(intval($playersRound[$i][$y], 10));
+                }
+                else {
+                    $playerRoundList[$i][$y] = $teamModel->findById(intval($playersRound[$i][$y], 10));
+                }
+            }
+            // if tournament format is for team --> take the last team of connected user as reference for win
+            if (isset($currentUser) && $_GET['format'] == 'team') {
+                $tmpList = $list;
+                for ($x = 0;$x < count($tmpList);$x++) {
+                    $tmpTeam = $teamModel->findById($tmpList[$x]);
+                    if (in_array($currentUser[0]['id'], explode(' ', $tmpTeam[0]['teammates']))) {
+                        $currentUserTeam = $tmpTeam[0]['id'];
+                    }
+                }
             }
             //set the last round number to $lastRoundLoggedUser where connected user qualified itself
-            if (isset($currentUser) && in_array($currentUser[0]['id'], $playersRound[$i]) && isset($_SESSION['name']) && $currentUser[0]['name'] == $_SESSION['name']) {
+            if (isset($currentUser) && in_array($currentUser[0]['id'], $playersRound[$i]) && isset($_SESSION['name']) && $currentUser[0]['name'] == $_SESSION['name'] && $_GET['format'] == 'solo') {
                 $lastRoundLoggedUser = $i;
+            }
+            else if ($_GET['format'] == 'team' && isset($currentUser) && in_array($currentUserTeam, $playersRound[$i]) && isset($_SESSION['name']) && $currentUser[0]['name'] == $_SESSION['name']){
+                $lastRoundLoggedUser = $i;
+            }
+            else {
+            }
+            //debug
+            if (!isset($lastRoundLoggedUser)) {
             }
         }
         //set date in a readable way
@@ -230,7 +360,7 @@
         else {
             $isTournamentReady = false;
         }
-        // if round2 (final) has been played then set timer to unreachable limit (year 3000)
+        // if round2 (final) has been played, then set timer to unreachable limit (year 3000)
         if (isset($_GET['timerOff'])) {
             $tournamentsModel->TimerOff($tournament[0]['id']);
 

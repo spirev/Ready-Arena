@@ -43,7 +43,7 @@
         <div id='upTourn'>
             <h3>Upcoming Tournaments</h3>
             <?php foreach($tournaments as $tournament): ?>
-                <a href="oneTournament.php?path=oneTournament&id=<?= $tournament[0]['id'] ?>&game=<?= $tournament[0]['game'] ?>"><div class='UpTournament'><?= $tournament[0]['name'] ?></br><?= $tournament[0]['game'] ?></div></a>
+                <a href="oneTournament.php?path=oneTournament&id=<?= $tournament[0]['id'] ?>&game=<?= $tournament[0]['game'] ?>&format=<?= $tournament[0]['format'] ?>"><div class='UpTournament'><?= $tournament[0]['name'] ?></br><?= $tournament[0]['game'] ?></div></a>
             <?php endforeach; ?>
         </div>
         <div id='teams'>

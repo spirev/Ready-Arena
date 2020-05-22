@@ -253,7 +253,6 @@ aside nav ul a li:hover {
     transition: all 0.2s;
 }
 
-
 @media screen and (max-width: 1600px) {
     #arrowMenu {
         width: 8%;
@@ -276,6 +275,12 @@ aside nav ul a li:hover {
     
     main {
         width: 1112px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .showAside {
+        width: 100px;
     }
 }
 
