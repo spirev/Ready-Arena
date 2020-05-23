@@ -5,12 +5,17 @@
     <?php if (empty($teams) && isset($_GET['format'])): ?>
         <h1>All of your teams are already participating to this tournament</h1>
     <?php endif; ?>
+    <?php if($_GET['action'] && !empty($teams)): ?>
+    <?php endif; ?>
     <?php foreach($teams as $team): ?>
-        <?php if(!isset($_GET['format'])): ?>
+        <?php if(!isset($_GET['format']) && !isset($_GET['action'])): ?>
             <a href="checkInvitation.php?id=<?= $requestPlayer[0]['id'] ?>&team=<?= $team[0]['id'] ?>"><div><?= $team[0]['name'] ?></br><?= $team[0]['game'] ?></div></a>
         <?php endif; ?>
-        <?php if(isset($_GET['format'])): ?>
+        <?php if(isset($_GET['format']) && !isset($_GET['action'])): ?>
             <a href="checkInvitation.php?format=team&teamId=<?= $team[0]['id'] ?>&tournament=<?= $_GET['Tid'] ?>"><?= $team[0]['name'] ?></a>
+        <?php endif; ?>
+        <?php if(isset($_GET['action']) && $_GET['action'] == 'addTournament'): ?>
+            <a href='addTournament.php?soloTeam=team&action=done&formName=<?= $_GET['formName']?>&startDate=<?= $_GET['startDate']?>&soloTeam=<?= $_GET['soloTeam']?>&maxParticipants=<?= $_GET['maxParticipants']?>&averageSkill=<?= $_GET['averageSkill'] ?>&teamId=<?= $team[0]['id'] ?>'><?= $team[0]['name'] ?></a>
         <?php endif; ?>
     <?php endforeach; ?>
 </div>

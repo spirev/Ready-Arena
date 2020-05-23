@@ -18,7 +18,7 @@
         $requestPlayer = $userModel->findById($_GET['id']);
         $requestPlayerInviteBox = $requestPlayer[0]['team_invite'];
         if (empty($requestPlayerInviteBox)) {
-            $requestPlayerInviteBox = $_GET['team'];
+            $requestPlayerInviteBox .= $_GET['team'];
         }
         else {
             $requestPlayerInviteBox .= " ".$_GET['team'];
