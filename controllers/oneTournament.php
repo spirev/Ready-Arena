@@ -31,7 +31,7 @@
         }
         $tournamentsModel->updateRounds($tournament[0]['id'], $nextRound, $newPlayerList);
     }
-    
+
     function addLadderPoint($playerList, $usersModel, $teamModel) {
         for ($i = 0;$i < count($playerList);$i++) {
             for ($y = 0;$y < count($playerList[$i]);$y++) {
@@ -100,7 +100,7 @@
         }
         for ($i = 0;$i < count($playerList);$i++) {
             for ($y = 0;$y < count($playerList[$i]);$y++) {
-                if (!isset($_GET['format'])) {
+                if (isset($_GET['format']) && $_GET['format'] == 'solo') {
                     if ($playerList[$i][$y] == $currentUser[0]['id']) {
                         $lastRoundLoggedUser = $i;
                     }
@@ -114,7 +114,7 @@
         }
         switch ($maxPlayers) {
             case 32:
-                if (!isset($_GET['format'])) {
+                if (isset($_GET['format']) && $_GET['format'] == 'solo') {
                     switch($lastRoundLoggedUser) {
                         case 0:
                             updateNextRound($tournamentsModel, $tournament, 'round16', $currentUser);
@@ -160,7 +160,7 @@
                 }
                 break;
             case 16:
-                if (!isset($_GET['format'])) {                
+                if (!isset($_GET['format']) && $_GET['format'] == 'solo') {                
                     switch ($lastRoundLoggedUser) {
                         case 0:
                             updateNextRound($tournamentsModel, $tournament, 'round8', $currentUser);
@@ -201,7 +201,7 @@
                 }
                 break;
             case 8:
-                if (!isset($_GET['format'])) {                    
+                if (!isset($_GET['format']) && $_GET['format'] == 'solo') {                    
                     switch ($lastRoundLoggedUser) {
                         case 0:
                             updateNextRound($tournamentsModel, $tournament, 'round4', $currentUser);
@@ -235,8 +235,8 @@
                 }
                 break;
         }
-        if (!isset($_GET['format'])) {
-            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']);
+        if (isset($_GET['format']) && $_GET['format'] == 'solo') {
+            header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&format=solo");
         }
         else {
             header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&format=team");
@@ -341,7 +341,7 @@
             if (isset($currentUser) && in_array($currentUser[0]['id'], $playersRound[$i]) && isset($_SESSION['name']) && $currentUser[0]['name'] == $_SESSION['name'] && $_GET['format'] == 'solo') {
                 $lastRoundLoggedUser = $i;
             }
-            else if ($_GET['format'] == 'team' && isset($currentUser) && in_array($currentUserTeam, $playersRound[$i]) && isset($_SESSION['name']) && $currentUser[0]['name'] == $_SESSION['name']){
+            else if ($_GET['format'] == 'team' && isset($currentUser) && isset($currentUserTeam) && in_array($currentUserTeam, $playersRound[$i]) && isset($_SESSION['name']) && $currentUser[0]['name'] == $_SESSION['name']){
                 $lastRoundLoggedUser = $i;
             }
             else {
