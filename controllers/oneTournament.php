@@ -244,7 +244,7 @@
         exit;
     }
     else {
-        //display part
+        //display part (not win part)
         $playerList = $tournament[0]['playerList'];
         $list = [];
         $players = [];
@@ -371,5 +371,4 @@
             include ROOT_PATH.'/../views/layout.phtml';
         }
     }
-
 ?>
