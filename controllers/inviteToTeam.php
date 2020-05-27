@@ -17,7 +17,7 @@
     
     if (isset($_GET['action']) || isset($_GET['format'])) {
         if (isset($_GET['format'])) {
-            //find all teams where currentUser is in and stock them in "$teams" (for team choice in tournament)
+            //find all teams where currentUser is in and stock them in "$teams" //// WARNING (for team choice in tournament ONLY)
             $currentTournament = $tournamentModel->findById($_GET['Tid']);
             $y = 0;
             for ($i = 0;$i < count($allTeams);$i++) {
@@ -46,7 +46,7 @@
 
         for($i = 0;$i < count($allTeams);$i++) {
             $tmpTeammates = explode(' ', $allTeams[$i]['teammates']);
-            if (!in_array($requestPlayer[0]['id'], $tmpTeammates) && in_array($connectedUser[0]['id'],$allTeams[$i]) && !in_array($allTeams[$i]['id'], explode(' ', $requestPlayer[0]['team_invite']))) {
+            if (!in_array($requestPlayer[0]['id'], $tmpTeammates) && in_array($connectedUser[0]['id'], $tmpTeammates) && !in_array($allTeams[$i]['id'], explode(' ', $requestPlayer[0]['team_invite']))) {
                 $teams[$i] = $teamsModel->findById($i + 1);
             }
         }

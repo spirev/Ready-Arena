@@ -77,7 +77,7 @@
             $currentUser = $usersModel->checkName($_SESSION['name']);
         }
         $maxPlayers = intval($tournament[0]['nbr_participants'], 10);
-        //find last round current user is in
+        //find last round where current user is
         switch ($maxPlayers) {
             case 32:
                 $playerList[0] = explode(' ', $tournament[0]['playerList']);

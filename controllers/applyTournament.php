@@ -21,6 +21,6 @@
         exit;
     }
     $tournamentModel->updatePlayerList($playerList, $_GET['id']);
-    header('Location: oneTournament.php?path=oneTournament&id='.$currentTournament[0]['id']."&flash=apply");
+    header('Location: oneTournament.php?path=oneTournament&id='.$currentTournament[0]['id']."&flash=apply&format=solo");
 
 ?>

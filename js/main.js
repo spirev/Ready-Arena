@@ -6,6 +6,9 @@ const sliders = [
     },
     {
         src: '/finalProject/img/slider/fond5.jpg',
+    },
+    {
+        src: '/finalProject/img/slider/scene2.jpg'
     }
 ]
 
