@@ -95,7 +95,6 @@
 
 #mainContent > div:nth-child(2) h2{
     margin-left: 2%;
-    padding-left: 11%;
 }
 
 #mainContent > div:nth-child(3) {
@@ -185,7 +184,7 @@
 #mainContent div h2 {
     font-size: 1.2rem;
     border-bottom: rgb(0, 255, 255);
-    width: 100%;
+    /*width: 100%;*/
     margin-bottom: 15%;
 }
 
@@ -210,4 +209,128 @@
 
 #oneTeamPhtml ul a {
     text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    #oneTeamPhtml img {
+        width: 12%;
+        max-width: 185px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #oneTeamPhtml {
+        height: 2000px;
+    }
+
+    #oneTeamPhtml h1 {
+        font-size: 3rem;
+    }
+
+    #mainContent {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    #oneTeamPhtml img {
+        width: 13%;
+        max-width: 185px;
+    }
+
+    #mainContent > div {
+        width: 85%;
+    }
+
+    #oneTeamPhtml p {
+        font-size: 2.2rem;
+    }
+
+    #oneTeamPhtml #mainContent > div h2 {
+        font-size: 2.1rem;
+    }
+
+    #oneTeamPhtml #mainContent > div {
+        margin-top: 5%;
+    }
+
+    #oneTeamPhtml #mainContent > div:first-child {
+        margin-left: 0%;
+    }
+
+    #oneTeamPhtml #mainContent > div:nth-child(2) {
+        margin-left: 0%;
+    }
+
+    #oneTeamPhtml #mainContent > div:nth-child(3) {
+        width: 75%;
+        margin-right: 0%;
+    }
+
+    #oneTeamPhtml #mainContent > div:first-child form input {
+        height: 85px;
+        width: 110%;
+        font-size: 2.2rem;
+    }
+
+    #oneTeamPhtml #mainContent > div:first-child form input::placeholder {
+        font-size: 2rem;
+    }
+
+    #oneTeamPhtml .waitingPlayer i {
+        font-size: 3rem;
+    }
+
+    #oneTeamPhtml #mainContent > div:nth-child(3) .adminTeammatesDiv i {
+        font-size: 3rem;
+    }
+    #oneTeamPhtml li {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    
+    #oneTeamPhtml {
+        height: 4000px;
+    }
+
+    #oneTeamPhtml div:first-child:not(.adminTeammatesDiv):not(#commentDiv) {
+        flex-flow: row nowrap;
+    }
+    
+    #oneTeamPhtml h1 {
+        font-size: 5rem;
+    }
+
+    #oneTeamPhtml img {
+        width: 23%;
+        max-width: 360px;
+        max-height: 215px;
+    }
+
+    #oneTeamPhtml p {
+        font-size: 4.2rem;
+    }
+
+    #oneTeamPhtml #mainContent > div:first-child form input {
+        height: 100px;
+        width: 110%;
+        font-size: 2.8rem;
+    }
+
+    #oneTeamPhtml #mainContent > div:first-child form input::placeholder {
+        font-size: 2.8rem;
+    }
+
+    #oneTeamPhtml #mainContent > div h2 {
+        font-size: 4rem;
+    }
+
+    #oneTeamPhtml #mainContent > div {
+        margin-top: 10%;
+    }
+
+    #oneTeamPhtml li {
+        font-size: 3.5rem;
+    }
 }

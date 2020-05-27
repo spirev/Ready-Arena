@@ -210,7 +210,7 @@ aside nav ul { /* menu aside nav */
     background: linear-gradient(#0b1b38, #071620);
     border-right: 1px blue solid;
     border-radius: 30px;
-    margin-right: -35%;
+    margin-right: -45%;
     transition: all 0.2s;
 }
 
@@ -424,7 +424,7 @@ aside nav ul a li:hover {
     }
 
     .showAside {
-        bottom: 48%;
+        bottom: 47%;
     }
 
     aside nav ul {
