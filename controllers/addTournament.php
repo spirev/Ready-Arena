@@ -26,7 +26,7 @@
 // if team choice isn't done yet or if tournament is solo
     if (!isset($_GET['action'])) {
         if ($_GET['soloTeam'] === 'solo') {
-
+            //if tournament format is 'solo' add this tournament to the database
             if (!empty($_GET['name']) && !empty($_GET['startDate'])) {
                 $tournamentModel->addTournament($lastId, $_GET['name'], $_COOKIE['game'], $_GET['maxParticipants'], $_GET['soloTeam'], $_GET['averageSkill'], $_GET['startDate'], $_SESSION['id']);
                 setcookie('game', null, -1, '/'); // doesn't work...
@@ -40,8 +40,13 @@
         }
         else {
             //if tournament format is 'team' --> 'inviteToTeam.phtml' for team selection --> go to this script again with all 'GET' info + chosen team
-            //this is reuse of 'inviteToTeam.phtml', variable 'action' is there to specify to 'inviteToTeam.phtml' that it is meant for adding a team at the first signed-In position
-            header('Location: inviteToTeam.php?path=inviteToTeam&action=addTournament&formName='.$_GET['name']."&startDate=".$_GET['startDate']."&soloTeam=".$_GET['soloTeam']."&maxParticipants=".$_GET['maxParticipants']."&averageSkill=".$_GET['averageSkill']);
+            //this is reuse of 'inviteToTeam.phtml', variable 'action' is there to specify to 'inviteToTeam.phtml' that it is meant for adding a team as the first participant
+            if (!empty($_GET['name']) && !empty($_GET['startDate'])) {
+                header('Location: inviteToTeam.php?path=inviteToTeam&action=addTournament&formName='.$_GET['name']."&startDate=".$_GET['startDate']."&soloTeam=".$_GET['soloTeam']."&maxParticipants=".$_GET['maxParticipants']."&averageSkill=".$_GET['averageSkill']);
+            }
+            else {
+                header('Location: /finalProject/index.php?flash=incorrectForm');
+            }
         }
     }
     else {
