@@ -11,6 +11,7 @@
     $teamModel = new TeamsModel();
     $tournament = $tournamentsModel->findById($_GET['id']);
 
+    // make connected user go to the next round (editing '$nextRound' in Database)
     function updateNextRound($tournamentsModel, $tournament, $nextRound, $currentUser) {
         $newPlayerList = $tournament[0][$nextRound];
         if (isset($_GET['format']) && $_GET['format'] == 'solo') {
@@ -32,6 +33,7 @@
         $tournamentsModel->updateRounds($tournament[0]['id'], $nextRound, $newPlayerList);
     }
 
+    // count the number of rounds each players as gone throught and add one 'ladder_point' for each
     function addLadderPoint($playerList, $usersModel, $teamModel) {
         for ($i = 0;$i < count($playerList);$i++) {
             for ($y = 0;$y < count($playerList[$i]);$y++) {
@@ -54,23 +56,14 @@
         }
     }
 
+    // take all players by 'ladder_point' in Database and rank them from one to 'max players'
     function rankCalcul($usersModel) {
         $allPlayers = $usersModel->findAllByPoints();
         for($i = 0;$i < count($allPlayers);$i++) {
-            if ($i == 0) {
-                $usersModel->updateRank($allPlayers[$i]['id'], '1');
-            }
-            else {
-                if ($allPlayers[$i]['ladder_point'] == $allPlayers[$i - 1]['ladder_point']) {
-                    $usersModel->updateRank($allPlayers[$i]['id'], $allPlayers[$i - 1]['rank']);
-                }
-                else {
-                    $usersModel->updateRank($allPlayers[$i]['id'], strval(intval($allPlayers[$i - 1]['rank'] + 1, 10)));
-                }
-            }
+            $usersModel->updateRank($allPlayers[$i]['id'], $i + 1);
         }
     }
-    // next code is made in two parts, if '$_GET['win']' is set or not, this parametre is passed by clicking on victory button
+    // next code is made of two parts, if '$_GET['win']' is set or not, this parametre is passed by clicking on victory button
     //if connected user win a round
     if (isset($_GET['win'])) {
 
