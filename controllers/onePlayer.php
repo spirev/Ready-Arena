@@ -28,7 +28,7 @@
         $games[$i] = $gameModel->findById(intval($list[$i], 10));
     }
 
-// make a list of unset LFT games for '#seekTeam section' selection
+// make a list of games for '#seekTeam section' selection
 $notLFTGames = $gameModel->findAll();
 
 // take playerList from all tournaments and look for page user for phtml use (not smart / inner join expected)
@@ -48,7 +48,7 @@ $notLFTGames = $gameModel->findAll();
 
     for ($i = 0;$i < count($allTeams);$i++) {
         if (in_array($_GET['id'], explode(' ', $allTeams[$i]['teammates']))) {
-            $teams[$y] = $TeamsModel->findById($i + 1);
+            $teams[$y] = $TeamsModel->findById($allTeams[$i]['id']);
             $y++;
         }
     }
