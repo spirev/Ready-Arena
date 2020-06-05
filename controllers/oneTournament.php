@@ -63,6 +63,7 @@
             $usersModel->updateRank($allPlayers[$i]['id'], $i + 1);
         }
     }
+    
     // next code is made of two parts, if '$_GET['win']' is set or not, this parametre is passed by clicking on victory button
     //if connected user win a round
     if (isset($_GET['win'])) {

@@ -101,12 +101,29 @@ for($i = 0;$i < count($playersRound);$i++) {
 $newTimer = substr($tournament[0]['timer'], -2, 2)."-".substr($tournament[0]['timer'], -5, 2)."-".substr($tournament[0]['timer'], 0, 4);
 
 //test if tournament is ready to be launch ( timer - actual date )
-if (intval(substr($tournament[0]['timer'], 0, 4), 10) - date("Y") <= 0 && intval(substr($tournament[0]['timer'], 5, 2), 10) - date("m") <= 0 && intval(substr($tournament[0]['timer'], 8, 2), 10) - date("d") <= 0) {
+if (intval(substr($tournament[0]['timer'], 0, 4), 10) - date("Y") < 0) {
     $isTournamentReady = true;
+}
+else if (intval(substr($tournament[0]['timer'], 0, 4), 10) - date("Y") == 0) {
+    if (intval(substr($tournament[0]['timer'], 5, 2), 10) - date("m") < 0) {
+        $isTournamentReady = true;
+    }
+    else if (intval(substr($tournament[0]['timer'], 5, 2), 10) - date("m") == 0) {
+        if (intval(substr($tournament[0]['timer'], 8, 2), 10) - date("d") <= 0) {
+            $isTournamentReady = true;
+        }
+        else {
+            $isTournamentReady = false;
+        }
+    }
+    else {
+        $isTournamentReady = false;
+    }
 }
 else {
     $isTournamentReady = false;
 }
+
 // if round2 (final) has been played, then set timer to unreachable limit (year 3000)
 if (isset($_GET['timerOff'])) {
     $tournamentsModel->TimerOff($tournament[0]['id']);
