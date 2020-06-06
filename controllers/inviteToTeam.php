@@ -40,14 +40,15 @@
         }
     }
     else {
-        //find all teams where currentUser is in for sending invite to other users
+        //find all teams where currentUser is in ( and requestPlayer is not and where 'team_invite' of requestPlayer don't have currentTeam) for sending invite to other users
         $requestPlayer = $userModel->findById($_GET['id']);
         $requestPlayerIdLength = strlen($requestPlayer[0]['id']);
 
         for($i = 0;$i < count($allTeams);$i++) {
             $tmpTeammates = explode(' ', $allTeams[$i]['teammates']);
+            var_dump($tmpTeammates);
             if (!in_array($requestPlayer[0]['id'], $tmpTeammates) && in_array($connectedUser[0]['id'], $tmpTeammates) && !in_array($allTeams[$i]['id'], explode(' ', $requestPlayer[0]['team_invite']))) {
-                $teams[$i] = $teamsModel->findById($i + 1);
+                $teams[$i] = $teamsModel->findById($allTeams[$i]['id']);
             }
         }
     }
