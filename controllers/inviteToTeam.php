@@ -22,8 +22,8 @@
             $y = 0;
             for ($i = 0;$i < count($allTeams);$i++) {
                 $tmpTeammates = explode(' ', $allTeams[$i]['teammates']);
-                if (in_array($connectedUser[0]['id'], $tmpTeammates) && !in_array($i + 1, explode(' ', $currentTournament[0]['playerList']))) {
-                    $teams[$y] = $teamsModel->findById($i + 1);
+                if (in_array($connectedUser[0]['id'], $tmpTeammates) && !in_array($allTeams[$i]['id'], explode(' ', $currentTournament[0]['playerList']))) {
+                    $teams[$y] = $teamsModel->findById($allTeams[$i]['id']);
                     $y++;
                 }
             }
@@ -33,7 +33,7 @@
             for ($i = 0;$i < count($allTeams);$i++) {
                 $tmpTeammates = explode(' ', $allTeams[$i]['teammates']);
                 if (in_array($connectedUser[0]['id'], $tmpTeammates)) {
-                    $teams[$y] = $teamsModel->findById($i + 1);
+                    $teams[$y] = $teamsModel->findById($allTeams[$i]['id']);
                     $y++;
                 }
             }
