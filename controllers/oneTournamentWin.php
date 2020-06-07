@@ -174,5 +174,4 @@ else {
     header('Location: oneTournament.php?path=oneTournament&id='.$tournament[0]['id']."&format=team");
 }
 exit;
-
 ?>

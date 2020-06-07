@@ -14,5 +14,4 @@ else {
 }
 
 include 'views/layout.phtml';
-
 ?>

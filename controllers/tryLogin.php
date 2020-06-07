@@ -10,16 +10,16 @@
             session_start();
             $_SESSION['name'] = $tryUser[0]['name'];
             $_SESSION['id'] = $tryUser[0]['id'];
-            header('Location: http://localhost/finalProject/controllers/onePlayer?path=onePlayer&id='.$tryUser[0]['id'].'&flash=login');
+            header('Location: onePlayer.php?path=onePlayer&id='.$tryUser[0]['id'].'&flash=login');
             exit;
         }
         else {
-            header('Location: http://localhost/finalProject/controllers/LoginController.php?path=Login&flashError=login');
+            header('Location: LoginController.php?path=Login&flashError=login');
             exit;
         }
     }
     else {
-        header('Location: http://localhost/finalProject/controllers/LoginController.php?path=Login&flashError=login');
+        header('Location: LoginController.php?path=Login&flashError=login');
         exit;
     }
 

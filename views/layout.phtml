@@ -14,8 +14,12 @@
     </head>
     <body>
         <header>
-            <a href="/finalProject/index.php"><img src="/finalProject/img/logo_ReadyArena.png" /></a>
-            <?php if (!isset($_SESSION['name'])): ?>
+            <?php if($_GET['path'] == 'home'): ?>
+                <a href="./index.php"><img src="img/logo_ReadyArena.png" /></a>
+            <?php endif; ?>
+            <?php if($_GET['path'] !== 'home'): ?>
+                <a href="../index.php"><img src="../img/logo_ReadyArena.png" /></a>
+            <?php endif; ?>            <?php if (!isset($_SESSION['name'])): ?>
                 <div id="searchBar">
                     <i class="fas fa-search"></i>
                     <?php if ($_GET['path'] == 'home'): ?>
@@ -47,8 +51,14 @@
             <?php endif; ?>
                 <?php if(!isset($_SESSION['name'])): ?>
                 <div id='connectDiv'>
-                    <a href="/finalProject/controllers/LoginController.php?path=Login" id="login">Login</a>
-                    <a href="/finalProject/controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
+                <?php if($_GET['path'] == 'home'): ?>
+                    <a href="controllers/LoginController.php?path=Login" id="login">Login</a>
+                    <a href="controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
+                <?php endif; ?>;
+                <?php if ($_GET['path'] !== 'home'): ?>
+                    <a href="../controllers/LoginController.php?path=Login" id="login">Login</a>
+                    <a href="../controllers/SignUpController.php?path=SignUp" id="signUp">Sign up</a>
+                <?php endif; ?>
                 </div>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['name'])): ?>

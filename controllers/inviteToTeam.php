@@ -46,7 +46,6 @@
 
         for($i = 0;$i < count($allTeams);$i++) {
             $tmpTeammates = explode(' ', $allTeams[$i]['teammates']);
-            var_dump($tmpTeammates);
             if (!in_array($requestPlayer[0]['id'], $tmpTeammates) && in_array($connectedUser[0]['id'], $tmpTeammates) && !in_array($allTeams[$i]['id'], explode(' ', $requestPlayer[0]['team_invite']))) {
                 $teams[$i] = $teamsModel->findById($allTeams[$i]['id']);
             }

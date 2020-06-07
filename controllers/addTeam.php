@@ -21,11 +21,11 @@
     
     if (!empty($_POST['name']) && !empty($_POST['comment'])) {
         $teamModel->addTeam($lastId, $_POST['name'], $_GET['game'], $_SESSION['name'], $_POST['LFP'], $_POST['comment'], $_SESSION['id']);
-        header('Location: /finalProject/index.php?flash=team');
+        header('Location: ../index.php?flash=team');
         exit;
     }
     else {
-        header('Location: /finalProject/controllers/createTeam.php?path=createTeam&game='.$_GET['game']);
+        header('Location: createTeam.php?path=createTeam&game='.$_GET['game']);
         exit;
     }
 

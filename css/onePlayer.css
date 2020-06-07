@@ -359,6 +359,11 @@
         font-size: 4rem;
     }
 
+    #onePlayerPhtml #flash {
+        font-size: 2.3rem;
+        width: 50%;
+    }
+
     #onePlayerPhtml #seekTeam .showAddLFT {
         height: 30%;
     }
