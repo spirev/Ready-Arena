@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-#allGamesPhtml p{
+#allGamesPhtml h1{
     font-family: "Candal";
     color : white;
     font-size: 1.5rem;
@@ -30,7 +30,7 @@
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-    margin: 5% 22%;
+    margin: 5% 22% 5% 18%;
 }
 
 #allGamesPhtml #bottom {
@@ -73,6 +73,67 @@
     cursor: pointer;
     box-shadow: 0px 0px 30px black;
     border-radius: 20px;
+}
+
+#allGamesPhtml button {
+    background-color: black;
+}
+
+#allGamesPhtml button[value='dota2'] {
+    background-image: url('../img/games_icone/Dota2');
+    background-size: 81px;
+}
+
+#allGamesPhtml button[value='CS:GO'] {
+    background-image: url('../img/games_icone/csgo.jpg');
+}
+
+#allGamesPhtml button[value='LeagueOfLegends'] {
+    background-image: url('../img/games_icone/leagueIcone.png');
+    background-size: 90px;
+}
+
+#allGamesPhtml button[value='Overwatch'] {
+    background-image: url('../img/games_icone/overwatch.png');
+}
+
+#allGamesPhtml button[value='rocketLeague'] {
+    background-image: url('../img/games_icone/rocketLeague.png');
+    background-size: 100px;
+}
+
+#allGamesPhtml button[value='SSBU'] {
+    background-image: url('../img/games_icone/smash.png');
+    background-size: 90px;
+}
+
+#allGamesPhtml button[value='Hearthstone'] {
+    background-image: url('../img/games_icone/hearthStone.png');
+}
+
+#allGamesPhtml button[value='Starcraft2'] {
+    background-image: url('../img/games_icone/Starcraft2.png');
+    background-size: 108px;
+}
+
+#allGamesPhtml button[value='WorldOfWarcraft'] {
+    background-image: url('../img/games_icone/WorldOfWarcraft.png');
+    background-size: 90px;
+}
+
+#allGamesPhtml button[value='Fifa2020'] {
+    background-image: url('../img/games_icone/fifa2020.png');
+    background-size: 90px;
+}
+
+#allGamesPhtml button[value='Osu'] {
+    background-image: url('../img/games_icone/osu.png');
+    background-size: 90px;
+}
+
+#allGamesPhtml button[value='Warcraft3-reforged'] {
+    background-image: url('../img/games_icone/war3.png');
+    background-size: 100px;
 }
 
 @media screen and (max-width: 425px) {
