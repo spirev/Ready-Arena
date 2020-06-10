@@ -5,7 +5,7 @@
 
     if (isset($_GET['findPlayer'])) {
         $userModel = new UsersModel();
-        $player = $userModel->checkName($_GET['findPlayer']);
+        $player = $userModel->checkName(htmlspecialchars($_GET['findPlayer'], ENT_QUOTES));
         if (!empty($player)) {
             header('Location: onePlayer.php?path=onePlayer&id='.$player[0]['id']);
         }

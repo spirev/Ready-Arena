@@ -13,7 +13,7 @@
             <a href="checkInvitation.php?format=team&teamId=<?= $team[0]['id'] ?>&tournament=<?= $_GET['Tid'] ?>"><?= $team[0]['name'] ?></a>
         <?php endif; ?>
         <?php if(isset($_GET['action']) && $_GET['action'] == 'addTournament'): ?>
-            <a href='addTournament.php?soloTeam=team&action=done&formName=<?= $_GET['formName']?>&startDate=<?= $_GET['startDate']?>&soloTeam=<?= $_GET['soloTeam']?>&maxParticipants=<?= $_GET['maxParticipants']?>&averageSkill=<?= $_GET['averageSkill'] ?>&teamId=<?= $team[0]['id'] ?>'><?= $team[0]['name'] ?></a>
+            <a href='addTournament.php?soloTeam=team&action=done&formName=<?= htmlspecialchars($_GET['formName'], ENT_QUOTES)?>&startDate=<?= $_GET['startDate']?>&soloTeam=<?= $_GET['soloTeam']?>&maxParticipants=<?= $_GET['maxParticipants']?>&averageSkill=<?= $_GET['averageSkill'] ?>&teamId=<?= $team[0]['id'] ?>'><?= $team[0]['name'] ?></a>
         <?php endif; ?>
     <?php endforeach; ?>
 </div>

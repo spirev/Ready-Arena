@@ -39,7 +39,7 @@
     }
 
     if (isset($_GET['reloadComment'])) {
-        $teamsModel->updateComment($team[0]['id'], $_POST['reloadComment']);
+        $teamsModel->updateComment($team[0]['id'], htmlspecialchars($_POST['reloadComment'], ENT_QUOTES));
         header('Location: oneTeam.php?path=oneTeam&id='.$team[0]['id'].'&game='.$team[0]['game']);
     }
 

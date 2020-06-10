@@ -20,7 +20,7 @@
     }
     
     if (!empty($_POST['name']) && !empty($_POST['comment'])) {
-        $teamModel->addTeam($lastId, $_POST['name'], $_GET['game'], $_SESSION['name'], $_POST['LFP'], $_POST['comment'], $_SESSION['id']);
+        $teamModel->addTeam($lastId, htmlspecialchars($_POST['name'], ENT_QUOTES), $_GET['game'], $_SESSION['name'], $_POST['LFP'], htmlspecialchars($_POST['comment'], ENT_QUOTES), $_SESSION['id']);
         header('Location: ../index.php?flash=team');
         exit;
     }

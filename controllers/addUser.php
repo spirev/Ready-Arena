@@ -15,9 +15,9 @@
         exit;
     }
 
-    // check if name field contain an unused name and has two character minimum
+    // check if name field contain an unused name and have a minimum of two characters
     if (strlen($_POST['name']) >= 2) {
-        $varTest = $usersModel->checkName($_POST['name']);
+        $varTest = $usersModel->checkName(htmlspecialchars($_POST['name'], ENT_QUOTES));
         if (!empty($varTest)) {
             header('Location: SignUpController.php?path=SignUp&error=name');
             exit;
@@ -30,7 +30,7 @@
 
     //check if email field is a valid address format and is not already used
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $varTest = $usersModel->findByEmail($_POST['email']);
+        $varTest = $usersModel->findByEmail(htmlspecialchars($_POST['email'], ENT_QUOTES));
         if (!empty($varTest)) {
             header('Location: SignUpController.php?path=SignUp&error=email');
             exit;
@@ -65,7 +65,7 @@
 
     //hashing password
     $hashedPWD = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $usersModel->addUser($lastId, $_POST['name'], $_POST['email'], $hashedPWD, $varTest[0]['rank']);
+    $usersModel->addUser($lastId, htmlspecialchars($_POST['name'], ENT_QUOTES), htmlspecialchars($_POST['email'], ENT_QUOTES), $hashedPWD, $varTest[0]['rank']);
     header('Location: ../index.php?flash=signUp');
 
 ?>

@@ -25,7 +25,8 @@
             <?php endif; ?>
             <?php if($_GET['path'] !== 'home'): ?>
                 <a href="../index.php"><img src="../img/logo_ReadyArena.png" /></a>
-            <?php endif; ?>            <?php if (!isset($_SESSION['name'])): ?>
+            <?php endif; ?>
+            <?php if (!isset($_SESSION['name'])): ?>
                 <div id="searchBar">
                     <i class="fas fa-search"></i>
                     <?php if ($_GET['path'] == 'home'): ?>

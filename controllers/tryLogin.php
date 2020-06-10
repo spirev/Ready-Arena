@@ -5,7 +5,7 @@
 
     if(!empty($_POST['Email']) && !empty($_POST['Password'])) {
         $users = new UsersModel;
-        $tryUser = $users->loginVerify($_POST['Email'], $_POST['Password']);
+        $tryUser = $users->loginVerify(htmlspecialchars($_POST['Email'], ENT_QUOTES), $_POST['Password']);
         if (!empty($tryUser)) {
             session_start();
             $_SESSION['name'] = $tryUser[0]['name'];
