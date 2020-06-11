@@ -40,6 +40,10 @@
             $this->db->insert("UPDATE users SET ladder_point = $ladderPointsWin WHERE id = $userID");
         }
 
+        public function findLowerstRanks() {
+            return $this->db->getAll("SELECT MAX(rank) FROM users");
+        }
+
         public function updateRank($userId, $newRank) {
             $this->db->insert("UPDATE users SET rank = '$newRank' WHERE id = $userId");
         }

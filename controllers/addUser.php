@@ -59,13 +59,15 @@
         exit;
     }
 
-    //this take the user in DB who has the lower amount of ladder_point and make current signing user the same rank
-    //there is a false user in DB whom stay at the lowerest rank for this to work
-    $varTest = $usersModel->lowerestPoint();
+    //this take the user in DB who has the lower rank and make current signing user the same rank
+    $lowerstRankUser = $usersModel->findLowerstRanks();
+    $newRank = $lowerstRankUser[0]['MAX(rank)'] + 1;
+    var_dump($lowerstRankUser);
+    var_dump($newRank);
 
     //hashing password
     $hashedPWD = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $usersModel->addUser($lastId, htmlspecialchars($_POST['name'], ENT_QUOTES), htmlspecialchars($_POST['email'], ENT_QUOTES), $hashedPWD, $varTest[0]['rank']);
+    $usersModel->addUser($lastId, htmlspecialchars($_POST['name'], ENT_QUOTES), htmlspecialchars($_POST['email'], ENT_QUOTES), $hashedPWD, $newRank);
     header('Location: ../index.php?flash=signUp');
 
 ?>

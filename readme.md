@@ -5,8 +5,6 @@ Ready-Arena est une plateforme de création de tournois non-officiel pour une se
 
 ## La suite de ce fichier explicatif comporte des notions techniques à l'attention des examinateurs.
 
-l'éxistence d'un "faux" profil (falseUserRank0) est nécessaire au bon déroulement du classement de tout nouvel utilisateur.
-
 Dans de nombreux cas ( liste des participants aux tournois, déroulement des rounds, liste des équipiers dans une équipe ... ) la non-utilisation de la notion d'"INNER JOIN" à été une erreur. Cependant il m'aurait été trop fastidieux de revenir sur mon modèle de développement après en avoir pris conscience.
 
 il est important de noter que pour effectuer les tests du déroulement d'un tournoi la date de celui-ci doit être calibrée sur une date anterieur à celle du jour de connexion.
