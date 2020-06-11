@@ -62,8 +62,6 @@
     //this take the user in DB who has the lower rank and make current signing user the same rank
     $lowerstRankUser = $usersModel->findLowerstRanks();
     $newRank = $lowerstRankUser[0]['MAX(rank)'] + 1;
-    var_dump($lowerstRankUser);
-    var_dump($newRank);
 
     //hashing password
     $hashedPWD = password_hash($_POST['password'], PASSWORD_DEFAULT);

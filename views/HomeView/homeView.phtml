@@ -17,6 +17,9 @@
     <?php if (isset($_GET['flash']) && $_GET['flash'] == 'incorrectForm'): ?>
         <div id='redFlash'>Incorrect informations in form</div>
     <?php endif; ?>
+    <?php if(isset($_GET['flash']) && $_GET['flash'] == 'noPlayerFound'): ?>
+        <div id='redFlash'>User does not exist</div>
+    <?php endif; ?>
     <div id="homeContentNav">
         <div class="homeContentDiv">
             <article>

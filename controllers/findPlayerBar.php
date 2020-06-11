@@ -10,7 +10,7 @@
             header('Location: onePlayer.php?path=onePlayer&id='.$player[0]['id']);
         }
         else {
-            header('Location: ../index.php');
+            header('Location: ../index.php?flash=noPlayerFound');
         }
     }
 
