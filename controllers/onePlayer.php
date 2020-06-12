@@ -31,13 +31,25 @@
 // make a list of games for '#seekTeam section' selection
 $notLFTGames = $gameModel->findAll();
 
+
+
+// delete finished tournaments that have exceed thair 48 waiting hours after being done (where connected user is in)
 // take playerList from all tournaments and look for page user for phtml use (not smart / inner join expected)
-    $tournaments = [];
-    $y = 0;
+$tournaments = [];
+$y = 0;
 
     for ($i = 0;$i < count($allTournaments);$i++) {
         if (in_array($_GET['id'], explode(' ', $allTournaments[$i]['playerList']))) {
-            $tournaments[$y] = $TournamentsModel->findById($i + 1);
+            if ($allTournaments[$i]['played'] == 1 && $allTournaments[$i]['timer'] <= date('Y-m-d')) {
+                $TournamentsModel->deleteTournament($allTournaments[$i]['id']);
+                for ($x = $i;$x < count($allTournaments);$x++) {
+                    $allTournaments[$x]['id'] -= 1;
+                }
+                $i--;
+            }
+            else {
+                $tournaments[$y] = $TournamentsModel->findById($i + 1);
+            }
             $y++;
         }
     }

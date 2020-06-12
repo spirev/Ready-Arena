@@ -33,6 +33,7 @@
         $teamModel->addTeammates($_GET['team'], $newTeammates);
     }
     if ($_GET['choice'] === 'LFT') {
+        //'LFT' for 'Looking For a Team (section)'
         $gameModel = new GamesModel();
         $userModel = new UsersModel();
         $connectedUser = $userModel->findById($_GET['user']);

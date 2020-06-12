@@ -33,7 +33,7 @@
         $tournamentsModel->updateRounds($tournament[0]['id'], $nextRound, $newPlayerList);
     }
 
-    // count the number of rounds each players as gone throught and add one 'ladder_point' for each
+    // count the number of rounds each players has gone throught and add one 'ladder_point' for each
     function addLadderPoint($playerList, $usersModel, $teamModel) {
         for ($i = 0;$i < count($playerList);$i++) {
             for ($y = 0;$y < count($playerList[$i]);$y++) {

@@ -37,8 +37,16 @@
             $this->db->insert("UPDATE tournaments SET $round = '$newRoundList' WHERE id = '$tournamentId'");
         }
 
-        public function TimerOff($tournamentId) {
-            $this->db->insert("UPDATE tournaments SET timer = '3000-01-01' WHERE id = $tournamentId");
+        public function updateTimer($tournamentId, $date) {
+            $this->db->insert("UPDATE tournaments SET timer = '$date' WHERE id = $tournamentId");
+        }
+
+        public function setAsPlayed($tournamentId) {
+            $this->db->insert("UPDATE tournaments SET played = 1 WHERE id = $tournamentId");
+        }
+
+        public function deleteTournament($tournamentId) {
+            $this->db->insert("DELETE FROM tournaments WHERE id = $tournamentId");
         }
     }
 ?>

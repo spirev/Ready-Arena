@@ -3,6 +3,7 @@
     include ROOT_PATH.'/../library/bdd.class.php';
     include ROOT_PATH.'/../models/UsersModel.class.php';
 
+    // if a player has been research for in the top search bar of header
     if (isset($_GET['findPlayer'])) {
         $userModel = new UsersModel();
         $player = $userModel->checkName(htmlspecialchars($_GET['findPlayer'], ENT_QUOTES));

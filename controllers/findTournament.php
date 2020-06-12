@@ -6,6 +6,16 @@
 
     $tournamentsModel = new TournamentsModel();
     $tournaments = $tournamentsModel->findByGame($_GET['game']);
+    foreach($tournaments as $tournament) {
+        if ($tournament['played'] == 1 && $tournament['timer'] <= date('Y-m-d')) {
+            $tournamentsModel->deleteTournament($tournament['id']);
+        }
+    }
+    for ($i = 0;$i < count($tournaments);$i++) {
+        $tournaments[$i]['id'] = $i - 1;
+    }
+    $tournaments = $tournamentsModel->findByGame($_GET['game']);
+
 
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path'].".phtml";

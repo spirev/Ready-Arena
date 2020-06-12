@@ -97,6 +97,17 @@ for($i = 0;$i < count($playersRound);$i++) {
     else {
     }
 }
+
+// if round2 (final) has been played, then set timer to 48 hours forward 
+// ( when this limit will be reach, tournament will be delete on onePlayer.php and findTournament.php opening )
+if (isset($_GET['timerOff'])) {
+    $endDate = new DateTime('now');
+    $endDate->add(new DateInterval('P3D'));
+    $endDate2 = $endDate->format('Y-m-d');
+    $tournamentsModel->setAsPlayed($tournament['0']['id']);
+    $tournamentsModel->updateTimer($tournament[0]['id'], $endDate2);
+}
+
 //set date in a readable way ( for html usage )
 $newTimer = substr($tournament[0]['timer'], -2, 2)."-".substr($tournament[0]['timer'], -5, 2)."-".substr($tournament[0]['timer'], 0, 4);
 
@@ -124,11 +135,6 @@ else {
     $isTournamentReady = false;
 }
 
-// if round2 (final) has been played, then set timer to unreachable limit (year 3000)
-if (isset($_GET['timerOff'])) {
-    $tournamentsModel->TimerOff($tournament[0]['id']);
-
-}
 
 if (isset($_GET['path'])) {
     $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
