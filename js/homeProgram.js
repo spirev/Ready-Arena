@@ -30,10 +30,6 @@ lilProg = new Navigation();
                 $('#homeNav div').addClass('transitioningOut');
                 SetAjaxContent('allGames');
                 break;
-            case 'family':
-                /*$('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('findFamily');*/
-                break
         }
 
         //increment stage value to memorise current layer in the home nav
@@ -54,11 +50,11 @@ lilProg = new Navigation();
     $('body').on('click', "#returnArrow", function() {
         if(lilProg.stage == "3") {
             SetAjaxContent('allGames');
-            $('#homeNav div').addClass('transitioningIn'); // WORKING HERE /!\ transitioning animation has to work !!
+            $('#homeNav div').addClass('transitioningIn');
         }
         else {
-            SetAjaxContent('homeContent');          // WORKING HERE /!\ need function evaluating lilprog values to return to the right ajax page (and not necesserly home) !!
-            $('#homeNav div').addClass('transitioningIn'); // WORKING HERE /!\ transitioning animation has to work !!
+            SetAjaxContent('homeContent');
+            $('#homeNav div').addClass('transitioningIn');
         }
         lilProg.stage--;
     })
@@ -80,10 +76,6 @@ lilProg = new Navigation();
             case 'team':
                 $('#homeNav div').addClass('transitioningOut');
                 SetAjaxContent('Team');
-                break;
-            case 'family':
-                $('#homeNav div').addClass('transitioningOut');
-                SetAjaxContent('family');
                 break;
         }
         lilProg.stage++;

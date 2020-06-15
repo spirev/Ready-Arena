@@ -27,6 +27,12 @@
             </ul>
         </div>
         <div>
+            <h2>Upcoming Tournaments</h2>
+            <?php foreach($upcomingTournaments as $oneTournament): ?>
+                <a href="oneTournament.php?path=oneTournament&id=<?= $oneTournament[0]['id'] ?>&game=<?= $oneTournament[0]['game'] ?>&format=<?= $oneTournament[0]['format'] ?>"><div class='UpTournament'><?= $oneTournament[0]['name'] ?></br><?= $oneTournament[0]['game'] ?></div></a>
+            <?php endforeach; ?>
+        </div>
+        <div>
             <?php if ($alreadyIn !== true && isset($_SESSION['name'])): ?>
                 <form action="applyTeam.php?id=<?= $_GET['id'] ?>" method="post">
                     <button value="apply">APPLY</button>

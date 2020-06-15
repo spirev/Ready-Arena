@@ -42,15 +42,16 @@ $y = 0;
         if (in_array($_GET['id'], explode(' ', $allTournaments[$i]['playerList']))) {
             if ($allTournaments[$i]['played'] == 1 && $allTournaments[$i]['timer'] <= date('Y-m-d')) {
                 $TournamentsModel->deleteTournament($allTournaments[$i]['id']);
-                for ($x = $i;$x < count($allTournaments);$x++) {
-                    $allTournaments[$x]['id'] -= 1;
+                $allTournaments = $TournamentsModel->findAll();
+                for ($x = 0;$x <= count($allTournaments) - 1;$x++) {
+                    $TournamentsModel->updateId($allTournaments[$x]['id'], $x + 1);
                 }
                 $i--;
             }
             else {
                 $tournaments[$y] = $TournamentsModel->findById($i + 1);
+                $y++;
             }
-            $y++;
         }
     }
 

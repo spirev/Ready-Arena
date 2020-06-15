@@ -5,14 +5,16 @@
     include ROOT_PATH.'/../models/TeamsModel.class.php';
     include ROOT_PATH.'/../models/UsersModel.class.php';
     include ROOT_PATH.'/../models/GamesModel.class.php';
+    include ROOT_PATH.'/../models/TournamentsModel.class.php';
     include '../controllers/LayoutController.php';
 
     $teamsModel = new TeamsModel();
     $usersModel = new UsersModel();
     $gamesModel = new GamesModel();
+    $tournamentsModel = new TournamentsModel();
     $game = $gamesModel->findByName($_GET['game']);
     $team = $teamsModel->findById($_GET['id']);
-    $playerList = $team[0]['teammates'];
+    $teammates = $team[0]['teammates'];
     $waitingList = $team[0]['waiting_list'];
     $list = [];
     $players = [];
@@ -21,7 +23,7 @@
     $alreadyRegister = false;
 
     if (isset($_GET['deletePlayer'])) {
-        $oldTeammates = explode(' ', $playerList);
+        $oldTeammates = explode(' ', $teammates);
         for ($i = 0;$i < count($oldTeammates);$i++) {
             if ($oldTeammates[$i] == $_GET['user']) {
                 $y = $oldTeammates[0];
@@ -43,8 +45,8 @@
         header('Location: oneTeam.php?path=oneTeam&id='.$team[0]['id'].'&game='.$team[0]['game']);
     }
 
-    if(!empty($playerList)) {
-        $list = explode(' ', $playerList);
+    if(!empty($teammates)) {
+        $list = explode(' ', $teammates);
     }
     for($i = 0; $i < count($list);$i++) {
         $players[$i] = $usersModel->findById(intval($list[$i], 10));
@@ -67,7 +69,17 @@
             }
         }
     }
-    
+
+    $upcomingTournaments = [];
+    $i = 0;
+    $allTournamentsFormatTeam = $tournamentsModel->findByFormat('team');
+    foreach ($allTournamentsFormatTeam as $tournament) {
+        if (in_array($_GET['id'], explode(' ', $tournament['playerList']))) {
+            $upcomingTournaments[$i] = $tournamentsModel->findById($tournament['id']);
+            $i++;
+        }
+    }
+
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path']."View.phtml";
         include ROOT_PATH.'/../views/layout.phtml';

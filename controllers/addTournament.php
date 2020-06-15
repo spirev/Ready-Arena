@@ -22,6 +22,14 @@
     if (empty($_GET['maxParticipants'])) {
         $_GET['maxParticipants'] = 32;
     }
+
+    function resetAllId($tournamentModel) {
+        $allTournaments = $tournamentModel->findAll();
+        var_dump($allTournaments);
+        for ($i = 0;$i < count($allTournaments);$i++) {
+            $tournamentModel->updateId($allTournaments[$i]['id'], $i + 1);
+        }
+    }
     
 // if team choice isn't done yet or if tournament is solo
     if (!isset($_GET['action'])) {
@@ -29,7 +37,7 @@
             //if tournament format is 'solo' add this tournament to the database
             if (!empty($_GET['name']) && !empty($_GET['startDate'])) {
                 $tournamentModel->addTournament($lastId, htmlspecialchars($_GET['name'], ENT_QUOTES), $_COOKIE['game'], $_GET['maxParticipants'], $_GET['soloTeam'], htmlspecialchars($_GET['averageSkill'], ENT_QUOTES), $_GET['startDate'], $_SESSION['id']);
-                setcookie('game', null, -1, '/'); // doesn't work...
+                //resetAllId($tournamentModel);
                 header('Location: ../index.php?flash=tournament');
                 exit;
             }
@@ -53,5 +61,6 @@
         // if tournament is for teams and choice has been made
         $tournamentModel->addTournament($lastId, htmlspecialchars($_GET['formName'], ENT_QUOTES), $_COOKIE['game'], $_GET['maxParticipants'], $_GET['soloTeam'], $_GET['averageSkill'], $_GET['startDate'], $_GET['teamId']);
         header('Location: ../index.php?flash=tournament');
+        //resetAllId($tournamentModel);
 }
 ?>

@@ -43,7 +43,7 @@
 
 #mainContent {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: flex-start;
     justify-content: space-between;
 }
@@ -53,20 +53,22 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 28%;
     border: 1px solid rgb(0, 255, 255);
     background-color: rgba(30, 30, 30, 0.5);
 }
 
 #mainContent > div:first-child {
-    margin-left: 6%;
     display: flex;
+    width: 80%;
     flex-flow: column wrap;
+    margin-bottom: 5%;
+    margin-left: 10%;
 }
 
 #mainContent > div:first-child form {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    /*margin-top: 10%;
+    margin-bottom: 10%;*/
 }
 
 #mainContent > div:first-child form input {
@@ -97,28 +99,48 @@
     margin-left: 2%;
 }
 
-#mainContent > div:nth-child(3) {
-    margin-right: 2%;
+#mainContent > div:nth-child(3) a {
+    color: white;
+    border: 1px solid rgb(0, 255, 255);
+    box-shadow: 1px 1px 25px #000dff;
+    border-radius: 10px;
+    margin: 8% 5% 8%;
+    padding: 2%;
+    min-width: 80%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+#mainContent > div:nth-child(3) a:hover {
+    background-color: rgb(0, 255, 255);
+    color: black;
+    font-weight: bolder;
+    box-shadow: 1px 1px 10px rgb(0, 255, 255);
+}
+
+#mainContent > div:nth-child(4) {
+    margin-right: 4%;
     width: 30%;
 }
 
-#mainContent > div:nth-child(3) .adminTeammatesDiv {
+#mainContent > div:nth-child(4) .adminTeammatesDiv {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
 
-#mainContent > div:nth-child(3) .adminTeammatesDiv div:first-child {
+#mainContent > div:nth-child(4) .adminTeammatesDiv div:first-child {
     margin-right: 50px;
 }
 
-#mainContent > div:nth-child(3) .adminTeammatesDiv i{
+#mainContent > div:nth-child(4) .adminTeammatesDiv i{
     font-size: 1.7rem;
     color: rgb(0, 225, 255);
 }
 
-#mainContent > div:nth-child(3) .adminTeammatesDiv i:hover{
+#mainContent > div:nth-child(4) .adminTeammatesDiv i:hover{
     color: red;
 }
 
@@ -220,11 +242,15 @@
 
 @media screen and (max-width: 768px) {
     #oneTeamPhtml {
-        height: 2000px;
+        height: 2500px;
+    }
+
+    #oneTeamPhtml div:first-child:not(.adminTeammatesDiv):not(#commentDiv) {
+        font-size: 2rem;
     }
 
     #oneTeamPhtml h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     #mainContent {
@@ -242,7 +268,7 @@
     }
 
     #oneTeamPhtml p {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     #oneTeamPhtml #mainContent > div h2 {
@@ -264,6 +290,11 @@
     #oneTeamPhtml #mainContent > div:nth-child(3) {
         width: 75%;
         margin-right: 0%;
+    }
+
+    #mainContent > div:nth-child(4) {
+        width: 75%;
+        margin-right: 0;
     }
 
     #oneTeamPhtml #mainContent > div:first-child form input {
@@ -296,6 +327,7 @@
 
     #oneTeamPhtml div:first-child:not(.adminTeammatesDiv):not(#commentDiv) {
         flex-flow: row nowrap;
+        font-size: 2.5rem;
     }
     
     #oneTeamPhtml h1 {
@@ -309,7 +341,7 @@
     }
 
     #oneTeamPhtml p {
-        font-size: 4.2rem;
+        font-size: 2.5rem;
     }
 
     #oneTeamPhtml #mainContent > div:first-child form input {
@@ -319,7 +351,7 @@
     }
 
     #oneTeamPhtml #mainContent > div:first-child form input::placeholder {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
     }
 
     #oneTeamPhtml #mainContent > div h2 {

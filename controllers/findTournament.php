@@ -11,8 +11,12 @@
             $tournamentsModel->deleteTournament($tournament['id']);
         }
     }
-    for ($i = 0;$i < count($tournaments);$i++) {
-        $tournaments[$i]['id'] = $i - 1;
+
+    // reset id of all tournaments
+    $allTournaments = $tournamentsModel->findAll();
+    for ($i = 0;$i < count($allTournaments);$i++) {
+        //$allTournaments[$i]['id'] = $i + 1;
+        $tournamentsModel->updateId($allTournaments[$i]['id'], $i + 1);
     }
     $tournaments = $tournamentsModel->findByGame($_GET['game']);
 

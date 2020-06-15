@@ -24,7 +24,7 @@ function SetAjaxContent(path) {
             $.get('views/ajaxHTML/nav/'+ path + 'View/'+ path + '.phtml', setNav);
             $.get('views/ajaxHTML/explain/homeContentExplain.phtml', setExplain);
         }
-        else if (path == 'Team' || path == 'family') {
+        else if (path == 'Team') {
             $.get('views/ajaxHTML/nav/find'+ path + 'View/find'+ path + '.phtml', setNav);
         }
         else if (path == 'create') {
