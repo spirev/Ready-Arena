@@ -42,7 +42,7 @@
                                         <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
                                     <?php endif; ?>
                                     <?php if($_GET['format'] == 'team'): ?>
-                                        <a href="oneTeam.php?path=oneTeam&id=<?= $player[0]['id'] ?>&game=<?= $player[0]['game'] ?>"><li><?= $player[0]['name'] ?></li></a>
+                                        <a href="oneTeam.php?path=oneTeam&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>&game=<?= $playerRoundList[$i - 1][$y][0]['game'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
                                     <?php endif; ?>
                                     <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1 && $isTournamentReady == true): ?>
                                         <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&format=solo&win" class="winIcone"><i class="far fa-check-circle"></i></a>
@@ -67,7 +67,7 @@
                                         <a href="onePlayer.php?path=onePlayer&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
                                     <?php endif; ?>
                                     <?php if($_GET['format'] == 'team'): ?>
-                                        <a href="oneTeam.php?path=oneTeam&id=<?= $player[0]['id'] ?>&game=<?= $player[0]['game'] ?>"><li><?= $player[0]['name'] ?></li></a>
+                                        <a href="oneTeam.php?path=oneTeam&id=<?= $playerRoundList[$i - 1][$y][0]['id'] ?>&game=<?= $playerRoundList[$i - 1][$y][0]['game'] ?>"><li><?= $playerRoundList[$i - 1][$y][0]['name'] ?></li></a>
                                     <?php endif; ?>
                                     <?php if(isset($_SESSION['name']) && $_SESSION['name'] == $playerRoundList[$i - 1][$y][0]['name'] && isset($lastRoundLoggedUser) && $lastRoundLoggedUser == $i - 1 && $isTournamentReady == true): ?>
                                         <a href="oneTournament.php?id=<?= $tournament[0]['id'] ?>&format=solo&win" class="winIcone"><i class="far fa-check-circle"></i></a>
