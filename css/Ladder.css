@@ -73,6 +73,10 @@
         height: 58px;
         font-size: 1.5rem;
     }
+
+    #ladderPhtml div {
+        margin: 0% 21% 5%;
+    }
 }
 
 /* fot mobile */

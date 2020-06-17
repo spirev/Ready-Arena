@@ -253,6 +253,80 @@ aside nav ul a li:hover {
     transition: all 0.2s;
 }
 
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: -100px;
+    text-align: center;
+    background: linear-gradient(#0b1b38, #071620);
+}
+
+.hiddenFooter {
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    bottom: -100px;
+    text-align: center;
+    border-top: 1px solid rgb(0, 255, 255);
+    background: linear-gradient(#0b1b38, #071620);
+    transition: all 0.2s;
+}
+
+.showFooter {
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    border-top: 1px solid rgb(0, 255, 255);
+    background: linear-gradient(#0b1b38, #071620);
+    transition: all 0.4s;
+}
+
+footer h3 {
+    position: relative;
+    bottom: 30px;
+    right: 45%;
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    transition: all 0.2s;
+}
+
+footer h3:hover {
+    cursor: pointer;
+    color: rgb(0, 255, 255);
+}
+
+/*all footer*/
+footer > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+/*email + discord as a all*/
+footer div div {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+/*email and discord as ones with their <p>*/
+footer div div div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
 @media screen and (max-width: 1600px) {
     #arrowMenu {
         width: 8%;
@@ -301,14 +375,15 @@ aside nav ul a li:hover {
         font-size: 2rem;
         justify-content: center;
         align-items: center;
-        margin-top: 8%;
-        margin-bottom: 8%;
-        margin-left: -10%;
+        margin-top: 15%;
+        margin-bottom: 20%;
+        margin-left: -7%;
     }
 
     header img {
         width: 340px;
         height: 105px;
+        margin-right: 45px;
     }
 
     header #headerProfil h4 {
@@ -342,6 +417,19 @@ aside nav ul a li:hover {
     aside nav ul a li {
         font-size: 1.5rem;
     }
+
+    footer h3 {
+        bottom: 40px;
+        font-size: 1.4rem;
+    }
+
+    footer p {
+        font-size: 1.7rem;
+    }
+
+    .hiddenFooter {
+        bottom: -145px;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -355,6 +443,7 @@ aside nav ul a li:hover {
     header img {
         width: 366px;
         height: 116px;
+        margin-left: 60%;
     }
 
     header a:not(#signUp):not(#login) {
@@ -395,7 +484,7 @@ aside nav ul a li:hover {
     header div a {
         width: 150px;
         height: 60px;
-        font-size: 2rem !important;
+        font-size: 2.7rem !important;
         margin-right: 0px !important;
         text-align: center;
         padding-top: 5% !important;
@@ -442,5 +531,26 @@ aside nav ul a li:hover {
 
     aside nav ul a li {
         font-size: 2rem;
+    }
+
+    footer h3 {
+        bottom: 70px;
+        right: 42%;
+        font-size: 2.7rem;
+    }
+
+    footer p {
+        font-size: 2.7rem;
+    }
+    footer .fa-discord, footer .fa-envelope {
+        font-size: 4rem;
+    }
+
+    footer div div div {
+        flex-flow: column wrap;
+    }
+
+    .hiddenFooter {
+        bottom: -290px;
     }
 }

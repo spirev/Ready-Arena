@@ -14,7 +14,7 @@ const sliders = [
 
 $(document).ready(function () {
 
-    // listen to the click of menu/arrow to hide & show aside menu*/
+    // listen to the click of menu to hide & show */
     $('#arrowMenu').on('click', function () {
         $asideMenu.toggleClass("showAside");
         $asideMenu.toggleClass("hideAside");
@@ -45,6 +45,7 @@ $(document).ready(function () {
         }
     })
 
+    // set a timer to switch background images every 6 seconds
     setInterval(function() {
         if (state == sliders.length - 1) {
             state = 0;
@@ -60,10 +61,17 @@ $(document).ready(function () {
         $('#onePlayerPhtml #seekTeam section').toggleClass('showAddLFT');
     })
 
+    // hide flash messages when clicked
     $('#flash').on('click', function() {
         $('#flash').css('display', 'none');
     })
     $('#redFlash').on('click', function() {
         $('#redFlash').css('display', 'none');
+    })
+
+    // hide and show footer
+    $('footer').on('click', function () {
+        $('footer > div').toggleClass('showFooter');
+        $('footer > div').toggleClass('hiddenFooter');
     })
 })

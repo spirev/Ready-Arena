@@ -203,6 +203,10 @@
         background-size: 140rem;
     }
 
+    #homeContentNav p {
+        font-size: 1.5rem;
+    }
+
     #homeExplain p {
         font-size: 1.3rem;
     }
@@ -218,7 +222,8 @@
     }
     
     #homeContentNav {
-        padding-top: 10%;
+        padding-top: 35%;
+        padding-bottom: 50%;
     }
     
     #homeContentNav div{
@@ -227,17 +232,17 @@
     
     #homeContentNav div article {
         width: 65%;
-        margin-bottom: 5%;
+        margin-bottom: 22%;
     }
 
     #homeContentNav div article p {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     #homeContentNav button:not(#helpBut) {
         width: 290px;
         height: 90px;
-        font-size: 2rem;
+        font-size: 2.9rem;
     }
 
     .fa-question-circle {
@@ -245,7 +250,7 @@
     }
 
     #homeExplain {
-        height: 1700px;
+        height: 2300px;
         margin-top: 80%;
     }
 
@@ -254,7 +259,7 @@
     }
 
     #homeExplain p {
-        font-size: 1.8rem;
+        font-size: 2.6rem;
         font-weight: lighter;
         line-height: 4rem;
    }
