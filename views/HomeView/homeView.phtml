@@ -20,6 +20,12 @@
     <?php if(isset($_GET['flash']) && $_GET['flash'] == 'noPlayerFound'): ?>
         <div id='redFlash'>User does not exist</div>
     <?php endif; ?>
+    <?php if (isset($_GET['flash']) && $_GET['flash'] == 'wrongUser'): ?>
+        <div id='redFlash'>Unknown user</div>
+    <?php endif; ?>
+    <?php if (isset($_GET['flash']) && $_GET['flash'] == 'wrongTeam'): ?>
+        <div id='redFlash'>Unknown team</div>
+    <?php endif; ?>
     <div id="homeContentNav">
         <div class="homeContentDiv">
             <article>

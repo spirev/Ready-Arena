@@ -42,6 +42,7 @@
 @media screen and (max-width: 1024px) {
     #findTournamentPhtml a {
         width: 26%;
+        height: 100%;
     }
 }
 

@@ -1,8 +1,8 @@
 <div id='inviteToTeam'>
-    <?php if (empty($teams) && !isset($_GET['format'])): ?>
+    <?php if (empty($teams) && !isset($_GET['format']) && !isset($_GET['action'])): ?>
         <h1><?= $requestPlayer[0]['name'] ?> is already on waiting list for all your teams or is already in all of your teams</h1>
     <?php endif; ?>
-    <?php if (empty($teams) && isset($_GET['format'])): ?>
+    <?php if (empty($teams) && isset($_GET['format']) || empty($teams) && !isset($_GET['format']) && isset($_GET['action'])): ?>
         <h1>All of your teams are already participating to this tournament</h1>
     <?php endif; ?>
     <?php foreach($teams as $team): ?>

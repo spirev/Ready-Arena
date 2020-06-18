@@ -13,7 +13,15 @@
     $gamesModel = new GamesModel();
     $tournamentsModel = new TournamentsModel();
     $game = $gamesModel->findByName($_GET['game']);
-    $team = $teamsModel->findById($_GET['id']);
+    try {
+        $team = $teamsModel->findById($_GET['id']);
+        if (empty($team)) {
+            throw new Exception('team is unreachable');
+        }
+    }
+    catch(Exception $e){
+        header('Location: ../index.php?flash=wrongTeam');
+    }
     $teammates = $team[0]['teammates'];
     $waitingList = $team[0]['waiting_list'];
     $list = [];

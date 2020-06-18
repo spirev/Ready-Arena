@@ -1,5 +1,5 @@
 <div id="findTournamentPhtml">
     <?php foreach($tournaments as $tournament): ?>
-        <a href="oneTournament.php?path=oneTournament&id=<?= $tournament['id'] ?>&format=<?= $tournament['format'] ?>" class="resumeTournament"><?= $tournament['name'] ?></br></br><?= $tournament['timer'] ?></a>
+        <a href="oneTournament.php?path=oneTournament&id=<?= $tournament['id'] ?>&format=<?= $tournament['format'] ?>" class="resumeTournament"><?= $tournament['name'] ?></br></br><?= $tournament['timer'] ?></br></br><?= intval($tournament['nbr_participants'], 10) - count(explode(' ', $tournament['playerList'])) ?> slots available</a>
     <?php endforeach; ?>
 </div>

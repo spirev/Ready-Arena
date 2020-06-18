@@ -12,7 +12,15 @@
     $TeamsModel = new TeamsModel();
     $gameModel = new GamesModel();
     
-    $user = $usersModel->findById($_GET['id']);
+    try {
+        $user = $usersModel->findById($_GET['id']);
+        if (empty($user)) {
+            throw new Exception('Unreachable user');
+        }
+    }
+    catch(Exception $e) {
+        header('Location: ../index.php?flash=wrongUser');
+    }
     $allTournaments = $TournamentsModel->findAll();
     $allTeams = $TeamsModel->findAll();
 

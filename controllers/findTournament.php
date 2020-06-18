@@ -20,7 +20,6 @@
     }
     $tournaments = $tournamentsModel->findByGame($_GET['game']);
 
-
     if (isset($_GET['path'])) {
         $dataview = $_GET['path']."View/".$_GET['path'].".phtml";
         include ROOT_PATH.'/../views/layout.phtml';
