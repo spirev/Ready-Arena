@@ -130,7 +130,13 @@
             </div>
         </footer>
         <div id='hidden'></div>
-        <script type="text/javascript" src="/finalProject/js/main.js"></script>
-        <script type="text/javascript" src="/finalProject/js/ajax.js"></script>
+        <?php if($_GET['path'] == 'home'): ?>
+            <script type="text/javascript" src="js/main.js"></script>
+            <script type="text/javascript" src="js/ajax.js"></script>
+        <?php endif; ?>
+        <?php if($_GET['path'] !== 'home'): ?>
+            <script type="text/javascript" src="../js/main.js"></script>
+            <script type="text/javascript" src="../js/ajax.js"></script>
+        <?php endif; ?>
     </body>
 </html>
