@@ -4,6 +4,16 @@
     <?php endif; ?>
     <h1><?= $user[0]['name'] ?></h1>
     <h2>#<?= $user[0]['rank'] ?></h2>
+    <?php if (!empty($user[0]['comment'])): ?>    
+        <div id='comment'>
+            <p><?= $user[0]['comment'] ?></p>
+            <?php if (isset($_SESSION['name']) && $_SESSION['name'] == $user[0]['name']): ?>
+                <form action="onePlayer.php?path=onePlayer&id=<?= $user[0]['id'] ?>&reloadComment" method="post">
+                    <input type="text" name="reloadComment" placeholder="new comment">
+                </form>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
     <div>
         <div id="seekTeam">
             <section class='hideAddLFT'>

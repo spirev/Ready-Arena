@@ -12,6 +12,7 @@
     $TeamsModel = new TeamsModel();
     $gameModel = new GamesModel();
     
+    //try-catch to prevent url change with bad user-id
     try {
         $user = $usersModel->findById($_GET['id']);
         if (empty($user)) {
@@ -28,6 +29,13 @@
     $list = [];
     $games = [];
 
+    // this part update new comment and reload page
+    if (isset($_GET['reloadComment'])) {
+        $usersModel->updateComment($user[0]['id'], htmlspecialchars($_POST['reloadComment'], ENT_QUOTES));
+        header('Location: onePlayer.php?path=onePlayer&id='.$user[0]['id']);
+        exit;
+    }
+
 // make list of LFT games
     if(!empty($lookingForTeam)) {
         $list = explode(' ', $lookingForTeam);
@@ -41,7 +49,7 @@ $notLFTGames = $gameModel->findAll();
 
 
 
-// delete finished tournaments that have exceed thair 48 waiting hours after being done (where connected user is in)
+// delete finished tournaments that have exceed their 48 waiting hours after being done (where connected user is in)
 // take playerList from all tournaments and look for page user for phtml use (not smart / inner join expected)
 $tournaments = [];
 $y = 0;

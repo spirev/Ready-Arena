@@ -48,9 +48,11 @@
         header('Location: oneTeam.php?path=oneTeam&id='.$team[0]['id'].'&game='.$team[0]['game']);
     }
 
+    // this part update new comment and reload page
     if (isset($_GET['reloadComment'])) {
         $teamsModel->updateComment($team[0]['id'], htmlspecialchars($_POST['reloadComment'], ENT_QUOTES));
         header('Location: oneTeam.php?path=oneTeam&id='.$team[0]['id'].'&game='.$team[0]['game']);
+        exit;
     }
 
     if(!empty($teammates)) {

@@ -7,9 +7,9 @@
         <div id="commentDiv">
             <p><?= $team[0]['comment'] ?></p>
             <?php if (isset($_SESSION['name']) && $_SESSION['name'] == $team[0]['captain']): ?>
-                    <form action="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>&reloadComment" method="post">
-                        <input type="text" name="reloadComment" placeholder="new comment">
-                    </form>
+                <form action="oneTeam.php?path=oneTeam&id=<?= $team[0]['id'] ?>&game=<?= $team[0]['game'] ?>&reloadComment" method="post">
+                    <input type="text" name="reloadComment" placeholder="new comment">
+                </form>
             <?php endif; ?>
         </div>
         <div>

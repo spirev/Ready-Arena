@@ -60,6 +60,10 @@
             $this->db->insert("UPDATE users SET team_invite = '$newTeamInvite' WHERE id = '$id'");
         }
 
+        public function updateComment($userId, $newComment) {
+            $this->db->insert("UPDATE users SET comment = '$newComment' WHERE id = '$userId'");
+        }
+
         public function addUser($id, $name, $email, $password, $rank, $ladder_point = 0, $look_for_team = null) {
             $this->db->insert("INSERT INTO users (id, name, email, password, ladder_point, rank, look_for_team)
             VALUES ($id, '$name', '$email', '$password', '$ladder_point', '$rank', '$look_for_team')");

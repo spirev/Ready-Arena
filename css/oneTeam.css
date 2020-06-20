@@ -66,11 +66,6 @@
     margin-left: 10%;
 }
 
-#mainContent > div:first-child form {
-    /*margin-top: 10%;
-    margin-bottom: 10%;*/
-}
-
 #mainContent > div:first-child form input {
     background-color: black;
     color: rgb(0, 255, 255);
